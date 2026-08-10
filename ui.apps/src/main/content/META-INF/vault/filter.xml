@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/brumacafe/clientlibs"/>
+    <filter root="/apps/brumacafe/components"/>
+    <filter root="/apps/brumacafe/i18n"/>
+</workspaceFilter>

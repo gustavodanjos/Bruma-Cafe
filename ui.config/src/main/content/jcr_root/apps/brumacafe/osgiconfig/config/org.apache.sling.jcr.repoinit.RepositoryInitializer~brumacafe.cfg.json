@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/brumacafe",
+        "create path (nt:unstructured) /content/dam/brumacafe/jcr:content",
+        "set properties on /content/dam/brumacafe/jcr:content\n  set cq:conf{String} to /conf/brumacafe\n  set jcr:title{String} to \"Bruma Cafe\"\nend"
+    ]
+}
