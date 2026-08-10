@@ -3,35 +3,34 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:template="/conf/brumacafe/settings/wcm/templates/page-content"
+        cq:lastModified="{Date}2026-08-10T15:03:55.797-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="brumacafe/components/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="brumacafe/components/container"
             layout="responsiveGrid">
-            <experiencefragment-header
+            <experiencefragment
+                jcr:created="{Date}2026-08-10T15:03:50.477-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-10T15:03:50.477-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="brumacafe/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/brumacafe/us/en/site/header/master"/>
+                sling:resourceType="brumacafe/components/experiencefragment"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
-                layout="responsiveGrid">
-                <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/title"
-                    editable="{Boolean}true"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/container"
-                    editable="{Boolean}true"
-                    layout="responsiveGrid"/>
-            </container>
-            <experiencefragment-footer
+                editable="{Boolean}true"
+                layout="responsiveGrid"/>
+            <experiencefragment_1988736219
+                jcr:created="{Date}2026-08-10T15:03:55.793-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-10T15:03:55.793-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="brumacafe/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/brumacafe/us/en/site/footer/master"/>
+                sling:resourceType="brumacafe/components/experiencefragment"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
