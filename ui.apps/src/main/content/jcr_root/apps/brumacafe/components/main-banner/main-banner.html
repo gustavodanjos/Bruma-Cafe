@@ -1,0 +1,44 @@
+<sly
+    data-sly-use.mainBanner="com.brumacafe.core.models.MainBannerModel"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+</sly>
+
+<section
+    class="cmp-main-banner"
+    data-sly-test.hasContent="${!mainBanner.empty}">
+
+    <div class="cmp-main-banner__media">
+        <sly data-sly-resource="${'.' @ resourceType='brumacafe/components/image', decoration=false}"></sly>
+    </div>
+
+    <div class="cmp-main-banner__overlay"></div>
+
+    <div class="cmp-main-banner__content">
+
+        <h1
+            class="cmp-main-banner__title"
+            data-sly-test="${mainBanner.title}">
+            ${mainBanner.title}
+        </h1>
+
+        <div
+            class="cmp-main-banner__description"
+            data-sly-test="${mainBanner.description}">
+            ${mainBanner.description @ context='html'}
+        </div>
+
+        <a
+            class="cmp-main-banner__button"
+            data-sly-test="${mainBanner.buttonVisible}"
+            href="${mainBanner.buttonLink}"
+            target="${mainBanner.buttonTarget}">
+            ${mainBanner.buttonText}
+        </a>
+
+    </div>
+
+</section>
+
+<sly
+    data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}">
+</sly>
