@@ -8,4 +8,5 @@
     </filter>
     <filter root="/content/dam/brumacafe/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/brumacafe" mode="merge"/>
+    <filter root="/conf/brumacafe/settings/dam/cfm/models"/>
 </workspaceFilter>
