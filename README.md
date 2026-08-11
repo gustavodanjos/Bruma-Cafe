@@ -27,9 +27,9 @@ Mais do que apenas escrever código, o projeto avalia habilidades exigidas no me
 
 * O fluxo de trabalho será:
     * faz o trabalho em branches separadas por tarefa;
-    * Depois, abre-se um PR para a branch dev, onde o código é testado;
+    * Depois, abre-se um PR para a branch development, onde o código é testado;
     * Após a validação, fazer um backup da main;
-    * Abre-se o PR final da dev para a main.
+    * Abre-se o PR final da development para a main.
 
 * Formato Padrão de Nomenclatura de Branch
     ``` bash
