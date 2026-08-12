@@ -4,7 +4,7 @@
     allowedPaths="[/content/entities(/.*)?]"
     ranking="{Long}100">
     <jcr:content
-        cq:lastModified="{Date}2026-08-11T18:28:44.434-03:00"
+        cq:lastModified="{Date}2026-08-12T09:44:22.632-03:00"
         cq:lastModifiedBy="admin"
         cq:scaffolding="/conf/brumacafe/settings/dam/cfm/models/cafe/jcr:content/model"
         cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
@@ -25,7 +25,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="cq/gui/components/authoring/dialog">
                 <content
-                    jcr:lastModified="{Date}2026-08-11T17:56:16.537-03:00"
+                    jcr:lastModified="{Date}2026-08-12T09:44:22.632-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
@@ -47,22 +47,21 @@
                             valueType="string">
                             <granite:data jcr:primaryType="nt:unstructured"/>
                         </_x0031_786480486281>
-                        <_x0031_786481108586
+                        <_x0031_786538622184
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
-                            cfm-element="Origem do café"
-                            checked="false"
-                            default-mime-type="text/html"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldDescription="Informações sobre a região de onde foi colhido."
-                            listOrder="2"
-                            metaType="text-multi"
+                            fieldLabel="Origem do café"
+                            listOrder="21"
+                            maxlength="255"
+                            metaType="text-single"
                             name="origemCafe"
                             renderReadOnly="false"
                             required="on"
                             showEmptyInReadOnly="true"
-                            valueType="string/multiline">
+                            valueType="string">
                             <granite:data jcr:primaryType="nt:unstructured"/>
-                        </_x0031_786481108586>
+                        </_x0031_786538622184>
                         <_x0031_786481564642
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
@@ -70,7 +69,7 @@
                             checked="false"
                             default-mime-type="text/html"
                             fieldDescription="Campo para descrever o produto, trazendo informações relevantes como as pontuações obtidas na metrificação SCA, responsável por atribuir as notas sensoriais."
-                            listOrder="21"
+                            listOrder="2"
                             metaType="text-multi"
                             name="notasSensoriaisEDescricao"
                             renderReadOnly="false"
