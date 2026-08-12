@@ -1,23 +1,45 @@
 /**
- * Header Experience Fragment — Interactive behavior
- * Handles mobile navigation toggle and scroll shadow indicator.
+ * Header Experience Fragment — Interactive Controller
+ * Handles mobile navigation toggle and scroll shadow indicator for Bruma Café.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector<HTMLElement>('header.experiencefragment');
-    if (!header) {
-        return;
+class HeaderController {
+    private readonly header: HTMLElement | null;
+    private readonly container: HTMLElement | null;
+    private readonly navGroup: HTMLElement | null;
+
+    constructor() {
+        this.header = document.querySelector<HTMLElement>(
+            'header.experiencefragment, .experiencefragment, .cmp-experiencefragment--header, header'
+        );
+
+        if (!this.header) {
+            this.container = null;
+            this.navGroup = null;
+            return;
+        }
+
+        this.container = this.header.querySelector<HTMLElement>('.cmp-container');
+        this.navGroup = this.header.querySelector<HTMLElement>('.cmp-navigation__group');
+
+        this.init();
     }
 
-    const container = header.querySelector<HTMLElement>('.cmp-container');
-    const navGroup = header.querySelector<HTMLElement>('.cmp-navigation__group');
-
-    if (!container || !navGroup) {
-        return;
+    private init(): void {
+        this.setupMobileMenuToggle();
+        this.setupScrollShadow();
     }
 
-    // Injeta botão hamburger mobile se ainda não existir
-    if (!header.querySelector('.cmp-navigation__toggle')) {
+    private setupMobileMenuToggle(): void {
+        if (!this.header || !this.container || !this.navGroup) {
+            return;
+        }
+
+        // Evita inserção duplicada do botão hambúrguer
+        if (this.header.querySelector('.cmp-navigation__toggle')) {
+            return;
+        }
+
         const toggleBtn = document.createElement('button');
         toggleBtn.className = 'cmp-navigation__toggle';
         toggleBtn.type = 'button';
@@ -35,22 +57,31 @@ document.addEventListener('DOMContentLoaded', () => {
         let isOpen = false;
         toggleBtn.addEventListener('click', () => {
             isOpen = !isOpen;
-            navGroup.classList.toggle('is-open', isOpen);
+            this.navGroup?.classList.toggle('is-open', isOpen);
             toggleBtn.setAttribute('aria-expanded', String(isOpen));
         });
 
-        container.appendChild(toggleBtn);
+        this.container.appendChild(toggleBtn);
     }
 
-    // Scroll shadow effect
-    const handleScroll = () => {
-        if (window.scrollY > 10) {
-            header.classList.add('is-scrolled');
-        } else {
-            header.classList.remove('is-scrolled');
+    private setupScrollShadow(): void {
+        if (!this.header) {
+            return;
         }
-    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+        const handleScroll = (): void => {
+            if (window.scrollY > 10) {
+                this.header?.classList.add('is-scrolled');
+            } else {
+                this.header?.classList.remove('is-scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new HeaderController();
 });

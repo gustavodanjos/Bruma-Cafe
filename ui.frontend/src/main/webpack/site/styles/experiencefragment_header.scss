@@ -1,6 +1,6 @@
 // =============================================================================
 // Experience Fragment Header — Bruma Café
-// Escopo: header.experiencefragment, .experiencefragment, .cmp-experiencefragment
+// Header Layout Composition & Context Overrides
 // =============================================================================
 
 header.experiencefragment,
@@ -26,29 +26,15 @@ header {
         box-shadow: 0 4px 20px rgba(46, 31, 26, 0.06);
     }
 
-    // -------------------------------------------------------------------------
-    // Neutralizar Wrappers do AEM Grid & Experience Fragment
-    // -------------------------------------------------------------------------
+    // Neutralizar Wrappers do AEM Grid
     .cmp-experiencefragment,
     .experiencefragment,
     .aem-Grid,
     .aem-Grid--12 {
-        width: 100% !important;
-        max-width: none !important;
-        height: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-        float: none !important;
-        clear: both !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        background: transparent !important;
+        @include reset-aem-grid;
     }
 
-    // -------------------------------------------------------------------------
-    // Layout Container Flex Principal (.cmp-container)
-    // -------------------------------------------------------------------------
+    // Container Flex Principal
     .cmp-container,
     .cmp-experiencefragment > .cmp-container {
         display: flex !important;
@@ -67,7 +53,6 @@ header {
         box-sizing: border-box !important;
         gap: 24px !important;
 
-        // Neutraliza colunas do AEM Responsive Grid diretamente filhas do container
         > .aem-GridColumn,
         > .cmp-image,
         > .image,
@@ -88,140 +73,22 @@ header {
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Botão Hamburger (injetado por header-mobile.ts no .cmp-container)
-    // DESKTOP (> 768px): sempre oculto.
-    // -------------------------------------------------------------------------
+    // Hambúrguer Mobile Toggle (Oculto em Desktop)
     .cmp-navigation__toggle,
     .cmp-container > .cmp-navigation__toggle {
         display: none !important;
     }
 
-    // -------------------------------------------------------------------------
-    // 1. Logo (cmp-image / image) — Lado Esquerdo
-    // -------------------------------------------------------------------------
-    .cmp-image,
-    .image {
-        flex-shrink: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-
-        .cmp-image__link {
-            display: inline-flex !important;
-            align-items: center !important;
-            text-decoration: none !important;
-            border: none !important;
-
-            &:hover,
-            &:focus {
-                opacity: 0.9;
-            }
-        }
-
-        .cmp-image__image {
-            display: block !important;
-            height: 42px !important;
-            max-height: 42px !important;
-            width: auto !important;
-            max-width: 160px !important;
-            object-fit: contain !important;
-        }
-    }
-
-    // -------------------------------------------------------------------------
-    // 2. Navigation Menu (cmp-navigation / navigation) — Lado Direito
-    // -------------------------------------------------------------------------
+    // Navegação — Alinhamento no Header
     .cmp-navigation,
     .navigation {
         display: flex !important;
         align-items: center !important;
         margin-left: auto !important;
         overflow: visible !important;
-
-        .cmp-navigation__group {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            gap: 32px !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-        }
-
-        .cmp-navigation__item {
-            position: relative !important;
-            display: flex !important;
-            align-items: center !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .cmp-navigation__item-link {
-            font-family: $font-family-sans !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            color: $color-nevoa !important;
-            text-decoration: none !important;
-            letter-spacing: 0.01em !important;
-            padding: 6px 0 !important;
-            position: relative !important;
-            white-space: nowrap !important;
-            transition: color 0.2s ease !important;
-
-            &:hover,
-            &:focus {
-                color: $color-grao !important;
-            }
-        }
-
-        // Item Ativo ("Home") — Texto negrito + barra inferior de destaque
-        .cmp-navigation__item--active > .cmp-navigation__item-link {
-            font-weight: 600 !important;
-            color: $color-grao !important;
-
-            &::after {
-                content: '' !important;
-                position: absolute !important;
-                bottom: -2px !important;
-                left: 0 !important;
-                right: 0 !important;
-                height: 2px !important;
-                background-color: $color-grao !important;
-                border-radius: 1px !important;
-            }
-        }
-
-        // Estilo CTA caso a navegação inclua um item com classe cta
-        .cmp-navigation__item--cta > .cmp-navigation__item-link {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            background-color: $color-torra !important;
-            background: $color-torra !important;
-            color: $color-white !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            padding: 10px 20px !important;
-            border-radius: $radius-btn !important;
-            text-decoration: none !important;
-            transition: background-color 0.2s ease, transform 0.1s ease !important;
-
-            &::after {
-                display: none !important;
-            }
-
-            &:hover,
-            &:focus {
-                background-color: $color-torra-hover !important;
-                background: $color-torra-hover !important;
-                color: $color-white !important;
-            }
-        }
     }
 
-    // -------------------------------------------------------------------------
-    // 3. Botão CTA ("Ir para Loja") — Core Component Button (cmp-button)
-    // -------------------------------------------------------------------------
+    // Botão CTA — Contexto do Header
     .cmp-button,
     .button,
     [class*="cmp-button"] {
@@ -238,44 +105,7 @@ header {
         button.cmp-button__link,
         a,
         button {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            background-color: $color-torra !important; // #B4552D Terracota
-            background: $color-torra !important;
-            color: $color-white !important; // #FFFFFF Texto Branco
-            font-family: $font-family-sans !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            line-height: 1 !important;
-            padding: 10px 20px !important;
-            border-radius: $radius-btn !important;
-            border: none !important;
-            outline: none !important;
-            text-decoration: none !important;
-            white-space: nowrap !important;
-            cursor: pointer !important;
-            box-shadow: none !important;
-            transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease !important;
-
-            * {
-                color: $color-white !important;
-                background: transparent !important;
-                background-color: transparent !important;
-            }
-
-            &:hover,
-            &:focus {
-                background-color: $color-torra-hover !important;
-                background: $color-torra-hover !important;
-                color: $color-white !important;
-                transform: translateY(-1px) !important;
-                box-shadow: 0 4px 12px rgba(180, 85, 45, 0.25) !important;
-
-                * {
-                    color: $color-white !important;
-                }
-            }
+            @include button-cta;
         }
 
         .cmp-button__text,
@@ -288,13 +118,11 @@ header {
         }
 
         .cmp-button__screen-reader-only {
-            display: none !important;
+            @include screen-reader-only;
         }
     }
 
-    // -------------------------------------------------------------------------
-    // 4. Ocultar componentes auxiliares não presentes no design do topo
-    // -------------------------------------------------------------------------
+    // Ocultar componentes desnecessários para a barra de topo
     .cmp-languagenavigation,
     .languagenavigation,
     .cmp-search,
@@ -302,9 +130,7 @@ header {
         display: none !important;
     }
 
-    // -------------------------------------------------------------------------
-    // 5. Responsivo — Dispositivos Móveis (< 768px)
-    // -------------------------------------------------------------------------
+    // Responsividade Mobile (< 768px)
     @media (max-width: 768px) {
         .cmp-container,
         .cmp-experiencefragment > .cmp-container {
@@ -312,7 +138,6 @@ header {
             position: relative !important;
         }
 
-        // Exibe o botão hamburger apenas em mobile
         .cmp-navigation__toggle,
         .cmp-container > .cmp-navigation__toggle {
             display: flex !important;
@@ -383,23 +208,12 @@ header {
     }
 }
 
-// -----------------------------------------------------------------------------
 // Fallback Global de Alta Especificidade para o Botão do Header
-// (Garante estilizacao mesmo se o container no editor for envelopado por divs)
-// -----------------------------------------------------------------------------
 .cmp-experiencefragment .cmp-button__link,
 .cmp-experiencefragment--header .cmp-button__link,
 .experiencefragment .cmp-button__link,
 header .cmp-button__link {
-    background-color: #B4552D !important;
-    background: #B4552D !important;
-    color: #FFFFFF !important;
-    border-radius: 6px !important;
-    padding: 10px 20px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
+    @include button-cta;
 }
 
 .cmp-experiencefragment .cmp-button__text,
