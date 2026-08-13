@@ -1,53 +1,51 @@
 <sly
-    data-sly-use.mainBanner="com.brumacafe.core.models.MainBannerModel"
-    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+  data-sly-use.mainBanner="com.brumacafe.core.models.MainBannerModel"
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+>
 </sly>
 
 <sly
-    data-sly-call="${clientlib.css @ categories='brumacafe.components.main-banner'}">
+  data-sly-call="${clientlib.css @ categories='brumacafe.components.main-banner'}"
+>
 </sly>
 
 <section
-    class="cmp-main-banner"
-    data-sly-test.hasContent="${!mainBanner.empty}">
+  class="cmp-main-banner"
+  role="region"
+  aria-label="Banner Principal"
+>
+  <div
+    class="cmp-main-banner__media"
+    data-sly-test="${mainBanner.fileReference}"
+  >
+    <img
+      class="cmp-main-banner__image"
+      src="${mainBanner.fileReference}"
+      alt="${mainBanner.alt}"
+      fetchpriority="high"
+      loading="eager"
+    />
+  </div>
 
-    <div
-        class="cmp-main-banner__media"
-        data-sly-test="${mainBanner.fileReference}">
+  <div class="cmp-main-banner__content">
+    <h1 class="cmp-main-banner__title" data-sly-test="${mainBanner.title}">
+      ${mainBanner.title}
+    </h1>
 
-        <img
-            class="cmp-main-banner__image"
-            src="${mainBanner.fileReference}"
-            alt="${mainBanner.alt}">
+    <p
+      class="cmp-main-banner__description"
+      data-sly-test="${mainBanner.description}"
+    >
+      ${mainBanner.description}
+    </p>
 
-    </div>
-
-    <div class="cmp-main-banner__content">
-
-        <h1
-            class="cmp-main-banner__title"
-            data-sly-test="${mainBanner.title}">
-            ${mainBanner.title}
-        </h1>
-
-        <p
-            class="cmp-main-banner__description"
-            data-sly-test="${mainBanner.description}">
-            ${mainBanner.description}
-        </p>
-
-        <a
-            class="cmp-main-banner__button"
-            data-sly-test="${mainBanner.buttonVisible}"
-            href="${mainBanner.buttonLink}">
-            ${mainBanner.buttonText}
-        </a>
-
-    </div>
-
+    <a
+      class="cmp-main-banner__button"
+      data-sly-test="${mainBanner.buttonVisible}"
+      href="${mainBanner.buttonLink}"
+      rel="noopener noreferrer"
+    >
+      ${mainBanner.buttonText}
+    </a>
+  </div>
 </section>
-
-<sly
-    data-sly-call="${template.placeholder @ isEmpty=!hasContent}">
-</sly>
