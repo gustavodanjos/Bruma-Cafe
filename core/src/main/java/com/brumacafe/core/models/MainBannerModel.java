@@ -53,11 +53,11 @@ public class MainBannerModel {
     }
 
     public String getButtonLink() {
-        return buttonLink;
+        return isValidLink(buttonLink) ? buttonLink.trim() : null;
     }
 
     public boolean isButtonVisible() {
-        return hasText(buttonText) && hasText(buttonLink);
+        return hasText(buttonText) && isValidLink(buttonLink);
     }
 
     public boolean isEmpty() {
@@ -69,5 +69,15 @@ public class MainBannerModel {
 
     private boolean hasText(String value) {
         return value != null && !value.trim().isEmpty();
+    }
+
+    private boolean isValidLink(String link) {
+        if (!hasText(link)) {
+            return false;
+        }
+        String lower = link.trim().toLowerCase();
+        return !lower.startsWith("javascript:")
+            && !lower.startsWith("data:")
+            && !lower.startsWith("vbscript:");
     }
 }
