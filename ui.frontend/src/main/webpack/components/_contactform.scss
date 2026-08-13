@@ -1,0 +1,187 @@
+.cmp-contactform__wrapper {
+    margin: 1.5rem 0;
+
+    @media (min-width: 768px) {
+        margin: 2rem 0;
+    }
+}
+
+.cmp-contactform__card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
+
+    .cmp-contactform__title {
+        font-family: serif;
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        color: #333333;
+
+        @media (min-width: 768px) {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.cmp-contactform {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: #555555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-family: inherit;
+        background-color: #fafafa;
+        color: #333333;
+        box-sizing: border-box;
+
+        @media (min-width: 768px) {
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #a65330; 
+            background-color: #ffffff;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .cmp-contactform__select-wrapper {
+        position: relative;
+        display: block;
+        
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-overflow: ellipsis;
+            padding-right: 2rem;
+        }
+        &::after {
+            content: "▼";
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: #777777;
+            pointer-events: none;
+        }
+    }
+
+    fieldset.cmp-contactform__row {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cmp-contactform__row {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        .cmp-contactform__field {
+            flex: 1;
+            min-width: 0; 
+        }
+    }
+
+    p.cmp-contactform__field {
+        margin: 0;
+        padding: 0;
+    }
+
+    .cmp-contactform__submit {
+        background-color: #a65330; 
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #8c4527;
+        }
+
+        &:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    }
+
+    .cmp-contactform__disclaimer {
+        font-size: 0.75rem;
+        color: #888888;
+        text-align: center;
+        margin-top: -0.5rem;
+    }
+
+    .cmp-contactform__message-box--error {
+        color: #8c4527;
+        background-color: #ffffff;
+        padding: 1rem;
+        border-radius: 4px;
+        border: 1px solid #8c4527;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+.cmp-contactform__success {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #a65330;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    .cmp-contactform__success-text {
+        color: #333333;
+        font-family: serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0;
+
+        &::before {
+            content: "✓";
+            display: block;
+            font-size: 2.5rem;
+            color: #a65330;
+            margin-bottom: 0.75rem;
+            font-family: sans-serif;
+            font-weight: 300;
+        }
+    }
+}
