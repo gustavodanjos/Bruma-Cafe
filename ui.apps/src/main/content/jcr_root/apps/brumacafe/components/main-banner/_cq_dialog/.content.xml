@@ -18,7 +18,7 @@
 
             <image-section
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Banner Image"
+                jcr:title="1. Imagem de Fundo"
                 sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
 
                 <items jcr:primaryType="nt:unstructured">
@@ -26,8 +26,8 @@
                     <background-image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                        fieldLabel="Image"
-                        fieldDescription="Use a large landscape image. Choose an image from Assets or drag one into this area."
+                        fieldLabel="Imagem Principal"
+                        fieldDescription="Escolha uma imagem bonita de fundo. Você pode arrastar uma foto para cá ou clicar para buscar."
                         name="./file"
                         fileNameParameter="./fileName"
                         fileReferenceParameter="./fileReference"
@@ -37,17 +37,17 @@
                         multiple="{Boolean}false"
                         useHTML5="{Boolean}true"
                         class="cq-droptarget"
-                        title="Choose Banner Image"
-                        text="Choose Image"
-                        emptyText="Choose or drag an image"
+                        title="Escolher Imagem do Banner"
+                        text="Escolher Imagem"
+                        emptyText="Arraste ou clique para escolher a foto"
                         required="{Boolean}true"/>
 
                     <alternative-text
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Alternative Text"
-                        fieldDescription="Briefly describe what appears in the image."
-                        emptyText="Example: Coffee plantation surrounded by mountains"
+                        fieldLabel="Descrição da Imagem (Acessibilidade)"
+                        fieldDescription="Escreva de forma simples o que tem na foto (isso ajuda pessoas com deficiência visual a entenderem a imagem)."
+                        emptyText="Ex: Plantação de café cercada por montanhas"
                         name="./alt"
                         maxlength="{Long}160"
                         required="{Boolean}true"/>
@@ -60,7 +60,7 @@
 
             <message-section
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Main Message"
+                jcr:title="2. Mensagens do Banner"
                 sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
 
                 <items jcr:primaryType="nt:unstructured">
@@ -68,9 +68,9 @@
                     <title
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Title"
-                        fieldDescription="Main message visitors should understand first. Keep it short."
-                        emptyText="Example: Specialty coffee, from origin to cup"
+                        fieldLabel="Título Principal"
+                        fieldDescription="A frase de impacto que aparece grande na tela. Tente usar poucas palavras."
+                        emptyText="Ex: Café especial, da origem à xícara"
                         name="./jcr:title"
                         maxlength="{Long}80"
                         required="{Boolean}true"/>
@@ -78,9 +78,9 @@
                     <supporting-text
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                        fieldLabel="Supporting Text"
-                        fieldDescription="Add a short explanation that supports the main message."
-                        emptyText="Briefly explain what makes Bruma different"
+                        fieldLabel="Texto de Apoio"
+                        fieldDescription="Uma breve explicação logo abaixo do título."
+                        emptyText="Ex: Descubra o que faz o Bruma ser diferente"
                         name="./jcr:description"
                         maxlength="{Long}240"
                         rows="{Long}4"
@@ -94,7 +94,7 @@
 
             <button-section
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Button (optional)"
+                jcr:title="3. Botão (Opcional)"
                 sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
 
                 <items jcr:primaryType="nt:unstructured">
@@ -102,23 +102,23 @@
                     <button-instructions
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/text"
-                        text="Add a button to guide visitors to another page. Leave Button Link empty to hide it."/>
+                        text="Se quiser colocar um botão que leve o visitante para outra página, preencha os campos abaixo. Se quiser esconder o botão, basta deixar os campos vazios."/>
 
                     <button-text
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Button Text"
-                        fieldDescription="Short action displayed inside the button."
-                        emptyText="Example: Explore our coffees"
+                        fieldLabel="Texto do Botão"
+                        fieldDescription="O que vai estar escrito dentro do botão."
+                        emptyText="Ex: Conheça nossos cafés"
                         name="./buttonText"
                         maxlength="{Long}40"/>
 
                     <button-link
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Button Link"
-                        fieldDescription="Choose the page visitors should open when they click the button."
-                        emptyText="Choose a page"
+                        fieldLabel="Link do Botão"
+                        fieldDescription="Para qual página o visitante vai quando clicar? Clique na lupa para procurar."
+                        emptyText="Selecione uma página"
                         name="./buttonLink"
                         rootPath="/content/brumacafe"/>
 

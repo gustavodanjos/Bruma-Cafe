@@ -3,9 +3,9 @@
     xmlns:jcr="http://www.jcp.org/jcr/1.0"
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Specialty coffee, from origin to cup."
-    jcr:description="We select Brazilian specialty coffees directly from producers, valuing origin, process, and the people behind every harvest."
+    jcr:title="Café especial, da origem à xícara."
+    jcr:description="Selecionamos cafés especiais brasileiros diretamente de produtores, valorizando a origem, o processo e as pessoas por trás de cada colheita."
     fileReference="/content/dam/brumacafe/placeholder-main-banner.jpg"
-    alt="Brazilian specialty coffee plantation"
-    buttonText="Explore our coffees"
+    alt="Plantação brasileira de café especial"
+    buttonText="Conheça nossos cafés"
     buttonLink="/content/brumacafe/us/en"/>
