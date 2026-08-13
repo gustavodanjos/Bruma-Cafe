@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.UUID;
+
 import org.apache.sling.api.resource.Resource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +17,7 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 @ExtendWith(AemContextExtension.class)
 class MainBannerModelTest {
 
-    private final AemContext context = new AemContext();
+    public final AemContext context = new AemContext();
 
     @BeforeEach
     void setUp() {
@@ -29,8 +31,8 @@ class MainBannerModelTest {
             "buttonLink", "/content/brumacafe/us/en"
         );
 
-        assertNotNull(model);
-        assertTrue(model.isButtonVisible());
+        assertNotNull(model, "The model should not be null when created");
+        assertTrue(model.isButtonVisible(), "The button should be visible when both text and link are provided");
     }
 
     @Test
@@ -38,9 +40,8 @@ class MainBannerModelTest {
         MainBannerModel model = createModel(
             "buttonText", "Explore our coffees"
         );
-
-        assertNotNull(model);
-        assertFalse(model.isButtonVisible());
+        assertNotNull(model, "The model should not be null when created");
+        assertFalse(model.isButtonVisible(), "The button should be hidden when the link is missing");
     }
 
     @Test
@@ -49,8 +50,8 @@ class MainBannerModelTest {
             "buttonLink", "/content/brumacafe/us/en"
         );
 
-        assertNotNull(model);
-        assertFalse(model.isButtonVisible());
+        assertNotNull(model, "The model should not be null when created");
+        assertFalse(model.isButtonVisible(), "The button should be hidden when the text is missing");
     }
 
     @Test
@@ -60,16 +61,38 @@ class MainBannerModelTest {
             "buttonLink", "   "
         );
 
-        assertNotNull(model);
-        assertFalse(model.isButtonVisible());
+        assertNotNull(model, "The model should not be null when created");
+        assertFalse(model.isButtonVisible(), "The button should be hidden when the link contains only spaces");
+    }
+
+    @Test
+    void shouldHideButtonWhenLinkHasMaliciousScheme() {
+        
+        MainBannerModel modelJavascript = createModel(
+            "buttonText", "Click here",
+            "buttonLink", "javascript:alert('xss')"
+        );
+
+        MainBannerModel modelData = createModel(
+            "buttonText", "Click here",
+            "buttonLink", "data:text/html,<script>alert(1)</script>"
+        );
+
+        MainBannerModel modelVbscript = createModel(
+            "buttonText", "Click here",
+            "buttonLink", "vbscript:msgbox(\"XSS\")"
+        );
+
+        assertFalse(modelJavascript.isButtonVisible(), "The button should be hidden for javascript: links");
+        assertFalse(modelData.isButtonVisible(), "The button should be hidden for data: links");
+        assertFalse(modelVbscript.isButtonVisible(), "The button should be hidden for vbscript: links");
     }
 
     @Test
     void shouldBeEmptyWhenNoContentIsProvided() {
         MainBannerModel model = createModel();
-
-        assertNotNull(model);
-        assertTrue(model.isEmpty());
+        assertNotNull(model, "The model should not be null when created");
+        assertTrue(model.isEmpty(), "The model should be considered empty when no relevant content is provided");
     }
 
     @Test
@@ -78,13 +101,13 @@ class MainBannerModelTest {
             "fileReference", "/content/dam/brumacafe/main-banner.jpg"
         );
 
-        assertNotNull(model);
-        assertFalse(model.isEmpty());
+        assertNotNull(model, "The model should not be null when created");
+        assertFalse(model.isEmpty(), "The model should not be empty when an image is provided");
     }
 
     private MainBannerModel createModel(Object... properties) {
         Resource resource = context.create().resource(
-            "/content/main-banner",
+            "/content/main-banner-" + UUID.randomUUID().toString(),
             mergeWithResourceType(properties)
         );
 
