@@ -1,12 +1,8 @@
 package com.brumacafe.core.models;
 
-import javax.annotation.PostConstruct;
-
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
@@ -30,31 +26,11 @@ public class MainBannerModel {
     @ValueMapValue
     private String alt;
 
-    @ChildResource(name = "actions")
-    private Resource actions;
-
+    @ValueMapValue
     private String buttonText;
+
+    @ValueMapValue
     private String buttonLink;
-    private String buttonTarget;
-
-    @PostConstruct
-    protected void init() {
-        if (actions == null) {
-            return;
-        }
-
-        Resource firstAction = actions.getChild("item0");
-
-        if (firstAction == null) {
-            return;
-        }
-
-        ValueMap actionProperties = firstAction.getValueMap();
-
-        buttonText = actionProperties.get("text", String.class);
-        buttonLink = actionProperties.get("link", String.class);
-        buttonTarget = actionProperties.get("linkTarget", String.class);
-    }
 
     public String getTitle() {
         return title;
@@ -80,10 +56,6 @@ public class MainBannerModel {
         return buttonLink;
     }
 
-    public String getButtonTarget() {
-        return buttonTarget;
-    }
-
     public boolean isButtonVisible() {
         return hasText(buttonText) && hasText(buttonLink);
     }
@@ -91,7 +63,8 @@ public class MainBannerModel {
     public boolean isEmpty() {
         return !hasText(title)
             && !hasText(description)
-            && !hasText(fileReference);
+            && !hasText(fileReference)
+            && !isButtonVisible();
     }
 
     private boolean hasText(String value) {

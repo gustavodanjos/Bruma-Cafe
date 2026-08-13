@@ -2,6 +2,6 @@
 <jcr:root
     xmlns:cq="http://www.day.com/jcr/cq/1.0"
     xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:Component"
-    jcr:title="Main Banner"
-    componentGroup="Bruma Cafe - Content"/>
+    jcr:primaryType="cq:ClientLibraryFolder"
+    categories="[brumacafe.components.main-banner]"
+    allowProxy="{Boolean}true"/>
