@@ -114,3 +114,28 @@ Para garantir que o projeto funciona de verdade (e não apenas na máquina de qu
 ```Bash
     mvn clean install -PautoInstallSinglePackage
 ```
+
+
+### Passo 3: Instalar os Pacotes de Conteúdo e Assets
+
+O build do Maven instala os templates e as estruturas de componentes, mas o conteúdo real (os 4 cafés, 2 produtores cadastrados e suas respectivas imagens no DAM) reside em pacotes de conteúdo (`.zip`). 
+
+Para carregar todo o conteúdo oficial da marca, siga o passo a passo:
+
+1. Acesse o **Package Manager** do AEM Author no seu navegador:
+[http://localhost:4502/crx/packmgr/index.jsp](http://localhost:4502/crx/packmgr/index.jsp)
+2. Clique no botão **Upload Package**.
+3. Clique em **Browse/Escolher arquivo** e selecione o pacote de conteúdo disponível no repositório:
+   * Caminho: `packages/brumacafe-conteudo-cafes.zip` *(ou a pasta acordada pelo time)*.
+4. Marque a opção **Force Upload** (se aplicável) e clique em **OK**.
+5. Na listagem de pacotes, localize o pacote recém-enviado (`brumacafe-conteudo-cafes`) e clique no botão **Install**.
+6. Na janela modal de confirmação, clique em **Install** novamente e aguarde o log finalizar com a mensagem `Package installed in ...`.
+
+---
+
+### Passo 4: Validar a Instalação
+
+Após a instalação do pacote, valide se os conteúdos foram carregados corretamente:
+
+1. **Content Fragments e Imagens:** Vá em **Navigation > Assets > Files > brumacafe** e confirme se as pastas de imagens e fragmentos contêm os 4 cafés e os 2 produtores com as referências preenchidas.
+2. **Páginas do Site:** Acesse **Sites > Bruma Café** e visualize as páginas no editor para confirmar a renderização dos componentes com os dados reais dos cafés.
