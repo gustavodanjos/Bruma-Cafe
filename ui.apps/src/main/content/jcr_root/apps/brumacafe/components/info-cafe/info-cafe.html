@@ -1,0 +1,28 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='bruma-cafe.info-cafe'}"/>
+</sly>
+
+<sly data-sly-use.model="com.brumacafe.core.models.CafeModel">
+    
+    <div class="container-cafes-grid" data-sly-test="${model.configured}" data-sly-list.cafe="${model.listaDeCafes}">
+        <div class="info-cafe-container" data-sly-test="${cafe.nome}">
+            <img class="info-cafe-image" src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
+            
+            <div class="info-cafe-text-container">
+                <h2>${cafe.nome}</h2>
+                <p>${cafe.descricao}</p>
+                <div>
+                    <p>
+                        <strong>Produtor:</strong>
+                        ${cafe.produtor}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cq-placeholder" 
+         data-emptytext="Ficha do Café - Adicione um ou mais fragmentos" 
+         data-sly-test="${!model.configured}"></div>
+
+</sly>
