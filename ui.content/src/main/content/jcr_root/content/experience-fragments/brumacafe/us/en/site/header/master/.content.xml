@@ -15,26 +15,34 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="brumacafe/components/container"
-            layout="responsiveGrid">
-            
-            <!-- 1. Logo Trocável pelo Autor (sem código) -->
-            <logo
+            layout="simple">
+            <image
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/image"
+                fileReference="/content/dam/brumacafe/logo.svg"
                 alt="Bruma Café"
-                displayPopupTitle="false"
-                isDecorative="false"
-                linkURL="/content/brumacafe/us/en"
-                fileReference="/content/dam/brumacafe/logo.svg"/>
-
-            <!-- 2. Navegação Dinâmica Baseada na Árvore JCR (Zero links no HTL) -->
+                linkURL="/content/brumacafe/us/en.html"/>
             <navigation
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/navigation"
                 navigationRoot="/content/brumacafe/us/en"
-                structureDepth="2"
-                collectAllPages="false"
-                skipNavigationRoot="true"/>
+                skipNavigationRoot="false"
+                structureDepth="1"/>
+            <languagenavigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/languagenavigation"
+                navigationRoot="/content/brumacafe/us"
+                structureDepth="2"/>
+            <search
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/search"
+                searchRoot="/content/brumacafe/us"/>
+            <button
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/button"
+                jcr:title="Ir para Loja"
+                text="Ir para Loja"
+                linkURL="/content/brumacafe/us/en.html"/>
         </root>
     </jcr:content>
 </jcr:root>

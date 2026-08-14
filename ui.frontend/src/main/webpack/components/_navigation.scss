@@ -1,35 +1,65 @@
-.cmp-navigation {
-    &__group {
+// =============================================================================
+// Navigation Core Component — Component-level Base Styles
+// =============================================================================
+
+.cmp-navigation,
+.navigation {
+    display: flex;
+    align-items: center;
+
+    .cmp-navigation__group {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        list-style: none;
+        gap: 32px;
         margin: 0;
         padding: 0;
-        gap: 2rem;
+        list-style: none;
     }
 
-    &__item {
+    .cmp-navigation__item {
+        position: relative;
+        display: flex;
+        align-items: center;
         margin: 0;
+        padding: 0;
+    }
 
-        &-link {
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #2D2320; // Tom quente/café
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
+    .cmp-navigation__item-link {
+        font-family: $font-family-sans;
+        font-size: 14px;
+        font-weight: 400;
+        color: $color-nevoa;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        padding: 6px 0;
+        position: relative;
+        white-space: nowrap;
+        transition: color 0.2s ease;
 
-            &:hover,
-            &:focus {
-                color: #8C6239;
-            }
+        &:hover,
+        &:focus {
+            color: $color-grao;
         }
+    }
 
-        &--active > .cmp-navigation__item-link {
-            font-weight: 700;
-            color: #8C6239;
-            border-bottom: 2px solid #8C6239;
-            padding-bottom: 4px;
+    .cmp-navigation__item--active > .cmp-navigation__item-link {
+        font-weight: 600;
+        color: $color-grao;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $color-grao;
+            border-radius: 1px;
         }
+    }
+
+    .cmp-navigation__item--cta > .cmp-navigation__item-link {
+        @include button-cta;
     }
 }

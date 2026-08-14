@@ -1,4 +1,30 @@
-.cmp-image {}
-.cmp-image__link {}
-.cmp-image__image {}
-.cmp-image__title {}
+// =============================================================================
+// Image Core Component — Component-level Base Styles
+// =============================================================================
+
+.cmp-image,
+.image {
+    display: flex;
+    align-items: center;
+
+    .cmp-image__link {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        border: none;
+
+        &:hover,
+        &:focus {
+            opacity: 0.9;
+        }
+    }
+
+    .cmp-image__image {
+        display: block;
+        height: 42px;
+        max-height: 42px;
+        width: auto;
+        max-width: 160px;
+        object-fit: contain;
+    }
+}
