@@ -3,5 +3,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Image"
     sling:resourceSuperType="core/wcm/components/image/v3/image"
-    componentGroup="Bruma Café - Content"/>
-
+    componentGroup="Bruma Cafe - Content"/>

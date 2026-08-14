@@ -1,116 +1,124 @@
-# Bruma Café — Projeto AEM
+# Sample AEM project template
 
-O projeto "Bruma Café" é uma simulação de projeto real desenvolvida como o desafio final (Sprint 5) do Programa de Estágio em AEM. A marca foi criada como um cenário prático para testar a capacidade do time de trabalhar de forma colaborativa em um único repositório durante as Semanas 9 e 10 do programa.
+This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
 
-Nesta simulação, os estagiários recebem um briefing de negócio e um manual de marca de um "cliente", em vez de telas desenhadas prontas ou tutoriais a serem seguidos. O objetivo do trabalho é transformar essas diretrizes na fundação de um site institucional e em um hub de conteúdo focado em contar a história por trás da produção de cafés especiais.
+## Modules
 
-Mais do que apenas escrever código, o projeto avalia habilidades exigidas no mercado de trabalho, como a capacidade de tomar decisões técnicas e visuais a partir de pedidos de negócio, priorizar entregas em um prazo curto, integrar diferentes frentes de desenvolvimento (como componentes, APIs, formulários e consultas) e saber justificar tecnicamente as escolhas e cortes de escopo durante a apresentação final.
+The main parts of the template are:
 
-## Regras do Time
+* [core:](core/README.md) Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
+* [it.tests:](it.tests/README.md) Java based integration tests
+* [ui.apps:](ui.apps/README.md) contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, and templates
+* [ui.content:](ui.content/README.md) contains sample content using the components from the ui.apps
+* ui.config: contains runmode specific OSGi configs for the project
+* [ui.frontend:](ui.frontend.general/README.md) an optional dedicated front-end build mechanism (Angular, React or general Webpack project)
+* [ui.tests:](ui.tests/README.md) Cypress based UI tests (for other frameworks check [aem-test-samples](https://github.com/adobe/aem-test-samples) repository
+* all: a single content package that embeds all of the compiled modules (bundles and content packages) including any vendor dependencies
+* analyse: this module runs analysis on the project which provides additional validation for deploying into AEMaaCS
 
-### 1. Frentes de Trabalho
-* **Cada frente manda na sua própria pasta:** Isso evita que duas pessoas editem o mesmo arquivo ao mesmo tempo.
-* **Divisão das frentes:**
+## How to build
 
-| Frente | Tarefas | Responsável | Suplente |
-| :--- | :--- | :--- | :--- |
-| **Frente 1** | Header, footer e identidade | Samuel | Antonni |
-| **Frente 2** | Cafés e integração | Antonni | Jonathan |
-| **Frente 3** | Componentes | Emiliano | Gustavo |
-| **Frente 4** | Hub de conteúdo | Jonathan | Emiliano |
-| **Frente 5** | Formulário e entrega | Gustavo | Samuel |
+To build all the modules run in the project root directory the following command with Maven 3:
 
-### 2. Fluxo de Branch e Pull Request (PR)
-* A branch main é protegida e exige revisão em PR. Ninguém commita direto nela.
+    mvn clean install
 
-* É obrigatório atualizar sua branch com a main toda manhã antes de escrever qualquer linha de código.
+To build all the modules and deploy the `all` package to a local instance of AEM, run in the project root directory the following command:
 
-* O fluxo de trabalho será:
-    * faz o trabalho em branches separadas por tarefa;
-    * Depois, abre-se um PR para a branch development, onde o código é testado;
-    * Após a validação, fazer um backup da main;
-    * Abre-se o PR final da development para a main.
-
-* Formato Padrão de Nomenclatura de Branch
-    ``` bash
-        <tipo>/<id-da-tarefa>-<descricao-curta>
-    ```
-    1. `<tipo>` (O que esta branch faz?)
-    * Use os prefixos do Conventional Commits (em inglês, seguindo suas regras globais de desenvolvimento):
-        * feat/ (Feature): Para o desenvolvimento de uma nova funcionalidade ou componente (ex: criar o componente de formulário).
-
-        * fix/ (Fix): Para correção de bugs (ex: consertar a validação do formulário que quebrou).
-
-        * chore/ (Chore): Para tarefas de configuração, dependências ou coisas que não afetam o código de produção (ex: configurar o pom.xml, setup inicial).
-
-        * docs/ (Docs): Para alterações exclusivas em documentação (ex: atualizar o README.md).
-
-        * test/ (Test): Para adição ou correção de testes (ex: testes unitários com AEM Mocks).
-
-        * refactor/ (Refactor): Para melhorias de código que não adicionam funcionalidades nem corrigem bugs (ex: reescrever um Sling Model para ficar mais limpo).
-
-    2. `<id-da-tarefa>` (De onde vem essa demanda?)
-    * Como o seu projeto é dividido em Frentes (F0, F1, F2...) e tarefas específicas (F1.1, F5.2), inclua esse ID logo após o tipo. Isso facilita muito na hora do Code Review para os colegas saberem o que estão revisando.
-
-    3. `<descricao-curta>` (Qual o contexto?)
-    * Uma descrição de 3 a 5 palavras separadas por hífen (`-` ou kebab-case), escrita preferencialmente em inglês (seguindo a sua regra global de usar inglês para nomenclaturas de arquivos e código).
-
-* Exemplos Práticos aplicados à Sprint 5
-    * Para a Frente 0 (Fundação):
-        * chore/f0.1-project-initial-setup (Setup do projeto via archetype)
-
-        * feat/f0.2-base-page-template (Criação do template base)
-
-    * Para a Frente 1 (Header e Identidade):
-
-        * feat/f1.1-header-experience-fragment (Criando o header)
-
-        * fix/f1.1-header-mobile-layout (Consertando um bug no layout do header no celular)
-
-    * Para a Frente 4 (Hub de Conteúdo):
-
-        * feat/f4.9-reading-time-sling-model (Lógica de tempo de leitura no artigo)
-
-    * Para a Frente 5 (Testes e Qualidade):
-
-        * test/f5.2-junit-base-configuration (Configuração inicial dos testes)
-
-        * docs/f5.6-project-readme-architecture (Escrita da documentação)
-
-* Por que usar esse padrão?
-    * Rastreabilidade: Quando alguém olhar o histórico do Git (ou o GitHub), saberá exatamente qual tarefa do PDF está sendo resolvida naquela branch (ex: f4.9).
-
-    * Revisão de Código (PRs): Facilita bater a branch com o Critério de Aceite da tarefa na hora que você for revisar o PR do seu colega.
-
-    * Prevenção de Conflitos: Evita que duas pessoas criem branches com nomes genéricos como meu-componente ou ajuste-header.
-
-    * Profissionalismo: O cliente e os avaliadores verão um histórico de versionamento limpo e corporativo.
-
----
-
-## Como Executar o Projeto AEM
-
-Para garantir que o projeto funciona de verdade (e não apenas na máquina de quem escreveu), o teste objetivo é executá-lo em uma instância limpa. Siga o passo a passo:
-
-### Passo 1: Preparar e rodar o AEM (Author)
-1. Crie uma pasta vazia no seu computador.
-2. Coloque dentro dela o arquivo `.jar` do AEM (nomeado como `aem-author-p4502.jar`).
-3. Inicie o servidor abrindo o terminal nessa pasta e executando o comando:
-   ```bash
-   java -jar aem-author-p4502.jar
-
-4. Aguarde a inicialização (pode levar alguns minutos). O ambiente Author estará rodando em http://localhost:4502, onde você poderá acessar o conteúdo deste projeto.
-
-### Passo 2: Clonar e Buildar o Código
-
-1. Clone o repositório do zero:
-
-```Bash
-    git clone https://github.com/gustavodanjos/Bruma-Cafe.git
-    cd Bruma-Cafe
-``` 
-2. Com o AEM rodando, execute o build completo utilizando o perfil do Maven que instala os pacotes básicos (ui.apps e ui.content) diretamente no AEM:
-
-```Bash
     mvn clean install -PautoInstallSinglePackage
-```
+
+Or to deploy it to a publish instance, run
+
+    mvn clean install -PautoInstallSinglePackagePublish
+
+Or alternatively
+
+    mvn clean install -PautoInstallSinglePackage -Daem.port=4503
+
+Or to deploy only the bundle to the author, run
+
+    mvn clean install -PautoInstallBundle
+
+Or to deploy only a single content package, run in the sub-module directory (i.e `ui.apps`)
+
+    mvn clean install -PautoInstallPackage
+
+## Documentation
+
+The build process also generates documentation in the form of README.md files in each module directory for easy reference. Depending on the options you select at build time, the content may be customized to your project.
+
+## Testing
+
+There are three levels of testing contained in the project:
+
+### Unit tests
+
+This show-cases classic unit testing of the code contained in the bundle. To
+test, execute:
+
+    mvn clean test
+
+### Integration tests
+
+This allows running integration tests that exercise the capabilities of AEM via
+HTTP calls to its API. To run the integration tests, run:
+
+    mvn clean verify -Plocal
+
+Test classes must be saved in the `src/main/java` directory (or any of its
+subdirectories), and must be contained in files matching the pattern `*IT.java`.
+
+The configuration provides sensible defaults for a typical local installation of
+AEM. If you want to point the integration tests to different AEM author and
+publish instances, you can use the following system properties via Maven's `-D`
+flag.
+
+| Property              | Description                                         | Default value           |
+|-----------------------|-----------------------------------------------------|-------------------------|
+| `it.author.url`       | URL of the author instance                          | `http://localhost:4502` |
+| `it.author.user`      | Admin user for the author instance                  | `admin`                 |
+| `it.author.password`  | Password of the admin user for the author instance  | `admin`                 |
+| `it.publish.url`      | URL of the publish instance                         | `http://localhost:4503` |
+| `it.publish.user`     | Admin user for the publish instance                 | `admin`                 |
+| `it.publish.password` | Password of the admin user for the publish instance | `admin`                 |
+
+The integration tests in this archetype use the [AEM Testing
+Clients](https://github.com/adobe/aem-testing-clients) and showcase some
+recommended [best
+practices](https://github.com/adobe/aem-testing-clients/wiki/Best-practices) to
+be put in use when writing integration tests for AEM.
+
+## Static Analysis
+
+The `analyse` module performs static analysis on the project for deploying into AEMaaCS. It is automatically
+run when executing
+
+    mvn clean install
+
+from the project root directory. Additional information about this analysis and how to further configure it
+can be found here https://github.com/adobe/aemanalyser-maven-plugin
+
+### UI tests
+
+They will test the UI layer of your AEM application using Cypress framework.
+
+Check README file in `ui.tests` module for more details.
+
+Examples of UI tests in different frameworks can be found here: https://github.com/adobe/aem-test-samples
+
+## ClientLibs
+
+The frontend module is made available using an [AEM ClientLib](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/clientlibs.html). When executing the NPM build script, the app is built and the [`aem-clientlib-generator`](https://github.com/wcm-io-frontend/aem-clientlib-generator) package takes the resulting build output and transforms it into such a ClientLib.
+
+A ClientLib will consist of the following files and directories:
+
+- `css/`: CSS files which can be requested in the HTML
+- `css.txt` (tells AEM the order and names of files in `css/` so they can be merged)
+- `js/`: JavaScript files which can be requested in the HTML
+- `js.txt` (tells AEM the order and names of files in `js/` so they can be merged
+- `resources/`: Source maps, non-entrypoint code chunks (resulting from code splitting), static assets (e.g. icons), etc.
+
+## Maven settings
+
+The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
+
+    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
