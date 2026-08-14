@@ -1,42 +1,27 @@
-// =============================================================================
-// Base Styles & Typography Imports
-// =============================================================================
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+//== Base
 
 html,
 body {
     margin: 0;
-    padding: 0;
     font-size:   $font-size;
     font-family: $font-family;
     line-height: $font-height;
-    color:       $color-grao;
+    color:       $color-foreground;
     background:  $color-background;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+    @media (prefers-color-scheme: dark) {
+        color:       $color-foreground-dark;
+        background:  $color-background-dark;
+    }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-serif;
-    line-height: 1.2;
-    margin: 0;
-}
 
 a {
     color: $color-link;
-    text-decoration: none;
-    transition: color 0.2s ease;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-link-dark;
+    }
 }
 
 button,
