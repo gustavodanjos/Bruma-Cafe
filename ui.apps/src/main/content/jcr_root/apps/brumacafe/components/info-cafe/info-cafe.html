@@ -5,7 +5,7 @@
 <sly data-sly-use.model="com.brumacafe.core.models.CafeModel">
     
     <div class="container-cafes-grid" data-sly-test="${model.configured}" data-sly-list.cafe="${model.listaDeCafes}">
-        <div class="info-cafe-container">
+        <div class="info-cafe-container" data-sly-test="${cafe.nome}">
             <img class="info-cafe-image" src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
             
             <div class="info-cafe-text-container">
