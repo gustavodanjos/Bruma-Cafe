@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -15,15 +15,6 @@
                         components="[/apps/brumacafe/components/form/button,/apps/brumacafe/components/form/hidden,/apps/brumacafe/components/form/options,/apps/brumacafe/components/form/text]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </form-container>
-                    <policy_3780077642885
-                        jcr:lastModified="{Date}2026-08-12T08:41:48.041-03:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="teste"
-                        sling:resourceType="wcm/core/components/policy/policy"
-                        components="group:Bruma Café - Structure">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
-                    </policy_3780077642885>
                 </container>
             </form>
             <languagenavigation jcr:primaryType="nt:unstructured">
@@ -43,11 +34,11 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
+                    disableLazyLoading="false"
+                    enableAssetDelivery="true"
                     allowUpload="false"
                     altValueFromDAM="true"
-                    disableLazyLoading="false"
                     displayPopupTitle="true"
-                    enableAssetDelivery="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
@@ -200,8 +191,6 @@
                 <policy_header
                     cq:styleDefaultElement="header"
                     jcr:description="Sets a &lt;header> element on the page header experience fragment."
-                    jcr:lastModified="{Date}2026-08-12T09:12:56.001-03:00"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Header"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -210,8 +199,6 @@
                 <policy_footer
                     cq:styleDefaultElement="footer"
                     jcr:description="Sets a &lt;footer> element on the page footer experience fragment."
-                    jcr:lastModified="{Date}2026-08-12T09:13:48.615-03:00"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Footer"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -251,13 +238,10 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-08-13T07:54:11.792-03:00"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Política de Artigo Bruma"
+                    jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[/apps/brumacafe/components/separator,/apps/brumacafe/components/text,/apps/brumacafe/components/title,/apps/brumacafe/components/image]"
-                    layoutDisabled="false">
+                    components="[group:Bruma Cafe - Content,/apps/brumacafe/components/form/container]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -285,24 +269,17 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
-                    jcr:lastModified="{Date}2026-08-12T09:37:34.989-03:00"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
-                    sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Bruma Cafe - Content,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:WKND - Content,group:WKND Site,group:WKND Site - Content,group:WKND Site - Form,group:WKND Site - Structure]"
-                    layoutDisabled="false">
+                    sling:resourceType="wcm/core/components/policy/policy">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-08-11T20:00:28.438-03:00"
-                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Bruma Cafe - Content,/apps/brumacafe/components/form/container,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure]"
-                    layoutDisabled="false">
+                    components="[group:Bruma Cafe - Content,/apps/brumacafe/components/form/container]">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -368,7 +345,9 @@
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured"/>
+                <responsivegrid jcr:primaryType="nt:unstructured">
+            
+                </responsivegrid>
             </components>
         </foundation>
     </wcm>
