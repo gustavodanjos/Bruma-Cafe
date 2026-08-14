@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Main Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        margin="{Boolean}true">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- Banner Image -->
+
+            <image-section
+                jcr:primaryType="nt:unstructured"
+                jcr:title="1. Imagem de Fundo"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <background-image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        fieldLabel="Imagem Principal"
+                        fieldDescription="Escolha uma imagem bonita de fundo. Você pode arrastar uma foto para cá ou clicar para buscar."
+                        name="./file"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image/jpeg,image/png,image/webp]"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        multiple="{Boolean}false"
+                        useHTML5="{Boolean}true"
+                        class="cq-droptarget"
+                        title="Escolher Imagem do Banner"
+                        text="Escolher Imagem"
+                        emptyText="Arraste ou clique para escolher a foto"
+                        required="{Boolean}true"/>
+
+                    <alternative-text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Descrição da Imagem (Acessibilidade)"
+                        fieldDescription="Escreva de forma simples o que tem na foto (isso ajuda pessoas com deficiência visual a entenderem a imagem)."
+                        emptyText="Ex: Plantação de café cercada por montanhas"
+                        name="./alt"
+                        maxlength="{Long}160"
+                        required="{Boolean}true"/>
+
+                </items>
+            </image-section>
+
+
+            <!-- Main Message -->
+
+            <message-section
+                jcr:primaryType="nt:unstructured"
+                jcr:title="2. Mensagens do Banner"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Título Principal"
+                        fieldDescription="A frase de impacto que aparece grande na tela. Tente usar poucas palavras."
+                        emptyText="Ex: Café especial, da origem à xícara"
+                        name="./jcr:title"
+                        maxlength="{Long}80"
+                        required="{Boolean}true"/>
+
+                    <supporting-text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Texto de Apoio"
+                        fieldDescription="Uma breve explicação logo abaixo do título."
+                        emptyText="Ex: Descubra o que faz o Bruma ser diferente"
+                        name="./jcr:description"
+                        maxlength="{Long}240"
+                        rows="{Long}4"
+                        required="{Boolean}true"/>
+
+                </items>
+            </message-section>
+
+
+            <!-- Optional Button -->
+
+            <button-section
+                jcr:primaryType="nt:unstructured"
+                jcr:title="3. Botão (Opcional)"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <button-instructions
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                        text="Se quiser colocar um botão que leve o visitante para outra página, preencha os campos abaixo. Se quiser esconder o botão, basta deixar os campos vazios."/>
+
+                    <button-text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto do Botão"
+                        fieldDescription="O que vai estar escrito dentro do botão."
+                        emptyText="Ex: Conheça nossos cafés"
+                        name="./buttonText"
+                        maxlength="{Long}40"/>
+
+                    <button-link
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Link do Botão"
+                        fieldDescription="Para qual página o visitante vai quando clicar? Clique na lupa para procurar."
+                        emptyText="Selecione uma página"
+                        name="./buttonLink"
+                        rootPath="/content/brumacafe"/>
+
+                </items>
+            </button-section>
+
+        </items>
+    </content>
+
+</jcr:root>
