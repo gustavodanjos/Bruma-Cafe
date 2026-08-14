@@ -1,4 +1,24 @@
-.cmp-button {}
-.cmp-button__text {}
-.cmp-button__icon {}
-//.cmp-button__icon--myIcon {}
+// =============================================================================
+// Button Core Component — Component-level Base Styles
+// =============================================================================
+
+.cmp-button,
+.button {
+    display: inline-flex;
+    align-items: center;
+
+    .cmp-button__link,
+    a.cmp-button__link,
+    button.cmp-button__link {
+        @include button-cta;
+    }
+
+    .cmp-button__text {
+        color: $color-white !important;
+        white-space: nowrap;
+    }
+
+    .cmp-button__screen-reader-only {
+        @include screen-reader-only;
+    }
+}

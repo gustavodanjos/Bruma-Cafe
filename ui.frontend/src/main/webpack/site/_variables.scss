@@ -1,18 +1,33 @@
+// =============================================================================
+// Bruma Café — Design Tokens & SCSS Variables
+// =============================================================================
 
-//== Font
-
-$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+// -- Typography
+$font-family-sans:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-serif:     'Fraunces', Georgia, serif;
+$font-family:           $font-family-sans;
 $font-size:             16px;
 $font-height:           1.5;
 
-//== Color
+// -- Brand Palette
+$color-grao:            #2E1F1A; // Espresso escuro (logo, texto principal, item ativo)
+$color-torra:           #B4552D; // Terracota (botão CTA "Ir para Loja")
+$color-torra-hover:     #9A4623; // Terracota hover
+$color-creme:           #F5EFE7; // Creme suave
+$color-nevoa:           #6B6560; // Cinza avelã (links inativos)
+$color-borda:           #E3DCD2; // Linha de separação inferior (header border)
+$color-white:           #FFFFFF; // Fundo do header
 
-// Normal mode
-$color-foreground:      #202020;
-$color-background:      #ECECEC;
-$color-link:            #2020E0;
+// -- Legacy Aliases (mantidos para compatibilidade do framework)
+$color-foreground:      $color-grao;
+$color-background:      $color-white;
+$color-link:            $color-torra;
 
-// Dark mode
 $color-foreground-dark: invert($color-foreground);
 $color-background-dark: invert($color-background);
 $color-link-dark:       invert($color-link);
+
+// -- Layout & Dimensions
+$header-height:         72px;
+$max-width:             1200px;
+$radius-btn:            6px;
