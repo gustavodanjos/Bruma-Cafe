@@ -4,8 +4,8 @@
 // =============================================================================
 
 header.experiencefragment,
-.experiencefragment,
-.cmp-experiencefragment,
+header .experiencefragment,
+header .cmp-experiencefragment,
 .cmp-experiencefragment--header,
 header {
     background-color: $color-white !important;
@@ -209,16 +209,16 @@ header {
 }
 
 // Fallback Global de Alta Especificidade para o Botão do Header
-.cmp-experiencefragment .cmp-button__link,
+header .cmp-experiencefragment .cmp-button__link,
 .cmp-experiencefragment--header .cmp-button__link,
-.experiencefragment .cmp-button__link,
+header .experiencefragment .cmp-button__link,
 header .cmp-button__link {
     @include button-cta;
 }
 
-.cmp-experiencefragment .cmp-button__text,
+header .cmp-experiencefragment .cmp-button__text,
 .cmp-experiencefragment--header .cmp-button__text,
-.experiencefragment .cmp-button__text,
+header .experiencefragment .cmp-button__text,
 header .cmp-button__text {
     color: #FFFFFF !important;
     background: transparent !important;
