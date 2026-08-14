@@ -1,0 +1,37 @@
+<div class="cq-placeholder" data-emptytext="Social Links (Adicione as redes sociais aqui)" data-sly-test="${wcmmode.edit && !resource.hasChildren}"></div>
+
+<sly data-sly-list.child="${resource.getChildren}">
+    <sly data-sly-test="${child.name == 'socialLinks'}">
+        <nav
+            class="brumacafe-sociallinks"
+            aria-label="Redes sociais">
+            
+            <ul class="brumacafe-sociallinks__list">
+                
+                <sly data-sly-list.social="${child.getChildren}">
+                    
+                    <li class="brumacafe-sociallinks__item" data-sly-test="${social.valueMap.url}">
+                        
+                        <a
+                            class="brumacafe-sociallinks__link brumacafe-sociallinks__link--${social.valueMap.platform}"
+                            href="${social.valueMap.url}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="${social.valueMap.platform}">
+
+                            <span
+                                class="brumacafe-sociallinks__icon"
+                                aria-hidden="true">
+                            </span>
+
+                        </a>
+
+                    </li>
+                    
+                </sly>
+                
+            </ul>
+            
+        </nav>
+    </sly>
+</sly>
