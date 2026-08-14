@@ -223,3 +223,23 @@ header .cmp-button__text {
     color: #FFFFFF;
     background: transparent;
 }
+
+.xf-header {
+    .aem-Grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .cmp-image {
+        &__image {
+            max-height: 44px;
+            width: auto;
+            display: block;
+        }
+    }
+}
+
