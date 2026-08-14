@@ -1,0 +1,28 @@
+<sly data-sly-list.child="${resource.getChildren}">
+    <sly data-sly-test="${child.name == 'links'}">
+        <nav
+            class="brumacafe-footerlinks"
+            aria-label="Links institucionais">
+            
+            <ul class="brumacafe-footerlinks__list">
+                
+                <sly data-sly-list.item="${child.getChildren}">
+                    
+                    <li class="brumacafe-footerlinks__item">
+                        
+                        <a
+                            class="brumacafe-footerlinks__link"
+                            href="${item.valueMap.link}"
+                            data-sly-test="${item.valueMap.text}">
+                            ${item.valueMap.text}
+                        </a>
+                        
+                    </li>
+                    
+                </sly>
+                
+            </ul>
+            
+        </nav>
+    </sly>
+</sly>
