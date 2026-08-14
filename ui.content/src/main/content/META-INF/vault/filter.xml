@@ -7,7 +7,5 @@
         <include pattern="/content/dam/brumacafe/jcr:content(/.*)?"/>
     </filter>
     <filter root="/content/dam/brumacafe/asset.jpg" mode="merge"/>
-    <filter root="/content/dam/brumacafe/logo.svg" mode="merge"/>
     <filter root="/content/experience-fragments/brumacafe" mode="merge"/>
-    <filter root="/content/cq:tags/brumacafe" mode="merge"/>
 </workspaceFilter>
