@@ -2,6 +2,7 @@
 //== Font
 
 $font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans:      "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size:             16px;
 $font-height:           1.5;
 
@@ -11,8 +12,18 @@ $font-height:           1.5;
 $color-foreground:      #202020;
 $color-background:      #ECECEC;
 $color-link:            #2020E0;
+$color-white:           #ffffff;
+$color-borda:           #e0e0e0;
+$color-grao:            #3e2723;
+$color-torra:           #B4552D;
+$color-torra-hover:     #9c4521;
 
 // Dark mode
 $color-foreground-dark: invert($color-foreground);
 $color-background-dark: invert($color-background);
 $color-link-dark:       invert($color-link);
+
+//== Layout & UI elements
+$header-height:         80px;
+$max-width:             1280px;
+$radius-btn:            4px;
