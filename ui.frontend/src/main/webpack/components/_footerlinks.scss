@@ -1,3 +1,7 @@
+// =============================================================================
+// Footer Links — Brumacafe Component Styles
+// =============================================================================
+
 .brumacafe-footerlinks {
     &__list {
         list-style: none;
@@ -7,7 +11,7 @@
         flex-wrap: wrap;
         gap: 48px;
     }
-    
+
     &__link {
         color: $color-creme;
         text-decoration: none;
@@ -15,8 +19,9 @@
         font-size: 14px;
         font-weight: 500;
         transition: color 0.3s ease;
-        
-        &:hover {
+
+        &:hover,
+        &:focus {
             color: $color-torra;
         }
     }

@@ -1,6 +1,10 @@
+// =============================================================================
+// Social Links — Brumacafe Component Styles
+// =============================================================================
+
 .brumacafe-sociallinks {
     margin-bottom: 40px;
-    
+
     &__list {
         list-style: none;
         padding: 0;
@@ -10,39 +14,34 @@
         align-items: center;
         gap: 32px;
     }
-    
+
+    &__icon {
+        display: none;
+    }
+
     &__link {
+        // Técnica para ocultar nós de texto soltos injetados pelo AEM
+        // (ex: "opens in a new tab") sem impactar o label visível
+        font-size: 0;
         color: $color-torra;
         text-decoration: none;
         font-family: $font-family-sans;
         font-weight: 500;
         transition: color 0.3s ease;
-        
-        &:hover {
+
+        &:hover,
+        &:focus {
             color: $color-torra-hover;
         }
 
-        // Esconder nós de texto soltos e forçar tamanho na label
-        font-size: 0 !important;
-        
-        .brumacafe-sociallinks__label {
-            font-size: 14px;
-            display: inline-block;
-        }
-
-        // Esconder textos de acessibilidade injetados pelo AEM (ex: "opens in a new tab")
-        .cmp-hidden {
-            display: none !important;
-        }
-        
-        // Esconder qualquer span que não seja label ou ícone
+        // Oculta qualquer span extra injetado pelo AEM que não seja label ou ícone
         span:not(.brumacafe-sociallinks__label):not(.brumacafe-sociallinks__icon) {
-            display: none !important;
+            display: none;
         }
     }
-    
-    // Se não houver ícone definido, garantir que apenas o texto apareça
-    &__icon {
-        display: none;
+
+    &__label {
+        font-size: 14px;
+        display: inline-block;
     }
 }
