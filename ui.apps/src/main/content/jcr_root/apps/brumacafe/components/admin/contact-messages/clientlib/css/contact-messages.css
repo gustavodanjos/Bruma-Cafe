@@ -1,0 +1,340 @@
+:root {
+    --bruma-bg: #F9FAFB;
+    --bruma-surface: #FFFFFF;
+    --bruma-text-main: #111827;
+    --bruma-text-muted: #6B7280;
+    --bruma-border: #E5E7EB;
+    --bruma-brand: #A85A3F;
+    --bruma-brand-hover: #8C4931;
+    --bruma-accent-light: #FFF7F4;
+    --bruma-danger: #DC2626;
+    --bruma-danger-hover: #B91C1C;
+    --bruma-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bruma-dashboard-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bruma-bg);
+    min-height: 100vh;
+}
+
+.bruma-dashboard-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--bruma-border);
+}
+
+.bruma-dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bruma-text-main);
+    letter-spacing: -0.025em;
+    margin: 0;
+}
+
+.bruma-messages-list {
+    background: var(--bruma-surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    border: 1px solid var(--bruma-border);
+}
+
+.bruma-msg-item {
+    border-bottom: 1px solid var(--bruma-border);
+    transition: var(--bruma-transition);
+}
+.bruma-msg-item:last-child {
+    border-bottom: none;
+}
+.bruma-msg-item:hover {
+    background-color: #F9FAFB;
+    box-shadow: inset 1px 0 0 #E5E7EB, inset -1px 0 0 #E5E7EB, 0 1px 2px rgba(0,0,0,0.05);
+    z-index: 10;
+    position: relative;
+}
+
+.bruma-msg-header {
+    display: grid;
+    grid-template-columns: 200px 1fr 120px;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    align-items: center;
+    color: var(--bruma-text-main);
+}
+
+.bruma-msg-sender {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bruma-msg-subject-snippet {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bruma-msg-subject {
+    font-weight: 500;
+}
+
+.bruma-msg-snippet {
+    color: var(--bruma-text-muted);
+}
+
+.bruma-msg-date-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    min-width: 100px;
+}
+
+.bruma-msg-date {
+    font-size: 0.85rem;
+    color: var(--bruma-text-muted);
+    font-weight: 500;
+}
+
+.bruma-msg-quick-actions {
+    display: none;
+    gap: 0.5rem;
+}
+
+.bruma-msg-header:hover .bruma-msg-date {
+    display: none;
+}
+
+.bruma-msg-header:hover .bruma-msg-quick-actions {
+    display: flex;
+}
+
+.quick-action-btn {
+    background: none;
+    border: none;
+    color: var(--bruma-text-muted);
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--bruma-transition);
+}
+
+.quick-action-btn:hover {
+    background-color: #E5E7EB;
+    color: var(--bruma-text-main);
+}
+
+.quick-action-btn--danger:hover {
+    background-color: #FEE2E2;
+    color: var(--bruma-danger);
+}
+
+.bruma-msg-unread {
+    background-color: var(--bruma-surface);
+}
+.bruma-msg-unread .bruma-msg-sender,
+.bruma-msg-unread .bruma-msg-subject,
+.bruma-msg-unread .bruma-msg-date {
+    font-weight: 700;
+    color: #000;
+}
+.bruma-msg-unread .bruma-msg-header {
+    border-left: 4px solid var(--bruma-brand);
+    padding-left: calc(1rem - 4px);
+}
+
+.bruma-msg-body {
+    padding: 1.5rem 1rem 1.5rem 3rem;
+    background-color: var(--bruma-surface);
+    border-top: 1px solid #F3F4F6;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bruma-msg-content-details p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--bruma-text-main);
+}
+.bruma-msg-content-details a {
+    color: var(--bruma-brand);
+    text-decoration: none;
+}
+.bruma-msg-content-details a:hover {
+    text-decoration: underline;
+}
+
+.bruma-msg-divider {
+    border: none;
+    border-top: 1px solid var(--bruma-border);
+    margin: 1.5rem 0;
+}
+
+.bruma-msg-text {
+    line-height: 1.6;
+    color: #374151;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+}
+
+.bruma-msg-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--bruma-border);
+    color: var(--bruma-text-main);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px; 
+    transition: var(--bruma-transition);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn:hover {
+    background: var(--bruma-bg);
+    border-color: #D1D5DB;
+}
+
+.action-btn--danger {
+    color: var(--bruma-danger);
+    border-color: #FECACA;
+    background-color: #FEF2F2;
+}
+.action-btn--danger:hover {
+    background-color: #FEE2E2;
+    border-color: #FCA5A5;
+    color: var(--bruma-danger-hover);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--bruma-text-muted);
+    font-style: italic;
+}
+.loading-state {
+    text-align: center;
+    padding: 2rem;
+}
+
+coral-tabview {
+    margin-bottom: 2rem;
+}
+coral-tablist {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: none !important;
+    padding-bottom: 1rem !important;
+    gap: 1rem;
+}
+coral-tablist::-webkit-scrollbar {
+    display: none;
+}
+coral-tab {
+    font-size: 1.05rem !important;
+    padding: 0.6rem 1.5rem !important;
+    text-transform: none !important;
+    font-weight: bold !important;
+    color: var(--bruma-text-muted) !important;
+    background-color: var(--bruma-surface) !important;
+    border: 1px solid var(--bruma-border) !important;
+    border-radius: 9999px !important;
+    transition: var(--bruma-transition) !important;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+coral-tab:hover {
+    color: var(--bruma-text-main) !important;
+    border-color: #D1D5DB !important;
+}
+coral-tab[selected] {
+    background-color: var(--bruma-text-main) !important;
+    color: white !important;
+    border-color: var(--bruma-text-main) !important;
+}
+coral-tab[selected]::after {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .bruma-dashboard-container {
+        padding: 1rem;
+    }
+    .bruma-dashboard-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bruma-dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .bruma-msg-header {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 0.25rem;
+        padding: 1rem;
+    }
+    
+    .bruma-msg-sender {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    
+    .bruma-msg-date-actions {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        min-width: auto;
+    }
+    
+    .bruma-msg-subject-snippet {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        font-size: 0.9rem;
+    }
+    
+    .bruma-msg-body {
+        padding: 1rem;
+    }
+    
+    .bruma-msg-actions {
+        flex-wrap: wrap;
+    }
+}
