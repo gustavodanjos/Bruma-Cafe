@@ -1,16 +1,114 @@
-
 //== XF Footer style, used on page template
 
 footer.experiencefragment {
-    padding: .5em 1em;
-    border-top: 1px solid $color-foreground;
-
-    @media (prefers-color-scheme: dark) {
-        border-color: $color-foreground-dark;
+    background-color: $color-grao;
+    color: $color-white;
+    padding: 40px 0 20px 0; // Menor altura
+    
+    // Restringe a largura e centraliza o conteúdo
+    > .cmp-experiencefragment__inner,
+    > .aem-Grid,
+    > .cmp-container,
+    .root > .cmp-container {
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
     }
-
+    
+    // Transforma a logo (e outras imagens no footer) em branco e alinha à direita
+    .cmp-image {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; // Centraliza a logo verticalmente se a coluna for mais alta
+        
+        img, svg, .cmp-image__image {
+            filter: brightness(0) invert(1) !important;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    
+    // Default separator style
     .cmp-separator__horizontal-rule {
-        margin: 0;
-        border: 0;
+        border-color: rgba($color-white, 0.2);
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
+
+    // Estilo específico para o primeiro separador (abaixo da frase)
+    // No grid AEM, podemos tentar pegar o primeiro separador que aparece
+    .aem-GridColumn:nth-child(-n+4) .cmp-separator__horizontal-rule {
+        width: 40px;
+        margin: 20px auto 40px auto;
+        border-color: $color-torra;
+        border-width: 2px;
+    }
+    
+    // Text styles inside footer
+    .cmp-text {
+        color: $color-white;
+        
+        // Copyright and default text
+        p {
+            font-family: $font-family-sans;
+            font-size: 12px;
+            color: rgba($color-white, 0.7);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        // The quote (assuming it might be authored as a heading, blockquote, or emphasis)
+        h1, h2, h3, h4, h5, h6, blockquote {
+            font-family: $font-family-serif;
+            font-style: italic;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: $color-white;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        // Se o autor colocou o quote em itálico usando <em> ou <i>
+        em, i {
+            font-family: $font-family-serif;
+            font-size: 24px;
+            font-style: italic;
+            color: $color-white;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    // Navigation inside footer (e.g., HUB ARTIGOS PRODUTOS)
+    .cmp-navigation, .navigation {
+        
+        .cmp-navigation__group {
+            justify-content: flex-end;
+            gap: 24px;
+        }
+
+        .cmp-navigation__item-link {
+            color: $color-white;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            
+            &:hover, &:focus {
+                color: $color-torra;
+            }
+        }
+        
+        .cmp-navigation__item--active > .cmp-navigation__item-link {
+            color: $color-white;
+            &::after {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    
 }
