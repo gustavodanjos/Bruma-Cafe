@@ -168,7 +168,9 @@ header {
             .cmp-button,
             .button,
             [class*="cmp-button"] {
-                display: inline-flex;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
                 margin-left: 0;
                 padding: 10px;
@@ -178,6 +180,17 @@ header {
                 button.cmp-button__link,
                 a,
                 button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .cmp-button__text,
+                span.cmp-button__text,
+                span {
+                    text-align: center;
                     width: 100%;
                 }
             }
@@ -209,10 +222,15 @@ header {
 
             .cmp-navigation__item {
                 width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .cmp-navigation__item-link {
                 display: block;
+                width: 100%;
+                text-align: center;
                 padding: 14px 0;
                 font-size: 15px;
                 border-bottom: 1px solid lighten($color-borda, 4%);
