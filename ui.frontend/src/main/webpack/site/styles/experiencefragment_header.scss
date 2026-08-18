@@ -36,7 +36,7 @@ header {
 
     // Container Flex Principal
     .cmp-container,
-    .cmp-experiencefragment > .cmp-container {
+    .cmp-experiencefragment>.cmp-container {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -53,13 +53,13 @@ header {
         box-sizing: border-box;
         gap: 24px;
 
-        > .aem-GridColumn,
-        > .cmp-image,
-        > .image,
-        > .cmp-navigation,
-        > .navigation,
-        > .cmp-button,
-        > .button {
+        >.aem-GridColumn,
+        >.cmp-image,
+        >.image,
+        >.cmp-navigation,
+        >.navigation,
+        >.cmp-button,
+        >.button {
             float: none;
             clear: none;
             width: auto;
@@ -75,7 +75,7 @@ header {
 
     // Hambúrguer Mobile Toggle (Oculto em Desktop)
     .cmp-navigation__toggle,
-    .cmp-container > .cmp-navigation__toggle {
+    .cmp-container>.cmp-navigation__toggle {
         display: none;
     }
 
@@ -132,14 +132,16 @@ header {
 
     // Responsividade Mobile (< 768px)
     @media (max-width: 768px) {
+
         .cmp-container,
-        .cmp-experiencefragment > .cmp-container {
+        .cmp-experiencefragment>.cmp-container {
             padding: 0 20px;
             position: relative;
         }
 
+        // Hambúrguer Mobile Toggle (Oculto em Desktop)
         .cmp-navigation__toggle,
-        .cmp-container > .cmp-navigation__toggle {
+        .cmp-container>.cmp-navigation__toggle {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -151,6 +153,35 @@ header {
             margin-left: auto;
         }
 
+        // Ocultar botão do header na visualização mobile padrão (ele será movido e mostrado dentro do menu)
+        >.cmp-button,
+        >.button,
+        >[class*="cmp-button"] {
+            display: none;
+        }
+
+        // Estilos para o botão quando estiver dentro do menu mobile
+        .cmp-navigation__group {
+
+            .cmp-button,
+            .button,
+            [class*="cmp-button"] {
+                display: inline-flex;
+                width: 100%;
+                margin-left: 0;
+                padding: 10px;
+
+                .cmp-button__link,
+                a.cmp-button__link,
+                button.cmp-button__link,
+                a,
+                button {
+                    width: 100%;
+                }
+            }
+        }
+
+        // Navegação (Menu Mobile)
         .cmp-navigation,
         .navigation {
             margin-left: 0;
@@ -161,7 +192,7 @@ header {
                 align-items: stretch;
                 gap: 0;
                 position: absolute;
-                top: $header-height;
+                top: 100%; // Alinha dinamicamente ao final do header
                 left: 0;
                 right: 0;
                 background-color: $color-white;
@@ -187,22 +218,6 @@ header {
                 &::after {
                     bottom: 0;
                 }
-            }
-        }
-
-        .cmp-button,
-        .button,
-        [class*="cmp-button"] {
-            width: 100%;
-            margin-left: 0;
-            margin-top: 12px;
-
-            .cmp-button__link,
-            a.cmp-button__link,
-            button.cmp-button__link,
-            a,
-            button {
-                width: 100%;
             }
         }
     }
@@ -242,4 +257,3 @@ header .cmp-button__text {
         }
     }
 }
-
