@@ -1,0 +1,66 @@
+// =============================================================================
+// Social Links — Brumacafe Component Styles
+// =============================================================================
+
+.brumacafe-sociallinks {
+    margin-bottom: 40px;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+
+        @media (max-width: 480px) {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    &__link {
+        // REMOVIDO: font-size: 0 — ocultava conteúdo de leitores de tela (High A11y)
+        color: $color-roast;
+        text-decoration: none;
+        font-family: $font-family-sans;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+
+        // Foco visível para navegação por teclado (WCAG 2.4.7)
+        &:focus-visible {
+            outline: 2px solid $color-roast;
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        &:hover,
+        &:focus {
+            color: darken($color-roast, 10%);
+        }
+
+        // REMOVIDO: span:not(.label):not(.icon) { display: none }
+        // Seletor genérico substituído por ocultação explícita via .sr-only no HTL
+    }
+
+    &__label {
+        font-size: 14px;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    // Indicação de "abre em nova aba" — apenas para leitores de tela
+    // Renderizado via span.sr-only no HTL
+    &__new-tab-hint {
+        @extend .sr-only;
+    }
+}
