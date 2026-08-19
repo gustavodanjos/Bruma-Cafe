@@ -1,0 +1,114 @@
+/*
+ * Content Grid component styles.
+ *
+ * Global design tokens such as colors, typography, spacing, radio,
+ * and layout values are defined in:
+ * ui.frontend/src/main/webpack/site/_variables.scss
+ *
+ * Runtime CSS custom properties used by this client library are exposed in:
+ * ui.frontend/src/main/webpack/site/_tokens.scss
+ *
+ * Prefer using the shared --bruma-* custom properties instead of
+ * duplicating global design values in this component.
+ */
+
+.cmp-content-grid {
+    width: 100%;
+    max-width: var(--bruma-max-width);
+    margin: 0 auto;
+    padding: var(--bruma-space-lg) var(--bruma-space-md);
+    box-sizing: border-box;
+}
+
+.cmp-content-grid__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--bruma-space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cmp-content-grid__item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid var(--bruma-color-border);
+    border-radius: var(--bruma-radius-card);
+    background-color: var(--bruma-color-cream);
+}
+
+.cmp-content-grid__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.cmp-content-grid__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cmp-content-grid__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bruma-space-sm);
+    min-width: 0;
+    padding: var(--bruma-space-md);
+}
+
+.cmp-content-grid__title {
+    margin: 0;
+
+    color: var(--bruma-color-grain);
+
+    font-family: var(--bruma-font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+.cmp-content-grid__text {
+    margin: 0;
+
+    color: var(--bruma-color-body);
+
+    font-family: var(--bruma-font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+    .cmp-content-grid__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cmp-content-grid__text {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cmp-content-grid {
+        padding-top: var(--bruma-space-xl);
+        padding-bottom: var(--bruma-space-xl);
+    }
+
+    .cmp-content-grid__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cmp-content-grid__title {
+        font-size: 20px;
+    }
+}

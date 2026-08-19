@@ -1,3 +1,17 @@
+/*
+ * Main Banner component styles.
+ *
+ * Global design tokens such as colors, typography, spacing, radii,
+ * and layout values are defined in:
+ * ui.frontend/src/main/webpack/site/_variables.scss
+ *
+ * Runtime CSS custom properties used by this client library are exposed in:
+ * ui.frontend/src/main/webpack/site/_tokens.scss
+ *
+ * Prefer using the shared --bruma-* custom properties instead of
+ * duplicating global design values in this component.
+ */
+
 .cmp-main-banner {
     position: relative;
     display: flex;
@@ -9,8 +23,8 @@
     overflow: hidden;
     isolation: isolate;
 
-    background-color: #2E1F1A;
-    color: #FFFFFF;
+    background-color: var(--bruma-color-grain);
+    color: var(--bruma-color-white);
 }
 
 /* Background image */
@@ -55,10 +69,10 @@
     z-index: 2;
 
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--bruma-max-width);
 
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: var(--bruma-space-lg) var(--bruma-space-md);
 
     box-sizing: border-box;
 }
@@ -68,11 +82,11 @@
 .cmp-main-banner__title {
     max-width: 760px;
 
-    margin: 0 0 16px;
+    margin: 0 0 var(--bruma-space-sm);
 
-    color: #FFFFFF;
+    color: var(--bruma-color-white);
 
-    font-family: "Fraunces", serif;
+    font-family: var(--bruma-font-serif);
     font-size: 32px;
     font-weight: 600;
     line-height: 1.1;
@@ -83,11 +97,11 @@
 .cmp-main-banner__description {
     max-width: 640px;
 
-    margin: 0 0 24px;
+    margin: 0 0 var(--bruma-space-md);
 
-    color: #FFFFFF;
+    color: var(--bruma-color-white);
 
-    font-family: "Inter", sans-serif;
+    font-family: var(--bruma-font-sans);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
@@ -100,16 +114,16 @@
     align-items: center;
     justify-content: center;
 
-    min-height: 48px;
-    padding: 0 24px;
+    min-height: var(--bruma-space-lg);
+    padding: 0 var(--bruma-space-md);
 
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--bruma-radius-control);
 
-    background-color: #B4552D;
-    color: #FFFFFF;
+    background-color: var(--bruma-color-roast);
+    color: var(--bruma-color-white);
 
-    font-family: "Inter", sans-serif;
+    font-family: var(--bruma-font-sans);
     font-size: 16px;
     font-weight: 600;
     line-height: 1;
@@ -122,12 +136,12 @@
 }
 
 .cmp-main-banner__button:hover {
-    background-color: #2E1F1A;
-    color: #FFFFFF;
+    background-color: var(--bruma-color-grain);
+    color: var(--bruma-color-white);
 }
 
 .cmp-main-banner__button:focus-visible {
-    outline: 3px solid #F5EFE7;
+    outline: 3px solid var(--bruma-color-cream);
     outline-offset: 3px;
 }
 
