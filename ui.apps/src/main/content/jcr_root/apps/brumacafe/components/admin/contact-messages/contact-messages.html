@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/etc.clientlibs/clientlibs/granite/coralui2.css" type="text/css">
     
     <sly data-sly-call="${clientlib.css @ categories='brumacafe.admin.contactmessages'}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="coral--light coral-App-page">
 
@@ -36,6 +39,14 @@
         </div>
     </main>
 
+    
+    <script>
+        window.Coral = window.Coral || {};
+        window.Coral.options = {
+            iconURL: "/libs/granite/coralui3/resources/spectrum-icons.svg",
+            colorIconURL: "/libs/granite/coralui3/resources/spectrum-icons-color.svg"
+        };
+    </script>
     <script src="/etc.clientlibs/clientlibs/granite/jquery.js"></script>
     <script src="/etc.clientlibs/clientlibs/granite/coralui3.js"></script>
     
