@@ -23,7 +23,7 @@
     }
 
     &__link {
-        color: $color-creme;
+        color: $color-cream;
         text-decoration: none;
         font-family: $font-family-sans;
         font-size: 14px;
@@ -32,14 +32,14 @@
 
         // Foco visível para navegação por teclado (WCAG 2.4.7)
         &:focus-visible {
-            outline: 2px solid $color-creme;
+            outline: 2px solid $color-cream;
             outline-offset: 3px;
             border-radius: 2px;
         }
 
         &:hover,
         &:focus {
-            color: $color-torra;
+            color: $color-roast;
         }
     }
 }

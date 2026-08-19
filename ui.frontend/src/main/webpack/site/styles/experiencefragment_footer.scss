@@ -2,9 +2,9 @@
 // XF Footer — Experience Fragment styles, used on page template
 // =============================================================================
 
-// -- Filtro CSS que converte qualquer cor de logo para $color-creme (#F5EFE7)
+// -- Filtro CSS que converte qualquer cor de logo para $color-cream (#F5EFE7)
 // NOTA: Aplicar SOMENTE à classe .cmp-image--footer__logo (ver abaixo).
-// Para SVGs prefira svg { fill: $color-creme } ou mask quando possível.
+// Para SVGs prefira svg { fill: $color-cream } ou mask quando possível.
 // Browsers alvo: Chrome 80+, Firefox 76+, Safari 14+, Edge 80+.
 $footer-logo-filter: brightness(0) saturate(100%) invert(97%) sepia(8%) saturate(400%) hue-rotate(345deg) brightness(102%);
 
@@ -18,14 +18,14 @@ $footer-logo-filter: brightness(0) saturate(100%) invert(97%) sepia(8%) saturate
     font-size: 24px;
     font-weight: 300;
     line-height: 1.4;
-    color: $color-creme;
+    color: $color-cream;
     text-align: center;
     margin: 0 0 20px;
 }
 
 footer.experiencefragment {
-    background-color: $color-grao;
-    color: $color-creme;
+    background-color: $color-grain;
+    color: $color-cream;
     padding: 40px 0 20px;
 
     // -------------------------------------------------------------------------
@@ -73,7 +73,7 @@ footer.experiencefragment {
     // Separador horizontal padrão
     // -------------------------------------------------------------------------
     .cmp-separator__horizontal-rule {
-        border-color: rgba($color-creme, 0.2);
+        border-color: rgba($color-cream, 0.2);
         margin-top: 30px;
         margin-bottom: 30px;
     }
@@ -87,7 +87,7 @@ footer.experiencefragment {
     .cmp-separator--decorative .cmp-separator__horizontal-rule {
         width: 40px;
         margin: 20px auto 40px;
-        border-color: $color-torra;
+        border-color: $color-roast;
         border-width: 2px;
     }
 
@@ -111,9 +111,9 @@ footer.experiencefragment {
         p {
             font-family: $font-family-sans;
             font-size: 12px;
-            color: rgba($color-creme, 0.7);
+            color: rgba($color-cream, 0.7);
             margin: 0;
-            line-height: $font-height;
+            line-height: $line-height-body;
         }
     }
 
@@ -134,7 +134,7 @@ footer.experiencefragment {
         }
 
         .cmp-navigation__item-link {
-            color: $color-creme;
+            color: $color-cream;
             text-decoration: none;
             font-family: $font-family-sans;
             font-size: 12px;
@@ -145,22 +145,22 @@ footer.experiencefragment {
 
             // Foco visível para navegação por teclado (WCAG 2.4.7)
             &:focus-visible {
-                outline: 2px solid $color-creme;
+                outline: 2px solid $color-cream;
                 outline-offset: 3px;
                 border-radius: 2px;
             }
 
             &:hover,
             &:focus {
-                color: $color-torra;
+                color: $color-roast;
             }
         }
 
         .cmp-navigation__item--active > .cmp-navigation__item-link {
-            color: $color-creme;
+            color: $color-cream;
 
             &::after {
-                background-color: $color-creme;
+                background-color: $color-cream;
             }
         }
     }

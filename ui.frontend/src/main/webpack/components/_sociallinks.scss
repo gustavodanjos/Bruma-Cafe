@@ -26,7 +26,7 @@
 
     &__link {
         // REMOVIDO: font-size: 0 — ocultava conteúdo de leitores de tela (High A11y)
-        color: $color-torra;
+        color: $color-roast;
         text-decoration: none;
         font-family: $font-family-sans;
         font-size: 14px;
@@ -38,14 +38,14 @@
 
         // Foco visível para navegação por teclado (WCAG 2.4.7)
         &:focus-visible {
-            outline: 2px solid $color-torra;
+            outline: 2px solid $color-roast;
             outline-offset: 3px;
             border-radius: 2px;
         }
 
         &:hover,
         &:focus {
-            color: $color-torra-hover;
+            color: darken($color-roast, 10%);
         }
 
         // REMOVIDO: span:not(.label):not(.icon) { display: none }
