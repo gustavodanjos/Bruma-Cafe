@@ -29,7 +29,7 @@
         font-family: $font-family-sans;
         font-size: 14px;
         font-weight: 400;
-        color: $color-nevoa;
+        color: $color-fog;
         text-decoration: none;
         letter-spacing: 0.01em;
         padding: 6px 0;
@@ -39,13 +39,13 @@
 
         &:hover,
         &:focus {
-            color: $color-grao;
+            color: $color-grain;
         }
     }
 
     .cmp-navigation__item--active > .cmp-navigation__item-link {
         font-weight: 600;
-        color: $color-grao;
+        color: $color-grain;
 
         &::after {
             content: '';
@@ -54,7 +54,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background-color: $color-grao;
+            background-color: $color-grain;
             border-radius: 1px;
         }
     }

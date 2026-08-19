@@ -15,10 +15,53 @@ Mais do que apenas escrever código, o projeto avalia habilidades exigidas no me
 | Frente | Tarefas | Responsável | Suplente |
 | :--- | :--- | :--- | :--- |
 | **Frente 1** | Header, footer e identidade | Samuel | Antonni |
-| **Frente 2** | Cafés e integração | Antonni | Jonathan |
+| **Frente 2** | Cafés e integração | Antonni | Jhonatan |
 | **Frente 3** | Componentes | Emiliano | Gustavo |
-| **Frente 4** | Hub de conteúdo | Jonathan | Emiliano |
+| **Frente 4** | Hub de conteúdo | Jhonatan | Emiliano |
 | **Frente 5** | Formulário e entrega | Gustavo | Samuel |
+
+---
+
+## Organização de Client Libraries — Frente 3
+
+A Frente 3 utiliza client libraries específicas por componente e mantém os estilos compartilhados centralizados no frontend do projeto.
+
+### Categorias
+
+- `brumacafe.base` — categoria base do projeto e agregação dos Core Components e do grid responsivo.
+- `brumacafe.dependencies` — dependências globais do frontend.
+- `brumacafe.grid` — estilos do AEM Responsive Grid.
+- `brumacafe.site` — estilos, fontes, design tokens e scripts globais do site.
+- `brumacafe.components.main-banner` — estilos específicos do componente Main Banner.
+- `brumacafe.components.content-grid` — estilos específicos do componente Content Grid.
+
+### Design Tokens
+
+Os valores visuais compartilhados da marca são centralizados em:
+
+```text
+ui.frontend/src/main/webpack/site/_variables.scss
+ui.frontend/src/main/webpack/site/_tokens.scss
+```
+
+As variáveis SCSS são utilizadas pelos estilos compilados do frontend, enquanto `_tokens.scss` expõe propriedades CSS globais com o prefixo `--bruma-*` para uso pelas client libraries dos componentes.
+
+Exemplos:
+
+```css
+var(--bruma-color-grain)
+var(--bruma-color-roast)
+var(--bruma-color-cream)
+var(--bruma-color-border)
+var(--bruma-font-sans)
+var(--bruma-font-serif)
+var(--bruma-space-md)
+var(--bruma-radius-card)
+```
+
+Os componentes devem manter apenas estilos específicos em suas próprias client libraries, reutilizando os design tokens globais para cores, tipografia, espaçamentos, raios e demais valores compartilhados.
+
+Não devem ser adicionados estilos CSS inline nos arquivos HTL.
 
 ### 2. Fluxo de Branch e Pull Request (PR)
 * A branch main é protegida e exige revisão em PR. Ninguém commita direto nela.
@@ -139,3 +182,23 @@ Após a instalação do pacote, valide se os conteúdos foram carregados correta
 
 1. **Content Fragments e Imagens:** Vá em **Navigation > Assets > Files > brumacafe** e confirme se as pastas de imagens e fragmentos contêm os 4 cafés e os 2 produtores com as referências preenchidas.
 2. **Páginas do Site:** Acesse **Sites > Bruma Café** e visualize as páginas no editor para confirmar a renderização dos componentes com os dados reais dos cafés.
+
+---
+
+## Documentação Técnica das Frentes
+
+### Frente 4 — Hub de Conteúdo: Validação de Performance (QueryBuilder)
+
+#### Tarefa F4.4: Validação e Otimização da Consulta de Artigos
+
+Para assegurar a estabilidade do repositório JCR e prevenir gargalos de processamento e consumo excessivo de memória na JVM ao carregar listagens de artigos, a busca automática implementada no `ArticleListModel` foi construída utilizando a API nativa do `QueryBuilder` com paginação estrita (`p.limit`).
+
+#### 1. Parâmetros da Consulta (Query Predicates)
+```text
+path=/content/brumacafe
+type=cq:Page
+property=jcr:content/cq:template
+property.value=/conf/brumacafe/settings/wcm/templates/pagina-de-artigo
+orderby=@jcr:content/cq:lastModified
+orderby.sort=desc
+p.limit=4
