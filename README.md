@@ -20,6 +20,49 @@ Mais do que apenas escrever código, o projeto avalia habilidades exigidas no me
 | **Frente 4** | Hub de conteúdo | Jhonatan | Emiliano |
 | **Frente 5** | Formulário e entrega | Gustavo | Samuel |
 
+---
+
+## Organização de Client Libraries — Frente 3
+
+A Frente 3 utiliza client libraries específicas por componente e mantém os estilos compartilhados centralizados no frontend do projeto.
+
+### Categorias
+
+- `brumacafe.base` — categoria base do projeto e agregação dos Core Components e do grid responsivo.
+- `brumacafe.dependencies` — dependências globais do frontend.
+- `brumacafe.grid` — estilos do AEM Responsive Grid.
+- `brumacafe.site` — estilos, fontes, design tokens e scripts globais do site.
+- `brumacafe.components.main-banner` — estilos específicos do componente Main Banner.
+- `brumacafe.components.content-grid` — estilos específicos do componente Content Grid.
+
+### Design Tokens
+
+Os valores visuais compartilhados da marca são centralizados em:
+
+```text
+ui.frontend/src/main/webpack/site/_variables.scss
+ui.frontend/src/main/webpack/site/_tokens.scss
+```
+
+As variáveis SCSS são utilizadas pelos estilos compilados do frontend, enquanto `_tokens.scss` expõe propriedades CSS globais com o prefixo `--bruma-*` para uso pelas client libraries dos componentes.
+
+Exemplos:
+
+```css
+var(--bruma-color-grain)
+var(--bruma-color-roast)
+var(--bruma-color-cream)
+var(--bruma-color-border)
+var(--bruma-font-sans)
+var(--bruma-font-serif)
+var(--bruma-space-md)
+var(--bruma-radius-card)
+```
+
+Os componentes devem manter apenas estilos específicos em suas próprias client libraries, reutilizando os design tokens globais para cores, tipografia, espaçamentos, raios e demais valores compartilhados.
+
+Não devem ser adicionados estilos CSS inline nos arquivos HTL.
+
 ### 2. Fluxo de Branch e Pull Request (PR)
 * A branch main é protegida e exige revisão em PR. Ninguém commita direto nela.
 
