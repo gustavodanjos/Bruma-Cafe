@@ -25,25 +25,7 @@ body {
     background:  $color-background;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
-
-.root {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.root > .cmp-container {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-serif;
