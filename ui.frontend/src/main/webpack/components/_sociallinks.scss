@@ -13,6 +13,11 @@
         justify-content: center;
         align-items: center;
         gap: 32px;
+
+        @media (max-width: 480px) {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
     }
 
     &__icon {
@@ -20,28 +25,42 @@
     }
 
     &__link {
-        // Técnica para ocultar nós de texto soltos injetados pelo AEM
-        // (ex: "opens in a new tab") sem impactar o label visível
-        font-size: 0;
+        // REMOVIDO: font-size: 0 — ocultava conteúdo de leitores de tela (High A11y)
         color: $color-torra;
         text-decoration: none;
         font-family: $font-family-sans;
+        font-size: 14px;
         font-weight: 500;
         transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+
+        // Foco visível para navegação por teclado (WCAG 2.4.7)
+        &:focus-visible {
+            outline: 2px solid $color-torra;
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
 
         &:hover,
         &:focus {
             color: $color-torra-hover;
         }
 
-        // Oculta qualquer span extra injetado pelo AEM que não seja label ou ícone
-        span:not(.brumacafe-sociallinks__label):not(.brumacafe-sociallinks__icon) {
-            display: none;
-        }
+        // REMOVIDO: span:not(.label):not(.icon) { display: none }
+        // Seletor genérico substituído por ocultação explícita via .sr-only no HTL
     }
 
     &__label {
         font-size: 14px;
         display: inline-block;
+        text-transform: capitalize;
+    }
+
+    // Indicação de "abre em nova aba" — apenas para leitores de tela
+    // Renderizado via span.sr-only no HTL
+    &__new-tab-hint {
+        @extend .sr-only;
     }
 }

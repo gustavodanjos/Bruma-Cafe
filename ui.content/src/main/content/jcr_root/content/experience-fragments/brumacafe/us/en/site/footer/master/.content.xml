@@ -15,7 +15,8 @@
             layout="responsiveGrid">
             <separator
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="brumacafe/components/separator"/>
+                sling:resourceType="brumacafe/components/separator"
+                cq:cssClass="cmp-separator--decorative"/>
             <text
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/text"

@@ -3,7 +3,25 @@
 // =============================================================================
 
 // -- Filtro CSS que converte qualquer cor de logo para $color-creme (#F5EFE7)
+// NOTA: Aplicar SOMENTE à classe .cmp-image--footer__logo (ver abaixo).
+// Para SVGs prefira svg { fill: $color-creme } ou mask quando possível.
+// Browsers alvo: Chrome 80+, Firefox 76+, Safari 14+, Edge 80+.
 $footer-logo-filter: brightness(0) saturate(100%) invert(97%) sepia(8%) saturate(400%) hue-rotate(345deg) brightness(102%);
+
+// =============================================================================
+// CORREÇÃO (Low→Medium): %footer-quote movido para nível global do arquivo
+// Anteriormente aninhado dentro de .cmp-text, o que reduzia reutilização.
+// =============================================================================
+%footer-quote {
+    font-family: $font-family-serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: $color-creme;
+    text-align: center;
+    margin: 0 0 20px;
+}
 
 footer.experiencefragment {
     background-color: $color-grao;
@@ -24,7 +42,11 @@ footer.experiencefragment {
     }
 
     // -------------------------------------------------------------------------
-    // Logo — alinhada à direita, cor convertida para creme via filtro CSS
+    // Logo — alinhada à direita
+    // CORREÇÃO (Medium): filtro aplicado apenas à classe .cmp-image--footer__logo
+    // em vez de todos os .cmp-image img (evita recolorir imagens indesejadas).
+    // No HTL, adicionar resourceType com data-sly-attribute ou customStyle para
+    // injetar a classe .cmp-image--footer__logo no componente de imagem do logo.
     // -------------------------------------------------------------------------
     .cmp-image {
         display: flex;
@@ -33,15 +55,22 @@ footer.experiencefragment {
 
         img,
         .cmp-image__image {
-            filter: $footer-logo-filter;
             max-width: 100%;
             height: auto;
             display: block;
         }
     }
 
+    // Filtro aplicado SOMENTE ao logo do footer (via classe específica no HTL)
+    .cmp-image--footer__logo {
+        img,
+        .cmp-image__image {
+            filter: $footer-logo-filter;
+        }
+    }
+
     // -------------------------------------------------------------------------
-    // Separador horizontal
+    // Separador horizontal padrão
     // -------------------------------------------------------------------------
     .cmp-separator__horizontal-rule {
         border-color: rgba($color-creme, 0.2);
@@ -49,8 +78,13 @@ footer.experiencefragment {
         margin-bottom: 30px;
     }
 
-    // Primeiro separador (abaixo da citação): pequeno traço decorativo
-    .aem-GridColumn:nth-child(-n+4) .cmp-separator__horizontal-rule {
+    // -------------------------------------------------------------------------
+    // CORREÇÃO (Medium): Separador decorativo via classe explícita
+    // Anteriormente: seletor nth-child frágil, quebrável por edição de conteúdo.
+    // Agora: usar a classe .cmp-separator--decorative no HTL do separador abaixo
+    // da citação (adicionar customStyle no diálogo do Separator Core Component).
+    // -------------------------------------------------------------------------
+    .cmp-separator--decorative .cmp-separator__horizontal-rule {
         width: 40px;
         margin: 20px auto 40px;
         border-color: $color-torra;
@@ -61,18 +95,6 @@ footer.experiencefragment {
     // Texto — cobre citação (quote) e copyright
     // -------------------------------------------------------------------------
     .cmp-text {
-        // Tipografia base para a citação principal
-        %footer-quote {
-            font-family: $font-family-serif;
-            font-style: italic;
-            font-size: 24px;
-            font-weight: 300;
-            line-height: 1.4;
-            color: $color-creme;
-            text-align: center;
-            margin: 0 0 20px;
-        }
-
         // Citação via headings ou blockquote
         h1, h2, h3, h4, h5, h6,
         blockquote {
@@ -102,6 +124,13 @@ footer.experiencefragment {
         .cmp-navigation__group {
             justify-content: flex-end;
             gap: 24px;
+
+            // CORREÇÃO (Low): gap responsivo em telas pequenas
+            @media (max-width: 480px) {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         .cmp-navigation__item-link {
@@ -114,6 +143,13 @@ footer.experiencefragment {
             letter-spacing: 0.1em;
             transition: color 0.3s ease;
 
+            // Foco visível para navegação por teclado (WCAG 2.4.7)
+            &:focus-visible {
+                outline: 2px solid $color-creme;
+                outline-offset: 3px;
+                border-radius: 2px;
+            }
+
             &:hover,
             &:focus {
                 color: $color-torra;
@@ -125,6 +161,21 @@ footer.experiencefragment {
 
             &::after {
                 background-color: $color-creme;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Responsividade geral (Low)
+    // -------------------------------------------------------------------------
+    @media (max-width: 768px) {
+        padding: 32px 0 16px;
+
+        .cmp-text {
+            h1, h2, h3, h4, h5, h6,
+            blockquote,
+            em, i {
+                font-size: 20px;
             }
         }
     }
