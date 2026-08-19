@@ -1,17 +1,16 @@
-<div class="cq-placeholder" data-emptytext="Social Links (Adicione as redes sociais aqui)" data-sly-test="${wcmmode.edit && !resource.hasChildren}"></div>
+<div class="cq-placeholder" data-emptytext="Social Links (Adicione as redes sociais aqui)"
+    data-sly-test="${wcmmode.edit && !resource.hasChildren}"></div>
 
 <sly data-sly-list.child="${resource.getChildren}">
     <sly data-sly-test="${child.name == 'socialLinks'}">
-        <nav
-            class="brumacafe-sociallinks"
-            aria-label="Redes sociais">
-            
+        <nav class="brumacafe-sociallinks" aria-label="Redes sociais">
+
             <ul class="brumacafe-sociallinks__list">
-                
+
                 <sly data-sly-list.social="${child.getChildren}">
-                    
+
                     <li class="brumacafe-sociallinks__item" data-sly-test="${social.valueMap.url}">
-                        
+
                         <!--
                             CORREÇÃO A11y (High):
                             1. Removido aria-label="${social.valueMap.platform}" — era redundante com o
@@ -20,15 +19,10 @@
                                corretamente para leitores de tela sem poluir o visual.
                             3. Foco visível garantido via CSS (outline no :focus-visible).
                         -->
-                        <a
-                            class="brumacafe-sociallinks__link brumacafe-sociallinks__link--${social.valueMap.platform}"
-                            href="${social.valueMap.url}"
-                            target="_blank"
-                            rel="noopener noreferrer">
+                        <a class="brumacafe-sociallinks__link brumacafe-sociallinks__link--${social.valueMap.platform}"
+                            href="${social.valueMap.url}" target="_blank" rel="noopener noreferrer">
 
-                            <span
-                                class="brumacafe-sociallinks__icon"
-                                aria-hidden="true">
+                            <span class="brumacafe-sociallinks__icon" aria-hidden="true">
                             </span>
                             <span class="brumacafe-sociallinks__label">
                                 ${social.valueMap.platform}
@@ -38,11 +32,11 @@
                         </a>
 
                     </li>
-                    
+
                 </sly>
-                
+
             </ul>
-            
+
         </nav>
     </sly>
 </sly>

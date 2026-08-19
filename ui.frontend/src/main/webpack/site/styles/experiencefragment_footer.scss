@@ -87,8 +87,8 @@ footer.experiencefragment {
     .cmp-separator--decorative .cmp-separator__horizontal-rule {
         width: 40px;
         margin: 20px auto 40px;
-        border-color: $color-roast;
-        border-width: 2px;
+        border: none;
+        border-top: 2px solid $color-roast;
     }
 
     // -------------------------------------------------------------------------

@@ -51,7 +51,9 @@ textarea {
 // Utilitário de acessibilidade — visível apenas para leitores de tela
 // Equivalente ao .sr-only do Bootstrap / visually-hidden do WCAG
 // =============================================================================
-.sr-only {
+.sr-only,
+.cmp-accessibility-hidden,
+.cmp-link__screen-reader-only {
     position: absolute;
     width: 1px;
     height: 1px;

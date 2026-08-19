@@ -84,6 +84,32 @@
                             features="-"/>
                     </plugins>
                 </policy_651483963895698>
+                <policy_2344346377480
+                    jcr:lastModified="{Date}2026-08-19T14:21:44.696-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Footer"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    altValueFromDAM="true"
+                    disableLazyLoading="false"
+                    displayPopupTitle="true"
+                    isDecorative="false"
+                    titleValueFromDAM="true">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Estilos de Imagem"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="cmp-image--footer__logo"
+                                    cq:styleId="1787160069191"
+                                    cq:styleLabel="Logo Footer"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_2344346377480>
             </image>
             <text jcr:primaryType="nt:unstructured">
                 <policy_641562756958017
@@ -363,6 +389,30 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
+            <separator jcr:primaryType="nt:unstructured">
+                <policy_1787159302949
+                    jcr:lastModified="{Date}2026-08-19T14:09:40.920-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Footer"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    isDecorative="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Estilos"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="cmp-separator--decorative"
+                                    cq:styleId="1787159356218"
+                                    cq:styleLabel="Decorativo"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1787159302949>
+            </separator>
         </components>
     </brumacafe>
     <wcm jcr:primaryType="nt:unstructured">
@@ -372,4 +422,30 @@
             </components>
         </foundation>
     </wcm>
+    <wknd jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <separator jcr:primaryType="nt:unstructured">
+                <policy_1787159083623
+                    jcr:lastModified="{Date}2026-08-19T14:05:40.834-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Footer"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    isDecorative="true">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="cmp-separator--decorative"
+                                    cq:styleId="1787159129654"
+                                    cq:styleLabel="Decorative"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1787159083623>
+            </separator>
+        </components>
+    </wknd>
 </jcr:root>
