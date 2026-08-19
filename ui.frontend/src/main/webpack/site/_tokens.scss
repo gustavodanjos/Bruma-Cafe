@@ -1,0 +1,34 @@
+// =============================================================================
+// Bruma Café — Runtime Design Tokens
+// =============================================================================
+
+:root {
+    // Colors
+    --bruma-color-grain: #{$color-grain};
+    --bruma-color-roast: #{$color-roast};
+    --bruma-color-cream: #{$color-cream};
+    --bruma-color-leaf: #{$color-leaf};
+    --bruma-color-fog: #{$color-fog};
+
+    --bruma-color-white: #{$color-white};
+    --bruma-color-body: #{$color-body};
+    --bruma-color-border: #{$color-border};
+
+    // Typography
+    --bruma-font-sans: #{$font-family-sans};
+    --bruma-font-serif: #{$font-family-serif};
+
+    // Layout
+    --bruma-max-width: #{$max-width};
+
+    // Radius
+    --bruma-radius-control: #{$radius-control};
+    --bruma-radius-card: #{$radius-card};
+
+    // Spacing
+    --bruma-space-xs: #{$space-xs};
+    --bruma-space-sm: #{$space-sm};
+    --bruma-space-md: #{$space-md};
+    --bruma-space-lg: #{$space-lg};
+    --bruma-space-xl: #{$space-xl};
+}
