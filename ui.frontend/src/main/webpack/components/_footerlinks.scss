@@ -1,0 +1,45 @@
+// =============================================================================
+// Footer Links — Brumacafe Component Styles
+// =============================================================================
+
+.brumacafe-footerlinks {
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px;
+
+        // CORREÇÃO (Low): gap responsivo em telas pequenas
+        @media (max-width: 600px) {
+            gap: 24px;
+        }
+
+        @media (max-width: 360px) {
+            gap: 16px;
+            flex-direction: column;
+        }
+    }
+
+    &__link {
+        color: $color-cream;
+        text-decoration: none;
+        font-family: $font-family-sans;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        // Foco visível para navegação por teclado (WCAG 2.4.7)
+        &:focus-visible {
+            outline: 2px solid $color-cream;
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-roast;
+        }
+    }
+}
