@@ -48,7 +48,8 @@
             <navigation
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/navigation"
-                collectAllPages="true"
+                collectAllPages="false"
+                structureDepth="1"
                 disableShadowing="false"
                 navigationRoot="/content/brumacafe/us/en"
                 structureStart="1">
