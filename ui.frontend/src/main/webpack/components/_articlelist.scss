@@ -1,11 +1,62 @@
 @import '../site/variables';
 
+.bruma-article-hub {
+  max-width: var(--bruma-max-width);
+  margin: 0 auto;
+  padding: var(--bruma-space-lg) var(--bruma-space-md) var(--bruma-space-xl);
+}
+
+.bruma-article-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.bruma-filter-btn {
+  background-color: transparent;
+  color: var(--bruma-color-fog);
+  border: 1px solid var(--bruma-color-border);
+  border-radius: 4px; 
+  padding: 8px 16px;
+  font-family: var(--bruma-font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: var(--bruma-color-grain);
+    border-color: var(--bruma-color-grain);
+    background-color: var(--bruma-color-cream);
+  }
+
+  &.is-active {
+    background-color: var(--bruma-color-grain);
+    color: var(--bruma-color-cream);
+    border-color: var(--bruma-color-grain);
+    font-weight: 600;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bruma-color-roast);
+    outline-offset: 2px;
+  }
+}
+
+.bruma-article-count {
+  font-family: var(--bruma-font-sans);
+  font-size: 14px;
+  color: var(--bruma-color-fog);
+  margin-bottom: 32px;
+}
+
 .bruma-article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--bruma-space-md);
-  padding: var(--bruma-space-lg) var(--bruma-space-md) var(--bruma-space-xl);
-  max-width: var(--bruma-max-width);
   margin: 0 auto;
 }
 
@@ -14,9 +65,12 @@
   border-radius: var(--bruma-radius-card);
   border: 1px solid var(--bruma-color-border);
   overflow: hidden;
-  
   box-shadow: 0 2px 8px rgba($color-grain, 0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &.is-hidden {
+    display: none !important;
+  }
 
   &:hover {
     box-shadow: 0 8px 24px rgba($color-grain, 0.12);
@@ -115,4 +169,12 @@
       color: var(--bruma-color-border);
     }
   }
+}
+
+.bruma-article-empty-feedback {
+  text-align: center;
+  padding: var(--bruma-space-xl) var(--bruma-space-md);
+  color: var(--bruma-color-fog);
+  font-family: var(--bruma-font-sans);
+  font-size: 16px;
 }
