@@ -25,8 +25,10 @@ import javax.annotation.PostConstruct;
 import javax.jcr.Session;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
@@ -119,7 +121,25 @@ public class ArticleListModel {
     }
 
     private String findImageFileReference(Resource resource) {
-        if (resource == null) return null;
+        return findImageFileReference(resource, 0, new HashSet<>());
+    }
+
+    private String findImageFileReference(Resource resource, int depth, Set<String> visited) {
+        final int MAX_DEPTH = 5;
+
+        if (resource == null || depth > MAX_DEPTH) {
+            if (depth > MAX_DEPTH) {
+                LOG.debug("Max recursion depth reached while searching for image reference");
+            }
+            return null;
+        }
+
+        String path = resource.getPath();
+        if (visited.contains(path)) {
+            LOG.debug("Circular reference detected at: {}", path);
+            return null;
+        }
+        visited.add(path);
 
         String fileRef = resource.getValueMap().get("fileReference", String.class);
         if (StringUtils.isNotBlank(fileRef)) {
@@ -127,7 +147,7 @@ public class ArticleListModel {
         }
 
         for (Resource child : resource.getChildren()) {
-            String childRef = findImageFileReference(child);
+            String childRef = findImageFileReference(child, depth + 1, visited);
             if (StringUtils.isNotBlank(childRef)) {
                 return childRef;
             }
