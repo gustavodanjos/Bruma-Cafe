@@ -199,3 +199,4 @@ document.addEventListener('DOMContentLoaded', function() {
 // Expose functions to global scope for inline HTML handlers
 (window as any).toggleMessage = toggleMessage;
 (window as any).performAction = performAction;
+(window as any).loadMessages = loadMessages;
