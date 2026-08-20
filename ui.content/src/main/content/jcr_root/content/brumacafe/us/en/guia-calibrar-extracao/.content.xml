@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T07:42:05.127-03:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[brumacafe:preparo]"
+        cq:template="/conf/brumacafe/settings/wcm/templates/pagina-de-artigo"
+        jcr:description="Moagem, proporção e temperatura não são variáveis fixas. Aprenda a ajustar cada parâmetro de acordo com o perfil sensorial do café que você está preparando."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Guia prático: como calibrar sua extração para diferentes cafés"
+        sling:resourceType="brumacafe/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-13T07:36:55.871-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:created="{Date}2026-08-13T08:02:52.140-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-13T08:02:52.140-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/title"/>
+                <image
+                    jcr:created="{Date}2026-08-13T08:04:00.355-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T07:41:22.877-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/image"
+                    alt="Preparo de café especial e calibração de extração manual"
+                    altValueFromDAM="false"
+                    displayPopupTitle="true"
+                    fileReference="/content/dam/brumacafe/artigos/artigo-guia-calibracao-extracao.jpg"
+                    imageFromPageImage="false"
+                    isDecorative="false"
+                    linkTarget="_self"
+                    titleValueFromDAM="true"/>
+                <text
+                    jcr:created="{Date}2026-08-20T07:41:40.638-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T07:42:05.125-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;p>Não existe uma receita universal para o café. O que funciona perfeitamente para um natural etíope floral e delicado pode destruir um pulped natural brasileiro de corpo robusto. Calibrar a extração é, antes de tudo, uma prática de escuta.&lt;/p>&#xd;&#xa;&lt;p>Comece pela proporção. A SCA (Specialty Coffee Association) recomenda entre 55 e 65 gramas de café por litro de água para métodos filtrados. Mas isso é ponto de partida, não lei. Cafés de alta altitude e acidez viva geralmente pedem proporções ligeiramente mais baixas para não ficarem ácidos demais. Cafés com processo natural e corpo mais denso suportam proporções maiores sem perder clareza.&lt;/p>&#xd;&#xa;&lt;p>A moagem controla a velocidade de extração. Mais fina significa mais contato entre a água e o café — extração mais rápida e, potencialmente, excesso de compostos amargos. Mais grossa desacelera tudo e pode resultar em subextração, com notas azedas e aguadas. O ideal é ajustar até o tempo de extração cair dentro da janela recomendada para o método.&lt;/p>&#xd;&#xa;&lt;p>A temperatura da água é frequentemente subestimada. Entre 88°C e 96°C é o intervalo seguro, mas cafés mais claros (torrações mais leves) geralmente se beneficiam de temperaturas mais altas para dissolver seus compostos com eficiência. Torrações mais escuras pedem temperaturas menores para não acentuar o amargor.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T07:40:06.981-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

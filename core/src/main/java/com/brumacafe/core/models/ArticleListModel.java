@@ -5,6 +5,7 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.commons.lang3.StringUtils;
@@ -24,8 +25,10 @@ import javax.annotation.PostConstruct;
 import javax.jcr.Session;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
@@ -85,6 +88,7 @@ public class ArticleListModel {
                 Page page = pageManager.getPage(hit.getPath());
                 if (page != null) {
                     String imagePath = extractCoverImage(page);
+                    String category = extractCategory(page);
 
                     ArticleInfoModel infoModel = null;
                     if (page.getContentResource() != null) {
@@ -100,6 +104,7 @@ public class ArticleListModel {
                             page.getPath() + ".html",
                             page.getLastModified() != null ? page.getLastModified().getTime() : null,
                             imagePath,
+                            category,
                             formattedDate,
                             readingTime
                     ));
@@ -110,21 +115,53 @@ public class ArticleListModel {
         }
     }
 
-   
+    private String extractCategory(Page page) {
+        Tag[] tags = page.getTags();
+        if (tags != null && tags.length > 0) {
+            return StringUtils.defaultIfBlank(tags[0].getTitle(), tags[0].getName());
+        }
+        return "Conteúdo";
+    }
+
     private String extractCoverImage(Page page) {
         Resource contentResource = page.getContentResource();
         if (contentResource == null) return null;
 
-        Resource featuredImage = contentResource.getChild("cq:featuredimage");
-        if (featuredImage != null) {
-            return featuredImage.getValueMap().get("fileReference", String.class);
+        return findImageFileReference(contentResource);
+    }
+
+    private String findImageFileReference(Resource resource) {
+        return findImageFileReference(resource, 0, new HashSet<>());
+    }
+
+    private String findImageFileReference(Resource resource, int depth, Set<String> visited) {
+        final int MAX_DEPTH = 5;
+
+        if (resource == null || depth > MAX_DEPTH) {
+            if (depth > MAX_DEPTH) {
+                LOG.debug("Max recursion depth reached while searching for image reference");
+            }
+            return null;
         }
 
-        Resource imageNode = contentResource.getChild("image");
-        if (imageNode != null) {
-            return imageNode.getValueMap().get("fileReference", String.class);
+        String path = resource.getPath();
+        if (visited.contains(path)) {
+            LOG.debug("Circular reference detected at: {}", path);
+            return null;
         }
-        
+        visited.add(path);
+
+        String fileRef = resource.getValueMap().get("fileReference", String.class);
+        if (StringUtils.isNotBlank(fileRef)) {
+            return fileRef;
+        }
+
+        for (Resource child : resource.getChildren()) {
+            String childRef = findImageFileReference(child, depth + 1, visited);
+            if (StringUtils.isNotBlank(childRef)) {
+                return childRef;
+            }
+        }
         return null;
     }
 

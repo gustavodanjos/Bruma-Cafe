@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T07:46:16.185-03:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[brumacafe:produtores]"
+        cq:template="/conf/brumacafe/settings/wcm/templates/pagina-de-artigo"
+        jcr:description="Na Serra da Canastra, três gerações cultivam café sob sombra parcial de bananeiras e macadâmias. Uma visita que mudou nossa forma de selecionar lotes."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Conheça Sítio Esperança: a família Meireles e 80 anos de cafeicultura"
+        sling:resourceType="brumacafe/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-13T07:36:55.871-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:created="{Date}2026-08-13T08:02:52.140-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-13T08:02:52.140-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/title"/>
+                <image
+                    jcr:created="{Date}2026-08-13T08:04:00.355-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T07:45:32.639-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/image"
+                    alt="Produtor de café no terreiro do Sítio Esperança"
+                    altValueFromDAM="false"
+                    displayPopupTitle="true"
+                    fileReference="/content/dam/brumacafe/artigos/artigo-sitio-esperanca-produtores.jpg"
+                    imageFromPageImage="false"
+                    isDecorative="false"
+                    linkTarget="_self"
+                    titleValueFromDAM="true"/>
+                <text
+                    jcr:created="{Date}2026-08-20T07:45:55.388-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T07:46:16.183-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;p>Chegar ao Sítio Esperança exige paciência. São 40 minutos de estrada de terra depois que o asfalto acaba, subindo a Serra da Canastra por uma trilha que, em época de chuva, só veículos tração 4x4 conseguem completar. Para a família Meireles, isso é o mundo ao contrário: eles nasceram lá.&lt;/p>&#xd;&#xa;&lt;p>Dona Helena, 72 anos, nos recebe com café coado na meia e rosquinhas de polvilho. Ela é a segunda geração: o avô plantou as primeiras mudas de Bourbon Vermelho em 1944, quando a região ainda não tinha nome no mercado de especialidades. &amp;quot;Meu pai sabia que o café daqui era diferente, mas ninguém pagava por isso. Hoje é diferente.&amp;quot;&lt;/p>&#xd;&#xa;&lt;p>A diferença está no manejo. O Sítio Esperança usa sistema agroflorestal parcial: bananeiras e macadâmias sombreiam as fileiras de café, reduzindo a incidência solar direta e mantendo a umidade do solo. O resultado é uma maturação mais lenta e uniforme — precisamente o que procuramos.&lt;/p>&#xd;&#xa;&lt;p>O lote que selecionamos para a Bruma é um Bourbon Vermelho processado em cereja descascada, seco em terreiro suspenso por 25 dias. Na xícara: ameixa, chocolate amargo e acidez cítrica longa. Um café que conta uma história antes mesmo de você terminar a primeira gole.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T07:44:17.876-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>
