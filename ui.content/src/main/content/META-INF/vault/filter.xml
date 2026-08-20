@@ -6,6 +6,8 @@
         <exclude pattern="/content/dam/brumacafe(/.*)?"/>
         <include pattern="/content/dam/brumacafe/jcr:content(/.*)?"/>
         <include pattern="/content/dam/brumacafe/artigos(/.*)?"/>
+        <include pattern="/content/dam/brumacafe/fragments(/.*)?"/>
+        <include pattern="/content/dam/brumacafe/images(/.*)?"/>
     </filter>
     <filter root="/content/dam/brumacafe/asset.jpg" mode="merge"/>
     <filter root="/content/dam/brumacafe/logo.svg" mode="merge"/>

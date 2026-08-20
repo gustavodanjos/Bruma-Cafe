@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="040bb645-1b3d-41f4-8006-724597219aea">
+    <jcr:content
+        cq:name="bruma-serra-da-mantiqueira"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T22:57:52.497-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Bruma Serra da Mantiqueira"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T22:57:52.497-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                fotoCafe="/content/dam/brumacafe/images/brumaSerradaMantiqueira.jpg"
+                fotoCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.477-03:00"
+                fotoCafe_x0040_LastModifiedBy="admin"
+                nomeCafe="Bruma Serra da Mantiqueira"
+                nomeCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.475-03:00"
+                nomeCafe_x0040_LastModifiedBy="admin"
+                notasSensoriaisEDescricao="&lt;p>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/p>&#xa;"
+                notasSensoriaisEDescricao_x0040_ContentType="text/html"
+                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-12T22:57:52.476-03:00"
+                notasSensoriaisEDescricao_x0040_LastModifiedBy="admin"
+                nvelDeTorra="media"
+                nvelDeTorra_x0040_LastModified="{Date}2026-08-12T22:57:52.477-03:00"
+                nvelDeTorra_x0040_LastModifiedBy="admin"
+                origemCafe="Carmo de Minas - MG, 1.250m de altitude"
+                origemCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.475-03:00"
+                origemCafe_x0040_LastModifiedBy="admin"
+                produtorRef="/content/dam/brumacafe/fragments/dona-sebastiana"
+                produtorRef_x0040_LastModified="{Date}2026-08-12T22:57:52.478-03:00"
+                produtorRef_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="c9e41e4d-c40c-477f-9dfe-74aa95903a5a"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_nomeCafe="Bruma Serra da Mantiqueira"
+                string_x0040_notasSensoriaisEDescricao="&lt;p>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/p>&#xa;"
+                string_x0040_nvelDeTorra="media"
+                string_x0040_origemCafe="Carmo de Minas - MG, 1.250m de altitude"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

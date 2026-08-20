@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="e915059b-e9c9-46a3-a25c-c9e800a67557">
+    <jcr:content
+        cq:name="dona-sebastiana"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T22:56:32.622-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Dona Sebastiana"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T22:56:32.622-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/produtor"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                foto="/content/dam/brumacafe/images/donaSebastiana.jpg"
+                foto_x0040_LastModified="{Date}2026-08-12T22:56:32.611-03:00"
+                foto_x0040_LastModifiedBy="admin"
+                historia="&lt;p>Nascida e criada entre os cafezais da Serra da Mantiqueira, Dona Sebastiana herdou a paixão pelo cultivo artesanal de seus pais. Com mais de 40 anos de dedicação, ela lidera sua família na colheita seletiva manual, garantindo que apenas os grãos em perfeito estado de maturação cheguem à mesa. Seu cuidado com a secagem em terreiros suspensos confere aos cafés uma doçura natural inigualável e notas sensoriais marcantes.&lt;/p>&#xa;"
+                historia_x0040_ContentType="text/html"
+                historia_x0040_LastModified="{Date}2026-08-12T22:56:32.610-03:00"
+                historia_x0040_LastModifiedBy="admin"
+                nome="Dona Sebastiana"
+                nome_x0040_LastModified="{Date}2026-08-12T22:56:32.610-03:00"
+                nome_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="22ad24a9-9881-4b4b-bef2-76f6b06f3693"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/produtor"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_historia="&lt;p>Nascida e criada entre os cafezais da Serra da Mantiqueira, Dona Sebastiana herdou a paixão pelo cultivo artesanal de seus pais. Com mais de 40 anos de dedicação, ela lidera sua família na colheita seletiva manual, garantindo que apenas os grãos em perfeito estado de maturação cheguem à mesa. Seu cuidado com a secagem em terreiros suspensos confere aos cafés uma doçura natural inigualável e notas sensoriais marcantes.&lt;/p>&#xa;"
+                string_x0040_nome="Dona Sebastiana"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
