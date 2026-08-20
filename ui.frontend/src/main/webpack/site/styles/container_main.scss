@@ -1,6 +1,46 @@
-
 //== Container main content style, used on page template
 
-main.container {
-    padding: .5em 1em;
+// 1. Make body a flex column filling the full viewport
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+// Prevent iframe infinite loop bug in AEM Editor
+body.aem-AuthorLayer-Edit,
+.cq-wcm-edit body {
+    min-height: auto;
+}
+
+body > .root,
+body > .root > .cmp-container,
+body > .root > .cmp-container > .aem-Grid {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+// 2. Hide clearfixes so they don't become stray flex items
+body > .root > .cmp-container > .aem-Grid::before,
+body > .root > .cmp-container > .aem-Grid::after {
+    display: none !important;
+}
+
+// 3. Make the main content area expand to push the footer down
+body > .root > .cmp-container > .aem-Grid > main.aem-GridColumn,
+body > .root > .cmp-container > .aem-Grid > .aem-GridColumn:nth-child(2) {
+    flex: 1 0 auto !important;
+}
+
+// 4. Hide the AEM "drop component here" placeholder that appears after the
+//    footer when logged in — it adds a 46px white gap below the footer.
+//    Safe to hide here: the real authoring parsys is only active in edit mode.
+footer.experiencefragment ~ .aem-Grid-newComponent {
+    display: none !important;
 }

@@ -35,9 +35,10 @@
                             </sly>
 
                             <div class="bruma-article-card__meta">
-                                <span>${article.date @ format='dd/MM/yyyy'}</span>
+                                <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
+                                <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
                                 <span class="separator">·</span>
-                                <span>3 min de leitura</span>
+                                <span>${article.readingTime} min de leitura</span>
                             </div>
                         </div>
                     </a>

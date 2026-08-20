@@ -90,13 +90,23 @@ public class ArticleListModel {
                     String imagePath = extractCoverImage(page);
                     String category = extractCategory(page);
 
+                    ArticleInfoModel infoModel = null;
+                    if (page.getContentResource() != null) {
+                        infoModel = page.getContentResource().adaptTo(ArticleInfoModel.class);
+                    }
+                    
+                    String formattedDate = infoModel != null ? infoModel.getFormattedDate() : "";
+                    int readingTime = infoModel != null ? infoModel.getReadingTime() : 1;
+
                     articles.add(new ArticleDTO(
                             page.getTitle() != null ? page.getTitle() : page.getName(),
                             page.getDescription(),
                             page.getPath() + ".html",
                             page.getLastModified() != null ? page.getLastModified().getTime() : null,
                             imagePath,
-                            category
+                            category,
+                            formattedDate,
+                            readingTime
                     ));
                 }
             }
