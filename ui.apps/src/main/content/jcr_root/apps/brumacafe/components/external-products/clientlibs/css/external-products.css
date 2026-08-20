@@ -100,3 +100,61 @@
     font-weight: 600;
     color: var(--bruma-color-roast);
 }
+
+
+.external-products-container .external-products-header h2 {
+    font-family: var(--bruma-font-serif);
+    font-size: 28px;
+    color: var(--bruma-color-grain);
+    margin: 0;
+}
+
+.product-price-link-block .product-buy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: var(--bruma-color-roast);
+    color: var(--bruma-color-white);
+    font-family: var(--bruma-font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: var(--bruma-radius-control);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+.product-price-link-block .product-buy-btn:hover {
+    background-color: #9A4623;
+    transform: translateY(-1px);
+}
+
+.product-price-link-block .product-buy-btn:focus-visible {
+    outline: 2px solid var(--bruma-color-grain);
+    outline-offset: 2px;
+}
+
+.product-price-link-block .external-icon {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.external-products-fallback {
+    width: 100%;
+    max-width: var(--bruma-max-width);
+    margin: 0 auto;
+    padding: var(--bruma-space-lg) var(--bruma-space-sm);
+    text-align: center;
+    background-color: var(--bruma-color-cream);
+    border-radius: var(--bruma-radius-card);
+    box-sizing: border-box;
+}
+
+.external-products-fallback p {
+    font-family: var(--bruma-font-sans);
+    font-size: 16px;
+    color: var(--bruma-color-fog);
+    margin: 0;
+}
