@@ -8,13 +8,15 @@ public class ArticleDTO {
     private final String path;
     private final Date date;
     private final String imagePath;
+    private final String category;
 
-    public ArticleDTO(String title, String description, String path, Date date, String imagePath) {
+    public ArticleDTO(String title, String description, String path, Date date, String imagePath, String category) {
         this.title = title;
         this.description = description;
         this.path = path;
         this.date = date;
         this.imagePath = imagePath;
+        this.category = category;
     }
 
     public String getTitle() { return title; }
@@ -22,4 +24,5 @@ public class ArticleDTO {
     public String getPath() { return path; }
     public Date getDate() { return date; }
     public String getImagePath() { return imagePath; }
+    public String getCategory() { return category; }
 }
