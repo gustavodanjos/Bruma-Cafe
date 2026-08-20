@@ -1,0 +1,43 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='brumacafe.external'}"/>
+</sly>
+
+<sly data-sly-use.vitrine="com.brumacafe.core.models.ShowExternalProductModel">
+    
+    <div class="external-products-container" data-sly-test="${vitrine.configured}">
+        <div class="external-products-header">
+            <h2>Produtos em Destaque</h2>
+        </div>
+
+        <div class="product-card-container" data-sly-list.item="${vitrine.produtos}">
+            <div class="product-card">
+                <div class="product-card-media">
+                    <img src="${item.thumbnail @ context='uri'}" alt="${item.title}" />
+                </div>
+                <div class="product-info">
+                    <h3>${item.title}</h3>
+                    <div class="product-price-link-block">
+                        <span class="product-price">$ ${item.price}</span>
+                        <a class="product-buy-btn" 
+                           href="https://dummyjson.com/products/${item.id @ context='uri'}" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="Comprar ${item.title} na loja externa">
+                            Comprar
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="external-products-fallback" data-sly-test="${!vitrine.configured}">
+        <p>Nossa loja virtual está passando por atualizações no momento. Volte em breve para conferir os produtos!</p>
+    </div>
+
+    <div class="cq-placeholder" 
+         data-emptytext="Vitrine da Loja - Aguardando conexão com a API" 
+         data-sly-test="${!vitrine.configured}"></div>
+
+</sly>
