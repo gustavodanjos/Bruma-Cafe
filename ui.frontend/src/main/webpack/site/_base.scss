@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+// Breakpoints expostos como CSS custom properties para consumo por JS
+// O JS lê via: getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-mobile')
+:root {
+    --breakpoint-mobile: 768;
+}
+
 html {
     scroll-behavior: smooth;
 }

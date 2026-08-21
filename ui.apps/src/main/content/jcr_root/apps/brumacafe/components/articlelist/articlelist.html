@@ -6,45 +6,93 @@
     </sly>
 
     <sly data-sly-test="${!model.empty}">
-        <div class="bruma-article-grid">
-            <sly data-sly-list.article="${model.articles}">
+        <div class="bruma-article-hub" data-component="articlelist">
 
-                <article class="bruma-article-card">
-                    <a href="${article.path}" class="bruma-article-card__link">
-                        
-                        <div class="bruma-article-card__image-wrapper">
-                            <sly data-sly-test="${article.imagePath}">
-                                <img src="${article.imagePath}" alt="${article.title}" class="bruma-article-card__image"/>
-                            </sly>
-                            <sly data-sly-test="${!article.imagePath}">
-                                <div class="bruma-article-card__image-placeholder"></div>
-                            </sly>
-                        </div>
+            <!-- Hero Header alterado para div para evitar herança do header fixo -->
+            <div class="bruma-article-hub__header">
+                <span class="bruma-article-hub__tag">Hub de Conteúdo</span>
+                <h1 class="bruma-article-hub__title">Tudo que você precisa saber sobre café especial</h1>
+                <p class="bruma-article-hub__description">
+                    Artigos sobre preparo, origem, produtores e processos — escritos para quem bebe café com atenção.
+                </p>
+                <div class="bruma-article-search">
+                    <svg class="bruma-article-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text"
+                           class="bruma-article-search__input"
+                           placeholder="Buscar artigos..."
+                           aria-label="Buscar artigos por título ou descrição" />
+                </div>
+            </div>
 
-                        <div class="bruma-article-card__content">
-                            <span class="bruma-article-card__category">${article.category}</span>
+            <div class="bruma-article-filters" role="tablist" aria-label="Filtrar artigos por assunto">
+                <button type="button"
+                        class="bruma-filter-btn is-active"
+                        data-filter="all"
+                        role="tab"
+                        aria-selected="true">
+                    Todos
+                </button>
+                <sly data-sly-list.category="${model.categories}">
+                    <button type="button"
+                            class="bruma-filter-btn"
+                            data-filter="${category}"
+                            role="tab"
+                            aria-selected="false">
+                        ${category}
+                    </button>
+                </sly>
+            </div>
 
-                            <h3 class="bruma-article-card__title">
-                                ${article.title}
-                            </h3>
+            <p class="bruma-article-count">
+                <span class="bruma-article-count__number">0</span> artigos encontrados
+            </p>
 
-                            <sly data-sly-test="${article.description}">
-                                <p class="bruma-article-card__description">
-                                    ${article.description}
-                                </p>
-                            </sly>
+            <div class="bruma-article-grid">
+                <sly data-sly-list.article="${model.articles}">
+                    <article class="bruma-article-card" data-category="${article.category}">
+                        <a href="${article.path}" class="bruma-article-card__link">
 
-                            <div class="bruma-article-card__meta">
-                                <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
-                                <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
-                                <span class="separator">·</span>
-                                <span>${article.readingTime} min de leitura</span>
+                            <div class="bruma-article-card__image-wrapper">
+                                <sly data-sly-test="${article.imagePath}">
+                                    <img src="${article.imagePath}" alt="${article.title}" class="bruma-article-card__image"/>
+                                </sly>
+                                <sly data-sly-test="${!article.imagePath}">
+                                    <div class="bruma-article-card__image-placeholder"></div>
+                                </sly>
                             </div>
-                        </div>
-                    </a>
-                </article>
 
-            </sly>
+                            <div class="bruma-article-card__content">
+                                <span class="bruma-article-card__category">${article.category}</span>
+
+                                <h3 class="bruma-article-card__title">
+                                    ${article.title}
+                                </h3>
+
+                                <sly data-sly-test="${article.description}">
+                                    <p class="bruma-article-card__description">
+                                        ${article.description}
+                                    </p>
+                                </sly>
+
+                                <div class="bruma-article-card__meta">
+                                    <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
+                                    <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
+                                    <span class="separator">·</span>
+                                    <span>${article.readingTime} min de leitura</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </sly>
+            </div>
+
+            <div class="bruma-article-empty-feedback" style="display: none;">
+                <p>Nenhum artigo encontrado.</p>
+            </div>
+
         </div>
     </sly>
 </sly>

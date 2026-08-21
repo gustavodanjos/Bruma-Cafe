@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d6751f9a-5064-42f3-8f24-fb99b1d6bcbd">
+    <jcr:content
+        cq:name="bruma-chapada-diamantina"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T22:58:59.745-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Bruma Chapada Diamantina"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T22:58:59.745-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                fotoCafe="/content/dam/brumacafe/images/brumaChapadaDiamantina.jpg"
+                fotoCafe_x0040_LastModified="{Date}2026-08-12T22:58:59.730-03:00"
+                fotoCafe_x0040_LastModifiedBy="admin"
+                nomeCafe="Bruma Chapada Diamantina"
+                nomeCafe_x0040_LastModified="{Date}2026-08-12T22:58:59.728-03:00"
+                nomeCafe_x0040_LastModifiedBy="admin"
+                notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Aroma floral intenso, com notas sensoriais de rapadura, pêssego e finalização prolongada com toque de mel.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                notasSensoriaisEDescricao_x0040_ContentType="text/html"
+                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-12T22:58:59.729-03:00"
+                notasSensoriaisEDescricao_x0040_LastModifiedBy="admin"
+                nvelDeTorra="clara"
+                nvelDeTorra_x0040_LastModified="{Date}2026-08-12T22:58:59.730-03:00"
+                nvelDeTorra_x0040_LastModifiedBy="admin"
+                origemCafe="Piatã - BA, 1.380m de altitude"
+                origemCafe_x0040_LastModified="{Date}2026-08-12T22:58:59.729-03:00"
+                origemCafe_x0040_LastModifiedBy="admin"
+                produtorRef="/content/dam/brumacafe/fragments/seu-altamiro"
+                produtorRef_x0040_LastModified="{Date}2026-08-12T22:58:59.731-03:00"
+                produtorRef_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="f6b5dd47-755f-43b5-8265-3c434a75d937"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_nomeCafe="Bruma Chapada Diamantina"
+                string_x0040_notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Aroma floral intenso, com notas sensoriais de rapadura, pêssego e finalização prolongada com toque de mel.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                string_x0040_nvelDeTorra="clara"
+                string_x0040_origemCafe="Piatã - BA, 1.380m de altitude"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

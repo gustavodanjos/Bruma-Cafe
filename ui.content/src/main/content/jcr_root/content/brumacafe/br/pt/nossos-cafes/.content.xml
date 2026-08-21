@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T13:05:19.933-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:description="Descubra nossos cafés de safras exclusivas. Conheça as notas sensoriais, a região de origem e a história de cada produtor parceiro da Bruma."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Nossos Cafés"
+        sling:resourceType="brumacafe/components/page"
+        navTitle="Cafés"
+        pageTitle="Nossos Cafés Especiais | Bruma Café"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <info_cafe
+                    jcr:created="{Date}2026-08-20T13:04:37.758-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T13:05:19.931-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/info-cafe">
+                    <cafes jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-cerrado-mineiro"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-chapada-diamantina"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-matas-de-minas"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-serra-da-mantiqueira"/>
+                    </cafes>
+                </info_cafe>
+            </container>
+            <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:53:21.194-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

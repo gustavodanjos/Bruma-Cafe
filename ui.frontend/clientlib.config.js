@@ -88,6 +88,23 @@ module.exports = {
           ignore: ['**/*.js', '**/*.css']
         }
       }
+    },
+    {
+      ...libsBaseConfig,
+      name: "clientlib-admin-contactmessages",
+      categories: ["brumacafe.admin.contactmessages"],
+      assets: {
+        js: {
+          cwd: "clientlib-admin-contactmessages",
+          files: ["**/*.js"],
+          flatten: false
+        },
+        css: {
+          cwd: "clientlib-admin-contactmessages",
+          files: ["**/*.css"],
+          flatten: false
+        }
+      }
     }
   ]
 };

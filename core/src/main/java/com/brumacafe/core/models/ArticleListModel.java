@@ -24,8 +24,11 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.jcr.Session;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -37,12 +40,16 @@ import java.util.Set;
 public class ArticleListModel {
 
     private static final Logger LOG = LoggerFactory.getLogger(ArticleListModel.class);
+    
+    private static final List<String> ORDERED_CATEGORIES = Collections.unmodifiableList(
+        Arrays.asList("Preparo", "Origem", "Produtores")
+    );
 
     @ValueMapValue
     private String listRoot;
 
     @ValueMapValue
-    @Default(intValues = 4)
+    @Default(intValues = 12)
     private int limit;
 
     @ValueMapValue
@@ -56,6 +63,7 @@ public class ArticleListModel {
     private ResourceResolver resourceResolver;
 
     private List<ArticleDTO> articles = new ArrayList<>();
+    private List<String> categories = new ArrayList<>();
 
     @PostConstruct
     protected void init() {
@@ -84,17 +92,23 @@ public class ArticleListModel {
             Query query = queryBuilder.createQuery(PredicateGroup.create(map), session);
             SearchResult result = query.getResult();
 
+            Set<String> uniqueCategories = new LinkedHashSet<>();
+
             for (Hit hit : result.getHits()) {
                 Page page = pageManager.getPage(hit.getPath());
                 if (page != null) {
                     String imagePath = extractCoverImage(page);
                     String category = extractCategory(page);
 
+                    if (StringUtils.isNotBlank(category) && !"Conteúdo".equalsIgnoreCase(category)) {
+                        uniqueCategories.add(category);
+                    }
+
                     ArticleInfoModel infoModel = null;
                     if (page.getContentResource() != null) {
                         infoModel = page.getContentResource().adaptTo(ArticleInfoModel.class);
                     }
-                    
+
                     String formattedDate = infoModel != null ? infoModel.getFormattedDate() : "";
                     int readingTime = infoModel != null ? infoModel.getReadingTime() : 1;
 
@@ -110,6 +124,21 @@ public class ArticleListModel {
                     ));
                 }
             }
+
+            List<String> sortedCategories = new ArrayList<>(uniqueCategories);
+            sortedCategories.sort((c1, c2) -> {
+                int idx1 = ORDERED_CATEGORIES.indexOf(c1);
+                int idx2 = ORDERED_CATEGORIES.indexOf(c2);
+                if (idx1 != -1 && idx2 != -1) {
+                    return Integer.compare(idx1, idx2);
+                }
+                if (idx1 != -1) return -1;
+                if (idx2 != -1) return 1;
+                return c1.compareToIgnoreCase(c2);
+            });
+
+            this.categories = sortedCategories;
+
         } catch (Exception e) {
             LOG.error("Erro ao buscar artigos no QueryBuilder", e);
         }
@@ -167,6 +196,10 @@ public class ArticleListModel {
 
     public List<ArticleDTO> getArticles() {
         return articles;
+    }
+
+    public List<String> getCategories() {
+        return categories;
     }
 
     public boolean isEmpty() {
