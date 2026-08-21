@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T13:03:28.229-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:description="Conheça a história e os valores por trás da Bruma Café. Valorizamos quem planta e entregamos o melhor do café especial brasileiro na sua xícara."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sobre"
+        sling:resourceType="brumacafe/components/page"
+        navTitle="Sobre"
+        pageTitle="Nossa História | Bruma Café Especial"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <content_grid
+                    jcr:created="{Date}2026-08-20T13:01:37.515-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T13:03:28.227-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/content-grid">
+                    <items jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            alt="café pronto em cima da mesa"
+                            fileReference="/content/dam/brumacafe/images/brumaMatasdeMinas.jpg"
+                            text="Bom café"
+                            title="Café"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            alt="cafe pronto na mao de alguem"
+                            fileReference="/content/dam/brumacafe/images/brumaSerradaMantiqueira.jpg"
+                            text="Parece um bom café"
+                            title="Cafe denovo"/>
+                    </items>
+                </content_grid>
+            </container>
+            <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:53:40.459-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

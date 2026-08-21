@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="6711a4da-2712-4df3-aa4a-4cd9da9b52c8">
+    <jcr:content
+        cq:name="bruma-cerrado-mineiro"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T22:59:55.370-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Bruma Cerrado Mineiro"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T22:59:55.370-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                fotoCafe="/content/dam/brumacafe/images/brumaCerradoMineiro.jpg"
+                fotoCafe_x0040_LastModified="{Date}2026-08-12T22:59:55.357-03:00"
+                fotoCafe_x0040_LastModifiedBy="admin"
+                nomeCafe="Bruma Cerrado Mineiro"
+                nomeCafe_x0040_LastModified="{Date}2026-08-12T22:59:55.355-03:00"
+                nomeCafe_x0040_LastModifiedBy="admin"
+                notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Perfil clássico e aconchegante, destacando chocolate amargo, nozes torradas e uma doçura marcante que remete à acentuada doçura de cana.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                notasSensoriaisEDescricao_x0040_ContentType="text/html"
+                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-12T22:59:55.356-03:00"
+                notasSensoriaisEDescricao_x0040_LastModifiedBy="admin"
+                nvelDeTorra="media"
+                nvelDeTorra_x0040_LastModified="{Date}2026-08-12T22:59:55.356-03:00"
+                nvelDeTorra_x0040_LastModifiedBy="admin"
+                origemCafe="Patrocínio - MG, 1.100m de altitude"
+                origemCafe_x0040_LastModified="{Date}2026-08-12T22:59:55.356-03:00"
+                origemCafe_x0040_LastModifiedBy="admin"
+                produtorRef="/content/dam/brumacafe/fragments/seu-altamiro"
+                produtorRef_x0040_LastModified="{Date}2026-08-12T22:59:55.357-03:00"
+                produtorRef_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="f9e20549-3531-48e2-8e38-f4d8291543bd"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_nomeCafe="Bruma Cerrado Mineiro"
+                string_x0040_notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Perfil clássico e aconchegante, destacando chocolate amargo, nozes torradas e uma doçura marcante que remete à acentuada doçura de cana.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                string_x0040_nvelDeTorra="media"
+                string_x0040_origemCafe="Patrocínio - MG, 1.100m de altitude"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

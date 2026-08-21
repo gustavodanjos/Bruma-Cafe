@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[]"
+        cq:template="/conf/brumacafe/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Header"
+        sling:resourceType="brumacafe/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <logo/>
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/image"
+                alt="Logo"
+                altValueFromDAM="false"
+                altValueFromPageImage="false"
+                displayPopupTitle="true"
+                fileName="bruma-cafe-logo.png"
+                fileReference="/content/dam/brumacafe/logo.svg"
+                imageFromPageImage="false"
+                isDecorative="false"
+                linkTarget="_self"
+                linkURL="/content/brumacafe/us/en"
+                titleValueFromDAM="true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="1"/>
+                    <phone
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="2"/>
+                    <tablet
+                        jcr:primaryType="nt:unstructured"
+                        behavior="newline"
+                        offset="4"
+                        width="4"/>
+                </cq:responsive>
+                <file/>
+            </image>
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/navigation"
+                collectAllPages="false"
+                disableShadowing="false"
+                navigationRoot="/content/brumacafe/us/en"
+                structureDepth="1"
+                structureStart="1">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        behavior="none"
+                        offset="1"
+                        width="7"/>
+                </cq:responsive>
+            </navigation>
+            <button
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Ir para a Loja"
+                sling:resourceType="brumacafe/components/button"
+                linkTarget="_self"
+                linkURL="#">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        behavior="none"
+                        offset="1"
+                        width="1"/>
+                    <phone
+                        jcr:primaryType="nt:unstructured"
+                        behavior="newline"
+                        offset="1"
+                        width="10"/>
+                </cq:responsive>
+            </button>
+        </root>
+    </jcr:content>
+</jcr:root>
