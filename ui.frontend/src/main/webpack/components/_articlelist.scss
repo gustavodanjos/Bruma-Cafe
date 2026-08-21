@@ -3,7 +3,79 @@
 .bruma-article-hub {
   max-width: var(--bruma-max-width);
   margin: 0 auto;
-  padding: var(--bruma-space-lg) var(--bruma-space-md) var(--bruma-space-xl);
+  padding: 48px var(--bruma-space-md) 96px;
+
+  &__header {
+    background-color: var(--bruma-color-cream);
+    padding: 64px 32px 48px;
+    border-radius: var(--bruma-radius-card);
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__tag {
+    font-family: var(--bruma-font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--bruma-color-fog);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-family: var(--bruma-font-serif);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--bruma-color-grain);
+    line-height: 1.15;
+    margin: 0 0 16px 0;
+    max-width: 640px;
+  }
+
+  &__description {
+    font-family: var(--bruma-font-sans);
+    font-size: 16px;
+    color: var(--bruma-color-fog);
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    max-width: 520px;
+  }
+}
+
+.bruma-article-search {
+  max-width: 520px;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bruma-color-fog);
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border-radius: var(--bruma-radius-control);
+    border: 1px solid var(--bruma-color-border);
+    background-color: var(--bruma-color-white);
+    font-family: var(--bruma-font-sans);
+    font-size: 16px;
+    color: var(--bruma-color-grain);
+    outline: none;
+    box-shadow: 0 1px 4px rgba($color-grain, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: var(--bruma-color-grain);
+      box-shadow: 0 0 0 2px rgba($color-grain, 0.1);
+    }
+  }
 }
 
 .bruma-article-filters {
@@ -19,7 +91,7 @@
   background-color: transparent;
   color: var(--bruma-color-fog);
   border: 1px solid var(--bruma-color-border);
-  border-radius: 4px; 
+  border-radius: 4px;
   padding: 8px 16px;
   font-family: var(--bruma-font-sans);
   font-size: 14px;
