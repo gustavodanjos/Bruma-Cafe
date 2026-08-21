@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:dam="http://www.day.com/dam/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          xmlns:dc="http://purl.org/dc/elements/1.1/"
-    jcr:primaryType="dam:Asset">
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="bf19598b-0005-43ab-b5ef-1b62553a0ba2">
     <jcr:content
-        jcr:lastModified="{Date}2026-08-11T00:00:00.000Z"
+        dam:assetState="processed"
+        jcr:lastModified="{Date}2026-08-12T10:21:03.814-03:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
+            dam:extracted="{Date}2026-08-12T10:21:02.891-03:00"
             dam:MIMEtype="image/svg+xml"
+            dam:sha1="b2e7b88e659f08db52f140a4e5de3e79e34f477a"
+            dam:size="{Long}3432"
             dc:format="image/svg+xml"
             dc:title="Bruma Café Logo"
             jcr:primaryType="nt:unstructured"/>
-        <renditions jcr:primaryType="nt:folder"/>
     </jcr:content>
 </jcr:root>

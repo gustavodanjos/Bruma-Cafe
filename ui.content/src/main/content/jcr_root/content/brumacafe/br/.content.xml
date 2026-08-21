@@ -23,8 +23,6 @@
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid"/>
             <title
-                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
-                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-18T11:49:35.002-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"

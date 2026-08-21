@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2026-08-10T15:03:55.797-03:00"
+        cq:lastModified="{Date}2026-08-20T12:31:36.824-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:primaryType="cq:PageContent"
@@ -13,22 +13,19 @@
             sling:resourceType="brumacafe/components/container"
             layout="responsiveGrid">
             <experiencefragment
-                jcr:created="{Date}2026-08-10T15:03:50.477-03:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2026-08-10T15:03:50.477-03:00"
+                jcr:lastModified="{Date}2026-08-12T11:28:14.555-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/experiencefragment"
                 fragmentVariationPath="/content/experience-fragments/brumacafe/us/en/site/header/master"/>
             <container
+                jcr:lastModified="{Date}2026-08-12T09:29:30.198-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
-                editable="{Boolean}true"
-                layout="responsiveGrid"/>
+                editable="{Boolean}true"/>
             <experiencefragment_1988736219
-                jcr:created="{Date}2026-08-10T15:03:55.793-03:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2026-08-10T15:03:55.793-03:00"
+                jcr:lastModified="{Date}2026-08-12T11:15:00.540-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/experiencefragment"
