@@ -1,0 +1,30 @@
+@import '../site/variables';
+
+.bruma-related-articles {
+  background-color: var(--bruma-color-cream);
+  padding: 72px var(--bruma-space-md);
+  margin-top: var(--bruma-space-xl);
+  border-top: 1px solid var(--bruma-color-border);
+
+  &__container {
+    max-width: var(--bruma-max-width);
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: var(--bruma-font-serif);
+    font-weight: 600;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--bruma-color-grain);
+    margin: 0 0 40px 0;
+    line-height: 1.2;
+  }
+
+  .bruma-article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--bruma-space-md);
+    padding: 0;
+    margin: 0 auto;
+  }
+}
