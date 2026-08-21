@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-20T13:10:02.079-03:00"
+        cq:lastModified="{Date}2026-08-21T11:41:31.421-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Mergulhe no universo do café especial. Leia nossos artigos sobre métodos de preparo, processos de pós-colheita e as histórias das fazendas."
@@ -25,8 +25,6 @@
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
                 <articlelist
-                    jcr:created="{Date}2026-08-20T13:06:49.151-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T13:10:02.077-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -34,10 +32,38 @@
                     limit="10"
                     listRoot="/content/brumacafe/br/pt/hub"
                     sortOrder="desc"/>
+                <featuredarticle
+                    jcr:lastModified="{Date}2026-08-21T11:40:40.584-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featuredarticle"/>
+                <featuredarticle_1300283527
+                    jcr:lastModified="{Date}2026-08-21T11:40:46.658-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featuredarticle"/>
+                <relatedarticles
+                    jcr:lastModified="{Date}2026-08-21T11:40:55.120-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/relatedarticles"/>
+                <featuredarticle_413076921
+                    jcr:lastModified="{Date}2026-08-21T11:41:00.507-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featuredarticle"/>
+                <relatedarticles_880823550
+                    jcr:lastModified="{Date}2026-08-21T11:41:02.515-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/relatedarticles"/>
+                <article_info
+                    jcr:lastModified="{Date}2026-08-21T11:41:31.418-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/article-info"/>
             </container>
             <title
-                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
-                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"

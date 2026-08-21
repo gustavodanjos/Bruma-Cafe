@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T10:03:17.154-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home"
+        sling:resourceType="brumacafe/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <store_callout
+                    jcr:lastModified="{Date}2026-08-19T10:03:24.052-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/store-callout"
+                    buttonLabel="Comprar Agora"
+                    buttonLink="https://www.mercafe.com.br/cafes-especiais-promocao?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=ceo_cafe_gourmet&amp;gad_source=1&amp;gad_campaignid=23899624304&amp;gbraid=0AAAAACYl42gbomcxR0B901fbYswiAzPFt&amp;gclid=CjwKCAjwqJXUBhBNEiwA8BgG7vDb0F7anJltlbLgXvdliHMls9LEEpWjoMBekZCOA0HYIdmvmbdsxxoCsRYQAvD_BwE"
+                    fileReference="/content/dam/brumacafe/images/seuAltamiro.jpg"
+                    text="Leve o nosso café para sua casa"
+                    title="Venha comprar">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                    </cq:responsive>
+                </store_callout>
+                <articlelist
+                    jcr:lastModified="{Date}2026-08-20T10:03:17.152-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/articlelist"
+                    limit="5"
+                    listRoot="/content/brumacafe/us/en/hub0"
+                    sortOrder="desc"/>
+            </container>
+            <title
+                jcr:lastModified="{Date}2026-08-18T11:49:35.002-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+    </jcr:content>
+</jcr:root>

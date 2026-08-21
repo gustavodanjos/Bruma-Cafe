@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-20T13:03:28.229-03:00"
+        cq:lastModified="{Date}2026-08-21T11:45:30.035-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Conheça a história e os valores por trás da Bruma Café. Valorizamos quem planta e entregamos o melhor do café especial brasileiro na sua xícara."
@@ -25,8 +25,6 @@
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
                 <content_grid
-                    jcr:created="{Date}2026-08-20T13:01:37.515-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T13:03:28.227-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -46,10 +44,18 @@
                             title="Cafe denovo"/>
                     </items>
                 </content_grid>
+                <featuredarticle
+                    jcr:lastModified="{Date}2026-08-21T11:45:27.614-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featuredarticle"/>
+                <relatedarticles
+                    jcr:lastModified="{Date}2026-08-21T11:45:30.031-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/relatedarticles"/>
             </container>
             <title
-                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
-                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"

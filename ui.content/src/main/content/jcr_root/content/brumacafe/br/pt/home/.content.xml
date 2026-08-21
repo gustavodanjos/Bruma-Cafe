@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-20T12:47:03.124-03:00"
+        cq:lastModified="{Date}2026-08-21T11:26:52.359-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Selecionamos cafés especiais brasileiros diretamente dos produtores. Torramos em pequenos lotes e contamos histórias de origem. Conheça a Bruma Café."
@@ -25,8 +25,6 @@
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
                 <main_banner
-                    jcr:created="{Date}2026-08-20T12:34:18.221-03:00"
-                    jcr:createdBy="admin"
                     jcr:description="Selecionamos cafés especiais brasileiros diretamente de produtores, valorizando a origem, o processo e as pessoas por trás de cada colheita."
                     jcr:lastModified="{Date}2026-08-20T12:34:33.644-03:00"
                     jcr:lastModifiedBy="admin"
@@ -38,8 +36,6 @@
                     buttonText="Conheça nossos cafés"
                     fileReference="/content/dam/brumacafe/images/seuAltamiro.jpg"/>
                 <text
-                    jcr:created="{Date}2026-08-20T12:37:31.435-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:37:56.224-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -54,8 +50,6 @@
                     </cq:responsive>
                 </text>
                 <title
-                    jcr:created="{Date}2026-08-20T12:39:11.773-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:43:39.092-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -68,28 +62,7 @@
                             width="7"/>
                     </cq:responsive>
                 </title>
-                <button
-                    jcr:created="{Date}2026-08-20T12:39:52.903-03:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-08-20T12:41:54.516-03:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Ver Todos Artigos"
-                    sling:resourceType="brumacafe/components/button"
-                    accessibilityLabel="hub de conteudo"
-                    icon="Ver Todos Artigos"
-                    linkTarget="_self"
-                    linkURL="/content/brumacafe/br/pt/home">
-                    <cq:responsive jcr:primaryType="nt:unstructured">
-                        <default
-                            jcr:primaryType="nt:unstructured"
-                            offset="0"
-                            width="3"/>
-                    </cq:responsive>
-                </button>
                 <articlelist
-                    jcr:created="{Date}2026-08-20T12:36:10.306-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:36:39.798-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -98,8 +71,6 @@
                     listRoot="/content/brumacafe/us/en/hub0"
                     sortOrder="desc"/>
                 <text_536744345
-                    jcr:created="{Date}2026-08-20T12:45:07.493-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:45:24.983-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -114,8 +85,6 @@
                     </cq:responsive>
                 </text_536744345>
                 <title_978074380
-                    jcr:created="{Date}2026-08-20T12:44:44.445-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:44:59.049-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -129,8 +98,6 @@
                     </cq:responsive>
                 </title_978074380>
                 <info_cafe
-                    jcr:created="{Date}2026-08-20T12:43:50.971-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T12:44:11.394-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -143,8 +110,6 @@
                 </info_cafe>
             </container>
             <title
-                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
-                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-18T11:49:35.002-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"

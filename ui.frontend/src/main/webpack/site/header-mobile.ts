@@ -111,8 +111,10 @@ class HeaderController {
                 }
             } else {
                 if (buttonWrapper.parentElement !== this.container) {
-                    if (navWrapper && navWrapper.nextSibling) {
-                        this.container?.insertBefore(buttonWrapper, navWrapper.nextSibling);
+                    const nextSibling = navWrapper?.nextSibling;
+                    const isNextSiblingChild = nextSibling && this.container?.contains(nextSibling) && nextSibling.parentNode === this.container;
+                    if (isNextSiblingChild) {
+                        this.container?.insertBefore(buttonWrapper, nextSibling);
                     } else {
                         this.container?.appendChild(buttonWrapper);
                     }
