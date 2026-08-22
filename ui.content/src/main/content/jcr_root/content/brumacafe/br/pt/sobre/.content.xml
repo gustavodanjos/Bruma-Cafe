@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-21T11:45:30.035-03:00"
+        cq:lastModified="{Date}2026-08-22T00:57:39.155-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Conheça a história e os valores por trás da Bruma Café. Valorizamos quem planta e entregamos o melhor do café especial brasileiro na sua xícara."
@@ -24,8 +24,59 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
+                <main_banner
+                    cq:styleIds="[1787365476664]"
+                    jcr:created="{Date}2026-08-21T16:32:01.119-03:00"
+                    jcr:createdBy="admin"
+                    jcr:description="Selecionamos cafés especiais brasileiros diretamente de produtores, valorizando a origem, o processo e as pessoas por trás de cada colheita."
+                    jcr:lastModified="{Date}2026-08-21T16:32:16.318-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Café especial, da origem à xícara."
+                    sling:resourceType="brumacafe/components/main-banner"
+                    alt="Plantação brasileira de café especial"
+                    buttonLink="/content/brumacafe/us/en"
+                    buttonText="Conheça nossos cafés"
+                    fileReference="/content/dam/brumacafe/placeholder-main-banner.jpg"/>
+                <title
+                    jcr:created="{Date}2026-08-21T23:31:46.767-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-21T23:31:57.293-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Nossa História | Bruma Café Especial"
+                    sling:resourceType="brumacafe/components/title">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                </title>
+                <featured_quote
+                    jcr:created="{Date}2026-08-22T00:16:44.312-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:17:42.485-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featured-quote"
+                    text="&lt;p>&amp;quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <title_1000284918
+                    jcr:created="{Date}2026-08-22T00:19:33.766-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:57:39.151-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Nosso Valores | Identidade da Bruma"
+                    sling:resourceType="brumacafe/components/title"
+                    linkTarget="_self"
+                    type="h1"/>
                 <content_grid
-                    jcr:lastModified="{Date}2026-08-20T13:03:28.227-03:00"
+                    cq:styleIds="[1787339962146]"
+                    jcr:created="{Date}2026-08-20T13:01:37.515-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:22:23.274-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="brumacafe/components/content-grid">
@@ -34,28 +85,50 @@
                             jcr:primaryType="nt:unstructured"
                             alt="café pronto em cima da mesa"
                             fileReference="/content/dam/brumacafe/images/brumaMatasdeMinas.jpg"
-                            text="Bom café"
-                            title="Café"/>
+                            text="Acreditamos que saber de onde vem o café faz parte da experiência de apreciá-lo.&#xd;&#xa;"
+                            title="Conhecer a origem"/>
                         <item1
                             jcr:primaryType="nt:unstructured"
                             alt="cafe pronto na mao de alguem"
                             fileReference="/content/dam/brumacafe/images/brumaSerradaMantiqueira.jpg"
-                            text="Parece um bom café"
-                            title="Cafe denovo"/>
+                            text="Queremos dar visibilidade às pessoas e aos produtores que existem por trás de cada café.&#xd;&#xa;"
+                            title="Valorizar quem planta"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            alt="foto café"
+                            fileReference="/content/dam/brumacafe/images/brumaChapadaDiamantina.jpg"
+                            text="Cada origem tem uma história e características próprias que ajudam a explicar por que aquele café é diferente."
+                            title="Entender cada café"/>
                     </items>
                 </content_grid>
-                <featuredarticle
-                    jcr:lastModified="{Date}2026-08-21T11:45:27.614-03:00"
+                <title_1682133320
+                    jcr:created="{Date}2026-08-22T00:22:54.647-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:23:43.644-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/featuredarticle"/>
-                <relatedarticles
-                    jcr:lastModified="{Date}2026-08-21T11:45:30.031-03:00"
+                    jcr:title="Quem faz a Bruma acontecer | Nossa Equipe"
+                    sling:resourceType="brumacafe/components/title"/>
+                <content_grid_1827369197
+                    jcr:created="{Date}2026-08-22T00:23:58.012-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:24:23.559-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/relatedarticles"/>
+                    sling:resourceType="brumacafe/components/content-grid">
+                    <items jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            alt="equipe"
+                            fileReference="/content/dam/brumacafe/images (9).jpg"
+                            text="Equipe do Balacobaco"
+                            title="Nossa Equipe"/>
+                    </items>
+                </content_grid_1827369197>
             </container>
             <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
