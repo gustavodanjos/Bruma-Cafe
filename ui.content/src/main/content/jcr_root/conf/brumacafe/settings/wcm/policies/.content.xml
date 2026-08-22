@@ -84,32 +84,6 @@
                             features="-"/>
                     </plugins>
                 </policy_651483963895698>
-                <policy_2344346377480
-                    jcr:lastModified="{Date}2026-08-19T14:21:44.696-03:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Page Footer"
-                    sling:resourceType="wcm/core/components/policy/policy"
-                    altValueFromDAM="true"
-                    disableLazyLoading="false"
-                    displayPopupTitle="true"
-                    isDecorative="false"
-                    titleValueFromDAM="true">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
-                    <cq:styleGroups jcr:primaryType="nt:unstructured">
-                        <item0
-                            cq:styleGroupLabel="Estilos de Imagem"
-                            jcr:primaryType="nt:unstructured">
-                            <cq:styles jcr:primaryType="nt:unstructured">
-                                <item0
-                                    cq:styleClasses="cmp-image--footer__logo"
-                                    cq:styleId="1787160069191"
-                                    cq:styleLabel="Logo Footer"
-                                    jcr:primaryType="nt:unstructured"/>
-                            </cq:styles>
-                        </item0>
-                    </cq:styleGroups>
-                </policy_2344346377480>
             </image>
             <text jcr:primaryType="nt:unstructured">
                 <policy_641562756958017
@@ -277,7 +251,7 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-08-13T07:54:11.792-03:00"
+                    jcr:lastModified="{Date}2026-08-18T12:06:46.377-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Política de Artigo Bruma"
@@ -311,12 +285,12 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
-                    jcr:lastModified="{Date}2026-08-12T09:37:34.989-03:00"
+                    jcr:lastModified="{Date}2026-08-21T11:40:32.068-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Bruma Cafe - Content,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:WKND - Content,group:WKND Site,group:WKND Site - Content,group:WKND Site - Form,group:WKND Site - Structure]"
+                    components="[/apps/brumacafe/components/featuredarticle,/apps/brumacafe/components/relatedarticles,/apps/brumacafe/components/main-banner,/apps/brumacafe/components/button,/apps/brumacafe/components/store-callout,/apps/brumacafe/components/contentfragment,/apps/brumacafe/components/content-grid,/apps/brumacafe/components/experiencefragment,/apps/brumacafe/components/contactform,/apps/brumacafe/components/article-info,/apps/brumacafe/components/articlelist,/apps/brumacafe/components/text,/apps/brumacafe/components/title,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:bruma-cafe-info]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
@@ -489,30 +463,4 @@
             </components>
         </foundation>
     </wcm>
-    <wknd jcr:primaryType="nt:unstructured">
-        <components jcr:primaryType="nt:unstructured">
-            <separator jcr:primaryType="nt:unstructured">
-                <policy_1787159083623
-                    jcr:lastModified="{Date}2026-08-19T14:05:40.834-03:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Page Footer"
-                    sling:resourceType="wcm/core/components/policy/policy"
-                    isDecorative="true">
-                    <jcr:content jcr:primaryType="nt:unstructured"/>
-                    <cq:styleGroups jcr:primaryType="nt:unstructured">
-                        <item0 jcr:primaryType="nt:unstructured">
-                            <cq:styles jcr:primaryType="nt:unstructured">
-                                <item0
-                                    cq:styleClasses="cmp-separator--decorative"
-                                    cq:styleId="1787159129654"
-                                    cq:styleLabel="Decorative"
-                                    jcr:primaryType="nt:unstructured"/>
-                            </cq:styles>
-                        </item0>
-                    </cq:styleGroups>
-                </policy_1787159083623>
-            </separator>
-        </components>
-    </wknd>
 </jcr:root>

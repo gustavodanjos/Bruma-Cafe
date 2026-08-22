@@ -23,8 +23,6 @@
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
                 <text
-                    jcr:created="{Date}2026-08-11T11:56:58.548-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-17T09:52:17.766-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -43,8 +41,6 @@
                     </cq:responsive>
                 </text>
                 <contactform
-                    jcr:created="{Date}2026-08-11T11:56:51.928-03:00"
-                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-13T00:28:28.891-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
