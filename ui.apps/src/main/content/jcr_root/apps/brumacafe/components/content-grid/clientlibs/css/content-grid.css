@@ -1,7 +1,7 @@
 /*
  * Content Grid component styles.
  *
- * Global design tokens such as colors, typography, spacing, radio,
+ * Global design tokens such as colors, typography, spacing, radius,
  * and layout values are defined in:
  * ui.frontend/src/main/webpack/site/_variables.scss
  *
@@ -12,55 +12,122 @@
  * duplicating global design values in this component.
  */
 
+
+/* =============================================================================
+ * Base - Mobile First
+ * ============================================================================= */
+
 .cmp-content-grid {
     width: 100%;
     max-width: var(--bruma-max-width);
+
     margin: 0 auto;
-    padding: var(--bruma-space-lg) var(--bruma-space-md);
+
+    padding:
+        calc(var(--bruma-space-md) + var(--bruma-space-xs))
+        var(--bruma-space-md);
+
     box-sizing: border-box;
 }
 
+
+/* =============================================================================
+ * Grid
+ * ============================================================================= */
+
 .cmp-content-grid__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     gap: var(--bruma-space-md);
+
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
+
+
+/* =============================================================================
+ * Item
+ * ============================================================================= */
 
 .cmp-content-grid__item {
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
 
-    border: 1px solid var(--bruma-color-border);
-    border-radius: var(--bruma-radius-card);
-    background-color: var(--bruma-color-cream);
+    /*
+     * Mobile: one item per row.
+     *
+     * The width changes at the tablet and desktop breakpoints.
+     */
+    flex: 0 1 100%;
+    min-width: 0;
+
+    /*
+     * Items remain structural cards, but without visual separation.
+     * Their background follows the section theme.
+     */
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
+
+
+/* =============================================================================
+ * Image
+ * ============================================================================= */
 
 .cmp-content-grid__media {
     width: 100%;
     aspect-ratio: 4 / 3;
+
     overflow: hidden;
+
+    /*
+     * The image itself is the visually rounded element.
+     * This rounds all four corners.
+     */
+    border-radius: var(--bruma-radius-card);
 }
 
 .cmp-content-grid__image {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
+
+    border-radius: inherit;
 }
+
+
+/* =============================================================================
+ * Content
+ * ============================================================================= */
 
 .cmp-content-grid__content {
     display: flex;
     flex-direction: column;
-    gap: var(--bruma-space-sm);
+
     min-width: 0;
-    padding: var(--bruma-space-md);
+
+    /*
+     * No horizontal card padding because the content should align
+     * with the image edges, as in the Bruma visual reference.
+     */
+    gap: var(--bruma-space-xs);
+    padding: var(--bruma-space-sm) 0 0;
 }
+
+
+/* =============================================================================
+ * Typography
+ * ============================================================================= */
 
 .cmp-content-grid__title {
     margin: 0;
@@ -88,9 +155,35 @@
     overflow-wrap: anywhere;
 }
 
+
+/* =============================================================================
+ * Tablet
+ * 2 columns maximum
+ * ============================================================================= */
+
 @media (min-width: 768px) {
-    .cmp-content-grid__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .cmp-content-grid__item {
+        flex-basis: calc(
+            (100% - var(--bruma-space-md)) / 2
+        );
+    }
+}
+
+
+/* =============================================================================
+ * Desktop
+ * 3 columns maximum
+ * ============================================================================= */
+
+@media (min-width: 1024px) {
+    .cmp-content-grid__item {
+        flex-basis: calc(
+            (100% - (2 * var(--bruma-space-md))) / 3
+        );
+    }
+
+    .cmp-content-grid__title {
+        font-size: 20px;
     }
 
     .cmp-content-grid__text {
@@ -98,17 +191,50 @@
     }
 }
 
-@media (min-width: 1024px) {
-    .cmp-content-grid {
-        padding-top: var(--bruma-space-xl);
-        padding-bottom: var(--bruma-space-xl);
-    }
 
-    .cmp-content-grid__grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+/* =============================================================================
+ * Style System - Themes
+ * ============================================================================= */
 
-    .cmp-content-grid__title {
-        font-size: 20px;
-    }
+/*
+ * Default
+ *
+ * Keeps the normal page background.
+ * Items remain visually integrated with the section.
+ */
+.content-grid-default {
+    background-color: transparent;
+}
+
+
+/*
+ * Cream
+ *
+ * Alternative light section defined by the Bruma Café brand guide.
+ */
+.content-grid-cream {
+    background-color: var(--bruma-color-cream);
+}
+
+
+/*
+ * Grain
+ *
+ * Dark section using the primary Bruma Café color.
+ */
+.content-grid-grain {
+    background-color: var(--bruma-color-grain);
+}
+
+
+/* =============================================================================
+ * Grain Theme - Contrast
+ * ============================================================================= */
+
+.content-grid-grain .cmp-content-grid__title {
+    color: var(--bruma-color-cream);
+}
+
+.content-grid-grain .cmp-content-grid__text {
+    color: var(--bruma-color-cream);
 }
