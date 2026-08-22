@@ -30,4 +30,11 @@ public @interface StoreApiConfig {
         type = AttributeType.INTEGER
     )
     int connectionTimeout() default 5000;
+
+    @AttributeDefinition(
+        name = "Cache TTL (segundos)", 
+        description = "Tempo em segundos que os produtos ficam em memória antes de nova consulta à API", 
+        type = AttributeType.INTEGER
+    )
+    int cacheTtlSeconds() default 300;
 }
