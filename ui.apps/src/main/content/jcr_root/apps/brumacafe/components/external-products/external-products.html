@@ -6,7 +6,7 @@
     
     <div class="external-products-container" data-sly-test="${vitrine.configured}">
         <div class="external-products-header">
-            <h2>Produtos em Destaque</h2>
+            <h2>${properties.title || 'Produtos em Destaque' @ i18n}</h2>
         </div>
 
         <div class="product-card-container" data-sly-list.item="${vitrine.produtos}">
@@ -22,8 +22,8 @@
                            href="https://dummyjson.com/products/${item.id @ context='uri'}" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           title="Comprar ${item.title} na loja externa">
-                            Comprar
+                           title="${'Comprar' @ i18n} ${item.title} ${'na loja externa' @ i18n}">
+                            ${'Comprar' @ i18n}
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
                         </a>
                     </div>
@@ -32,12 +32,12 @@
         </div>
     </div>
 
-    <div class="external-products-fallback" data-sly-test="${!vitrine.configured}">
-        <p>Nossa loja virtual está passando por atualizações no momento. Volte em breve para conferir os produtos!</p>
+    <div class="external-products-fallback" data-sly-test="${!vitrine.configured && !wcmmode.edit}">
+        <p>${properties.fallbackMessage || 'Nossa loja virtual está passando por atualizações no momento. Volte em breve para conferir os produtos!' @ i18n}</p>
     </div>
 
     <div class="cq-placeholder" 
          data-emptytext="Vitrine da Loja - Aguardando conexão com a API" 
-         data-sly-test="${!vitrine.configured}"></div>
+         data-sly-test="${!vitrine.configured && wcmmode.edit}"></div>
 
 </sly>

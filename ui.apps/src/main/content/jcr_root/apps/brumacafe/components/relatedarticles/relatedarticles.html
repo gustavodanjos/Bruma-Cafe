@@ -33,7 +33,7 @@
                                         <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
                                         <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
                                         <span class="separator">·</span>
-                                        <span>${article.readingTime} min de leitura</span>
+                                        <span>${article.readingTime} ${'min de leitura' @ i18n}</span>
                                     </div>
                                 </div>
                             </a>

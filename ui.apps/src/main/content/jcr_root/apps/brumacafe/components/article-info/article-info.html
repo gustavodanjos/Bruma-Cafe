@@ -5,7 +5,7 @@
         <sly data-sly-test="${model.formattedDate}">
             <span class="cmp-article-info__date">${model.formattedDate}</span>
             <span class="cmp-article-info__separator"> &middot; </span>
-            <span class="cmp-article-info__reading-time">${model.readingTime} min de leitura</span>
+            <span class="cmp-article-info__reading-time">${model.readingTime} ${'min de leitura' @ i18n}</span>
         </sly>
         <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!model.formattedDate}"></sly>
     </div>

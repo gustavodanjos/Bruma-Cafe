@@ -11,9 +11,9 @@
             <div class="info-cafe-text-container">
                 <h2>${cafe.nome}</h2>
                 <p>${cafe.descricao}</p>
-                <div>
+                <div data-sly-test="${cafe.produtor}">
                     <p>
-                        <strong>Produtor:</strong>
+                        <strong>${'Produtor:' @ i18n}</strong>
                         ${cafe.produtor}
                     </p>
                 </div>

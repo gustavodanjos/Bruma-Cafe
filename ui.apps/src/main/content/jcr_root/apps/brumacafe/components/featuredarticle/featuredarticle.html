@@ -37,7 +37,7 @@
                             <span data-sly-test="${model.article.formattedDate}">${model.article.formattedDate}</span>
                             <span data-sly-test="${!model.article.formattedDate}">${model.article.date @ format='dd/MM/yyyy'}</span>
                             <span class="separator">·</span>
-                            <span>${model.article.readingTime} min de leitura</span>
+                            <span>${model.article.readingTime} ${'min de leitura' @ i18n}</span>
                         </div>
 
                         <div class="bruma-featured-article__action">

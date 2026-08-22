@@ -10,10 +10,10 @@
 
             <!-- Hero Header alterado para div para evitar herança do header fixo -->
             <div class="bruma-article-hub__header">
-                <span class="bruma-article-hub__tag">Hub de Conteúdo</span>
-                <h1 class="bruma-article-hub__title">Tudo que você precisa saber sobre café especial</h1>
+                <span class="bruma-article-hub__tag">${properties.hubTag || 'Hub de Conteúdo' @ i18n}</span>
+                <h1 class="bruma-article-hub__title">${properties.title || 'Tudo que você precisa saber sobre café especial' @ i18n}</h1>
                 <p class="bruma-article-hub__description">
-                    Artigos sobre preparo, origem, produtores e processos — escritos para quem bebe café com atenção.
+                    ${properties.description || 'Artigos sobre preparo, origem, produtores e processos — escritos para quem bebe café com atenção.' @ i18n}
                 </p>
                 <div class="bruma-article-search">
                     <svg class="bruma-article-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -22,8 +22,8 @@
                     </svg>
                     <input type="text"
                            class="bruma-article-search__input"
-                           placeholder="Buscar artigos..."
-                           aria-label="Buscar artigos por título ou descrição" />
+                           placeholder="${'Buscar artigos...' @ i18n}"
+                           aria-label="${'Buscar artigos por título ou descrição' @ i18n}" />
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                         data-filter="all"
                         role="tab"
                         aria-selected="true">
-                    Todos
+                    ${'Todos' @ i18n}
                 </button>
                 <sly data-sly-list.category="${model.categories}">
                     <button type="button"
@@ -47,7 +47,7 @@
             </div>
 
             <p class="bruma-article-count">
-                <span class="bruma-article-count__number">0</span> artigos encontrados
+                <span class="bruma-article-count__number">0</span> ${'artigos encontrados' @ i18n}
             </p>
 
             <div class="bruma-article-grid">
@@ -81,7 +81,7 @@
                                     <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
                                     <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
                                     <span class="separator">·</span>
-                                    <span>${article.readingTime} min de leitura</span>
+                                    <span>${article.readingTime} ${'min de leitura' @ i18n}</span>
                                 </div>
                             </div>
                         </a>
@@ -90,7 +90,7 @@
             </div>
 
             <div class="bruma-article-empty-feedback" style="display: none;">
-                <p>Nenhum artigo encontrado.</p>
+                <p>${'Nenhum artigo encontrado.' @ i18n}</p>
             </div>
 
         </div>
