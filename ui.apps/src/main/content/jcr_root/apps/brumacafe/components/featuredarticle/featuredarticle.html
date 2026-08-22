@@ -1,0 +1,54 @@
+<sly data-sly-use.model="com.brumacafe.core.models.FeaturedArticleModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+
+    <sly data-sly-test="${wcmmode.edit && model.empty}">
+        <div class="cq-placeholder" data-emptytext="Artigo em Destaque: Clique na chave inglesa para selecionar o artigo a ser destacado."></div>
+    </sly>
+
+    <sly data-sly-test="${!model.empty}">
+        <section class="bruma-featured-article">
+            <div class="bruma-featured-article__container">
+                <div class="bruma-featured-article__card">
+                    
+                    <div class="bruma-featured-article__image-wrapper">
+                        <sly data-sly-test="${model.article.imagePath}">
+                            <img src="${model.article.imagePath}" alt="${model.article.title}" class="bruma-featured-article__image"/>
+                        </sly>
+                        <sly data-sly-test="${!model.article.imagePath}">
+                            <div class="bruma-featured-article__image-placeholder"></div>
+                        </sly>
+                    </div>
+
+                    <div class="bruma-featured-article__content">
+                        <div class="bruma-featured-article__tags">
+                            <span class="bruma-featured-article__badge">${model.badgeLabel}</span>
+                            <span class="bruma-featured-article__category">${model.article.category}</span>
+                        </div>
+
+                        <h2 class="bruma-featured-article__title">
+                            <a href="${model.article.path}">${model.article.title}</a>
+                        </h2>
+
+                        <sly data-sly-test="${model.article.description}">
+                            <p class="bruma-featured-article__description">${model.article.description}</p>
+                        </sly>
+
+                        <div class="bruma-featured-article__meta">
+                            <span data-sly-test="${model.article.formattedDate}">${model.article.formattedDate}</span>
+                            <span data-sly-test="${!model.article.formattedDate}">${model.article.date @ format='dd/MM/yyyy'}</span>
+                            <span class="separator">·</span>
+                            <span>${model.article.readingTime} min de leitura</span>
+                        </div>
+
+                        <div class="bruma-featured-article__action">
+                            <a href="${model.article.path}" class="bruma-featured-article__btn">
+                                ${model.ctaText}
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </sly>
+</sly>

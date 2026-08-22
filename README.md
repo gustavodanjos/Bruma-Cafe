@@ -15,9 +15,9 @@ Mais do que apenas escrever código, o projeto avalia habilidades exigidas no me
 | Frente | Tarefas | Responsável | Suplente |
 | :--- | :--- | :--- | :--- |
 | **Frente 1** | Header, footer e identidade | Samuel | Antonni |
-| **Frente 2** | Cafés e integração | Antonni | Jonathan |
+| **Frente 2** | Cafés e integração | Antonni | Jhonatan |
 | **Frente 3** | Componentes | Emiliano | Gustavo |
-| **Frente 4** | Hub de conteúdo | Jonathan | Emiliano |
+| **Frente 4** | Hub de conteúdo | Jhonatan | Emiliano |
 | **Frente 5** | Formulário e entrega | Gustavo | Samuel |
 
 ---
@@ -182,3 +182,23 @@ Após a instalação do pacote, valide se os conteúdos foram carregados correta
 
 1. **Content Fragments e Imagens:** Vá em **Navigation > Assets > Files > brumacafe** e confirme se as pastas de imagens e fragmentos contêm os 4 cafés e os 2 produtores com as referências preenchidas.
 2. **Páginas do Site:** Acesse **Sites > Bruma Café** e visualize as páginas no editor para confirmar a renderização dos componentes com os dados reais dos cafés.
+
+---
+
+## Documentação Técnica das Frentes
+
+### Frente 4 — Hub de Conteúdo: Validação de Performance (QueryBuilder)
+
+#### Tarefa F4.4: Validação e Otimização da Consulta de Artigos
+
+Para assegurar a estabilidade do repositório JCR e prevenir gargalos de processamento e consumo excessivo de memória na JVM ao carregar listagens de artigos, a busca automática implementada no `ArticleListModel` foi construída utilizando a API nativa do `QueryBuilder` com paginação estrita (`p.limit`).
+
+#### 1. Parâmetros da Consulta (Query Predicates)
+```text
+path=/content/brumacafe
+type=cq:Page
+property=jcr:content/cq:template
+property.value=/conf/brumacafe/settings/wcm/templates/pagina-de-artigo
+orderby=@jcr:content/cq:lastModified
+orderby.sort=desc
+p.limit=4

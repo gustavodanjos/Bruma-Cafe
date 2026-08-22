@@ -251,7 +251,7 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-08-13T07:54:11.792-03:00"
+                    jcr:lastModified="{Date}2026-08-18T12:06:46.377-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Política de Artigo Bruma"
@@ -285,12 +285,12 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
-                    jcr:lastModified="{Date}2026-08-12T09:37:34.989-03:00"
+                    jcr:lastModified="{Date}2026-08-21T11:40:32.068-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Bruma Cafe - Content,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:WKND - Content,group:WKND Site,group:WKND Site - Content,group:WKND Site - Form,group:WKND Site - Structure]"
+                    components="[/apps/brumacafe/components/featuredarticle,/apps/brumacafe/components/relatedarticles,/apps/brumacafe/components/main-banner,/apps/brumacafe/components/button,/apps/brumacafe/components/store-callout,/apps/brumacafe/components/contentfragment,/apps/brumacafe/components/content-grid,/apps/brumacafe/components/experiencefragment,/apps/brumacafe/components/contactform,/apps/brumacafe/components/article-info,/apps/brumacafe/components/articlelist,/apps/brumacafe/components/text,/apps/brumacafe/components/title,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:bruma-cafe-info]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>

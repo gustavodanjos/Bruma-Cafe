@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T12:57:00.683-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:description="Tem alguma dúvida, sugestão ou quer falar sobre café? Entre em contato com a equipe da Bruma Café. Estamos prontos para te atender."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Contato"
+        sling:resourceType="brumacafe/components/page"
+        navTitle="Contato"
+        pageTitle="Fale Conosco | Bruma Café Especial"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <text
+                    jcr:lastModified="{Date}2026-08-17T09:52:17.766-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;h1>&amp;nbsp;&lt;/h1>&#xd;&#xa;&lt;h1>Vamos conversar sobre café&lt;/h1>&#xd;&#xa;&lt;p>Se você é produtor, jornalista, importador, cliente pessoa física ou simplesmente tem uma pergunta sobre café especial — escreva para nós.&lt;/p>&#xd;&#xa;&lt;p>✉ E-mail&lt;/p>&#xd;&#xa;&lt;p>ola@brumacafe.com.br&lt;/p>&#xd;&#xa;&lt;p>↗ Telefone&lt;/p>&#xd;&#xa;&lt;p>+55 (31) 9 8765-4321&lt;/p>&#xd;&#xa;&lt;p>◎ Endereço&lt;/p>&#xd;&#xa;&lt;p>Rua Tomé de Souza, 1.024 Belo Horizonte — MG, 30140-131&lt;/p>&#xd;&#xa;&lt;p>◷ Horário de atendimento&lt;/p>&#xd;&#xa;&lt;p>Seg–Sex, 9h às 18h&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="4"/>
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                    </cq:responsive>
+                </text>
+                <contactform
+                    jcr:lastModified="{Date}2026-08-13T00:28:28.891-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/contactform"
+                    email="gustavo.anjos.pb@aircompany.ai"
+                    message="duvida&#xa;"
+                    name="JEFFERSON DARIANO LOPES DOS ANJOS"
+                    subject="Sou cliente e tenho uma dúvida">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="5"/>
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                    </cq:responsive>
+                </contactform>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:57:00.680-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

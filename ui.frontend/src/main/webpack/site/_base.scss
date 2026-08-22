@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+// Breakpoints expostos como CSS custom properties para consumo por JS
+// O JS lê via: getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-mobile')
+:root {
+    --breakpoint-mobile: 768;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -45,4 +51,22 @@ optgroup,
 select,
 textarea {
     font: inherit;
+}
+
+// =============================================================================
+// Utilitário de acessibilidade — visível apenas para leitores de tela
+// Equivalente ao .sr-only do Bootstrap / visually-hidden do WCAG
+// =============================================================================
+.sr-only,
+.cmp-accessibility-hidden,
+.cmp-link__screen-reader-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ce159b3a-55a7-4a24-94ab-613507eb5001">
+    <jcr:content
+        cq:name="bruma-matas-de-minas"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T23:01:05.546-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Bruma Matas de Minas"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T23:01:05.546-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                fotoCafe="/content/dam/brumacafe/images/brumaMatasdeMinas.jpg"
+                fotoCafe_x0040_LastModified="{Date}2026-08-12T23:01:05.497-03:00"
+                fotoCafe_x0040_LastModifiedBy="admin"
+                nomeCafe="Bruma Matas de Minas"
+                nomeCafe_x0040_LastModified="{Date}2026-08-12T23:01:05.496-03:00"
+                nomeCafe_x0040_LastModifiedBy="admin"
+                notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Corpo denso e marcante, trazendo notas de cacau 70%, especiarias doces e acidez baixa, ideal para quem aprecia um café encorpado.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                notasSensoriaisEDescricao_x0040_ContentType="text/html"
+                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-12T23:01:05.497-03:00"
+                notasSensoriaisEDescricao_x0040_LastModifiedBy="admin"
+                nvelDeTorra="escura"
+                nvelDeTorra_x0040_LastModified="{Date}2026-08-12T23:01:05.497-03:00"
+                nvelDeTorra_x0040_LastModifiedBy="admin"
+                origemCafe="Araponga - MG, 1.050m de altitude"
+                origemCafe_x0040_LastModified="{Date}2026-08-12T23:01:05.496-03:00"
+                origemCafe_x0040_LastModifiedBy="admin"
+                produtorRef="/content/dam/brumacafe/fragments/dona-sebastiana"
+                produtorRef_x0040_LastModified="{Date}2026-08-12T23:01:05.498-03:00"
+                produtorRef_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="592aea45-055c-420f-a5f7-5f7e8993690d"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/cafe"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_nomeCafe="Bruma Matas de Minas"
+                string_x0040_notasSensoriaisEDescricao="&lt;p>&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;p>Corpo denso e marcante, trazendo notas de cacau 70%, especiarias doces e acidez baixa, ideal para quem aprecia um café encorpado.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;li>&lt;p>&amp;nbsp;&lt;/p>&#xa;&lt;/li>&#xa;&lt;/p>&#xa;"
+                string_x0040_nvelDeTorra="escura"
+                string_x0040_origemCafe="Araponga - MG, 1.050m de altitude"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-21T11:26:52.359-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:description="Selecionamos cafés especiais brasileiros diretamente dos produtores. Torramos em pequenos lotes e contamos histórias de origem. Conheça a Bruma Café."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home"
+        sling:resourceType="brumacafe/components/page"
+        navTitle="Home"
+        pageTitle="Bruma Café Especial | Direto dos Produtores"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <main_banner
+                    jcr:description="Selecionamos cafés especiais brasileiros diretamente de produtores, valorizando a origem, o processo e as pessoas por trás de cada colheita."
+                    jcr:lastModified="{Date}2026-08-20T12:34:33.644-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Café especial, da origem à xícara."
+                    sling:resourceType="brumacafe/components/main-banner"
+                    alt="Plantação brasileira de café especial"
+                    buttonLink="/content/brumacafe/us/en"
+                    buttonText="Conheça nossos cafés"
+                    fileReference="/content/dam/brumacafe/images/seuAltamiro.jpg"/>
+                <text
+                    jcr:lastModified="{Date}2026-08-20T12:37:56.224-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;p>Hub de Conteúdo&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="5"/>
+                    </cq:responsive>
+                </text>
+                <title
+                    jcr:lastModified="{Date}2026-08-20T12:43:39.092-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Leituras para quem quer entender o café"
+                    sling:resourceType="brumacafe/components/title">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="7"/>
+                    </cq:responsive>
+                </title>
+                <articlelist
+                    jcr:lastModified="{Date}2026-08-20T12:36:39.798-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/articlelist"
+                    limit="8"
+                    listRoot="/content/brumacafe/us/en/hub0"
+                    sortOrder="desc"/>
+                <text_536744345
+                    jcr:lastModified="{Date}2026-08-20T12:45:24.983-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;p>Colheita 2026&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="5"/>
+                    </cq:responsive>
+                </text_536744345>
+                <title_978074380
+                    jcr:lastModified="{Date}2026-08-20T12:44:59.049-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Cafés disponíveis agora"
+                    sling:resourceType="brumacafe/components/title">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="9"/>
+                    </cq:responsive>
+                </title_978074380>
+                <info_cafe
+                    jcr:lastModified="{Date}2026-08-20T12:44:11.394-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/info-cafe">
+                    <cafes jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-cerrado-mineiro"/>
+                    </cafes>
+                </info_cafe>
+            </container>
+            <title
+                jcr:lastModified="{Date}2026-08-18T11:49:35.002-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:47:03.120-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>
