@@ -12,8 +12,18 @@
  * duplicating global design values in this component.
  */
 
+/* =============================================================================
+ * Base - Mobile first
+ * ============================================================================= */
+
 .cmp-main-banner {
+    --main-banner-background: var(--bruma-color-grain);
+    --main-banner-overlay: rgba(46, 31, 26, 0.68);
+    --main-banner-text-color: var(--bruma-color-white);
+    --main-banner-focus-color: var(--bruma-color-cream);
+
     position: relative;
+
     display: flex;
     align-items: flex-end;
 
@@ -23,11 +33,13 @@
     overflow: hidden;
     isolation: isolate;
 
-    background-color: var(--bruma-color-grain);
-    color: var(--bruma-color-white);
+    background-color: var(--main-banner-background);
+    color: var(--main-banner-text-color);
 }
 
-/* Background image */
+/* =============================================================================
+ * Background image
+ * ============================================================================= */
 
 .cmp-main-banner__media {
     position: absolute;
@@ -48,7 +60,9 @@
     object-position: center;
 }
 
-/* Contrast overlay */
+/* =============================================================================
+ * Contrast overlay
+ * ============================================================================= */
 
 .cmp-main-banner::before {
     content: "";
@@ -57,12 +71,14 @@
     inset: 0;
     z-index: 1;
 
-    background-color: rgba(46, 31, 26, 0.68);
+    background-color: var(--main-banner-overlay);
 
     pointer-events: none;
 }
 
-/* Content */
+/* =============================================================================
+ * Content
+ * ============================================================================= */
 
 .cmp-main-banner__content {
     position: relative;
@@ -72,42 +88,61 @@
     max-width: var(--bruma-max-width);
 
     margin: 0 auto;
-    padding: var(--bruma-space-lg) var(--bruma-space-md);
+
+    padding:
+        var(--bruma-space-lg)
+        var(--bruma-space-md);
 
     box-sizing: border-box;
 }
 
-/* Title */
+/* =============================================================================
+ * Title
+ * ============================================================================= */
 
 .cmp-main-banner__title {
     max-width: 760px;
 
-    margin: 0 0 var(--bruma-space-sm);
+    margin:
+        0
+        0
+        var(--bruma-space-sm);
 
-    color: var(--bruma-color-white);
+    color: var(--main-banner-text-color);
 
     font-family: var(--bruma-font-serif);
     font-size: 32px;
     font-weight: 600;
     line-height: 1.1;
+
+    overflow-wrap: anywhere;
 }
 
-/* Supporting text */
+/* =============================================================================
+ * Supporting text
+ * ============================================================================= */
 
 .cmp-main-banner__description {
     max-width: 640px;
 
-    margin: 0 0 var(--bruma-space-md);
+    margin:
+        0
+        0
+        var(--bruma-space-md);
 
-    color: var(--bruma-color-white);
+    color: var(--main-banner-text-color);
 
     font-family: var(--bruma-font-sans);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
+
+    overflow-wrap: anywhere;
 }
 
-/* Primary button */
+/* =============================================================================
+ * Primary button
+ * ============================================================================= */
 
 .cmp-main-banner__button {
     display: inline-flex;
@@ -115,7 +150,10 @@
     justify-content: center;
 
     min-height: var(--bruma-space-lg);
-    padding: 0 var(--bruma-space-md);
+
+    padding:
+        0
+        var(--bruma-space-md);
 
     border: 0;
     border-radius: var(--bruma-radius-control);
@@ -131,21 +169,22 @@
     text-decoration: none;
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+        opacity 0.2s ease,
+        background-color 0.2s ease;
 }
 
 .cmp-main-banner__button:hover {
-    background-color: var(--bruma-color-grain);
-    color: var(--bruma-color-white);
+    opacity: 0.9;
 }
 
 .cmp-main-banner__button:focus-visible {
-    outline: 3px solid var(--bruma-color-cream);
+    outline: 3px solid var(--main-banner-focus-color);
     outline-offset: 3px;
 }
 
-/* Tablet */
+/* =============================================================================
+ * Tablet
+ * ============================================================================= */
 
 @media (min-width: 768px) {
     .cmp-main-banner {
@@ -165,7 +204,9 @@
     }
 }
 
-/* Desktop */
+/* =============================================================================
+ * Desktop
+ * ============================================================================= */
 
 @media (min-width: 1024px) {
     .cmp-main-banner {
@@ -179,4 +220,72 @@
     .cmp-main-banner__title {
         font-size: 52px;
     }
+}
+
+/* =============================================================================
+ * Style System - Themes
+ * ============================================================================= */
+
+/*
+ * Default
+ * Keeps the original Main Banner appearance.
+ */
+
+.main-banner-default .cmp-main-banner {
+    --main-banner-background: var(--bruma-color-grain);
+    --main-banner-overlay: rgba(46, 31, 26, 0.68);
+    --main-banner-text-color: var(--bruma-color-white);
+    --main-banner-focus-color: var(--bruma-color-cream);
+}
+
+/*
+ * Cream
+ * Uses a light overlay while keeping the image visible.
+ */
+
+.main-banner-cream .cmp-main-banner {
+    --main-banner-background: var(--bruma-color-cream);
+    --main-banner-overlay: rgba(245, 239, 231, 0.82);
+    --main-banner-text-color: var(--bruma-color-grain);
+    --main-banner-focus-color: var(--bruma-color-grain);
+}
+
+/*
+ * Grain
+ * Uses a stronger dark overlay for light or visually busy images.
+ */
+
+.main-banner-grain .cmp-main-banner {
+    --main-banner-background: var(--bruma-color-grain);
+    --main-banner-overlay: rgba(46, 31, 26, 0.82);
+    --main-banner-text-color: var(--bruma-color-white);
+    --main-banner-focus-color: var(--bruma-color-cream);
+}
+
+/* =============================================================================
+ * Style System - Alignment
+ * ============================================================================= */
+
+/* Left */
+
+.main-banner-left .cmp-main-banner__content {
+    text-align: left;
+}
+
+.main-banner-left .cmp-main-banner__title,
+.main-banner-left .cmp-main-banner__description {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Center */
+
+.main-banner-centered .cmp-main-banner__content {
+    text-align: center;
+}
+
+.main-banner-centered .cmp-main-banner__title,
+.main-banner-centered .cmp-main-banner__description {
+    margin-left: auto;
+    margin-right: auto;
 }
