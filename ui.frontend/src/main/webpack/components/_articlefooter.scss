@@ -1,0 +1,17 @@
+@import '../site/variables';
+
+.bruma-article-footer {
+  max-width: 748px;
+  margin: 48px auto 40px;
+  padding: 24px var(--bruma-space-md) 0;
+  border-top: 1px solid var(--bruma-color-border);
+  text-align: left;
+
+  p {
+    font-family: var(--bruma-font-sans);
+    font-size: 13px;
+    color: var(--bruma-color-fog);
+    font-style: italic;
+    margin: 0;
+  }
+}
