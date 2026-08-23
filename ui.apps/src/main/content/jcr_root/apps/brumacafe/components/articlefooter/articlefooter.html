@@ -1,0 +1,10 @@
+<sly data-sly-use.model="com.brumacafe.core.models.ArticleHeroModel">
+    <div class="bruma-article-footer">
+        <sly data-sly-test="${model.formattedDate}">
+            <p>Publicado em ${model.formattedDate} &middot; Bruma Café Especial</p>
+        </sly>
+        <sly data-sly-test="${!model.formattedDate}">
+            <p>Publicado recentemente &middot; Bruma Café Especial</p>
+        </sly>
+    </div>
+</sly>
