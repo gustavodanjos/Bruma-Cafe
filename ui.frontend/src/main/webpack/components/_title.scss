@@ -1,3 +1,32 @@
-.cmp-title {}
-.cmp-title__text {}
-.cmp-title__link {}
+// =============================================================================
+// Title Core Component — Component-level Base Styles
+// =============================================================================
+
+.cmp-title {
+    margin: var(--bruma-space-md) 0;
+}
+
+.cmp-title__text {
+    margin: 0;
+}
+
+.cmp-title__link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) {
+    .cmp-title {
+        margin-top: var(--bruma-space-lg);
+        margin-bottom: var(--bruma-space-md);
+    }
+}
+
+/* Desktop: >= 1024px */
+@media (min-width: 1024px) {
+    .cmp-title {
+        margin-top: var(--bruma-space-lg);
+        margin-bottom: var(--bruma-space-md);
+    }
+}
