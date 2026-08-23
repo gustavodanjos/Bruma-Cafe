@@ -5,4 +5,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Vitrine da Loja"
     jcr:description="Exibe os produtos integrados da API externa"
-    componentGroup="Bruma Café - Conteúdo"/>
+    componentGroup="bruma-cafe-info"/>
