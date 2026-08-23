@@ -54,7 +54,6 @@ public class RelatedArticlesModel {
     private String title;
 
     @ValueMapValue
-    @Default(values = "/content/brumacafe/us/en")
     private String listRoot;
 
     @ValueMapValue
@@ -81,9 +80,15 @@ public class RelatedArticlesModel {
             return;
         }
 
+        String searchPath = listRoot;
+        if (StringUtils.isBlank(searchPath)) {
+            Page parent = currentPage.getParent();
+            searchPath = parent != null ? parent.getPath() : "/content/brumacafe/br/pt/hub";
+        }
+
         try {
             Map<String, String> map = new HashMap<>();
-            map.put("path", StringUtils.defaultIfBlank(listRoot, "/content/brumacafe/us/en"));
+            map.put("path", searchPath);
             map.put("type", "cq:Page");
             map.put("property", "jcr:content/cq:template");
             map.put("property.value", "/conf/brumacafe/settings/wcm/templates/pagina-de-artigo");
@@ -93,6 +98,8 @@ public class RelatedArticlesModel {
 
             Query query = queryBuilder.createQuery(PredicateGroup.create(map), session);
             SearchResult result = query.getResult();
+
+            Set<String> processedNames = new HashSet<>();
 
             for (Hit hit : result.getHits()) {
                 if (articles.size() >= limit) {
@@ -104,7 +111,12 @@ public class RelatedArticlesModel {
                     continue;
                 }
 
-                if (candidatePage.getPath().equals(currentPage.getPath())) {
+                if (candidatePage.getPath().equals(currentPage.getPath())
+                        || candidatePage.getName().equalsIgnoreCase(currentPage.getName())) {
+                    continue;
+                }
+
+                if (processedNames.contains(candidatePage.getName())) {
                     continue;
                 }
 
@@ -120,8 +132,10 @@ public class RelatedArticlesModel {
                     String formattedDate = infoModel != null ? infoModel.getFormattedDate() : "";
                     int readingTime = infoModel != null ? infoModel.getReadingTime() : 1;
 
+                    String articleTitle = StringUtils.defaultIfBlank(candidatePage.getTitle(), candidatePage.getName());
+
                     articles.add(new ArticleDTO(
-                            candidatePage.getTitle() != null ? candidatePage.getTitle() : candidatePage.getName(),
+                            articleTitle,
                             candidatePage.getDescription(),
                             candidatePage.getPath() + ".html",
                             candidatePage.getLastModified() != null ? candidatePage.getLastModified().getTime() : null,
@@ -130,6 +144,7 @@ public class RelatedArticlesModel {
                             formattedDate,
                             readingTime
                     ));
+                    processedNames.add(candidatePage.getName());
                 }
             }
 

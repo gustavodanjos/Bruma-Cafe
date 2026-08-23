@@ -1,0 +1,47 @@
+<sly data-sly-use.model="com.brumacafe.core.models.ArticleHeroModel">
+    <sly data-sly-test="${wcmmode.edit && !model.title}">
+        <div class="cq-placeholder" data-emptytext="Hero do Artigo: Preencha as propriedades da página (Capa, Título e Resumo)"></div>
+    </sly>
+
+    <sly data-sly-test="${model.title}">
+        <div class="bruma-article-hero">
+            <section class="bruma-article-hero__cover">
+                <sly data-sly-test="${model.imagePath}">
+                    <img src="${model.imagePath}" alt="${model.title}" class="bruma-article-hero__image" />
+                </sly>
+                <sly data-sly-test="${!model.imagePath}">
+                    <div class="bruma-article-hero__image-placeholder"></div>
+                </sly>
+                <div class="bruma-article-hero__gradient"></div>
+                <div class="bruma-article-hero__content-wrapper">
+                    <div class="bruma-article-hero__content">
+                        <span class="bruma-article-hero__category">${model.category}</span>
+                        <h1 class="bruma-article-hero__title">${model.title}</h1>
+                    </div>
+                </div>
+            </section>
+
+            <article class="bruma-article-hero__body-intro">
+                <div class="bruma-article-hero__meta-bar">
+                    <sly data-sly-test="${model.formattedDate}">
+                        <span class="bruma-article-hero__date">${model.formattedDate}</span>
+                    </sly>
+                    <sly data-sly-test="${model.formattedDate && model.readingTime}">
+                        <span class="separator">·</span>
+                    </sly>
+                    <sly data-sly-test="${model.readingTime}">
+                        <span class="bruma-article-hero__read-time">${model.readingTime} min de leitura</span>
+                    </sly>
+
+                    <a href="${model.hubPath}" class="bruma-article-hero__back-link">
+                        &larr; Voltar ao Hub
+                    </a>
+                </div>
+
+                <sly data-sly-test="${model.excerpt}">
+                    <p class="bruma-article-hero__excerpt">${model.excerpt}</p>
+                </sly>
+            </article>
+        </div>
+    </sly>
+</sly>
