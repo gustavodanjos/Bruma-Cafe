@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T01:26:17.353-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="About Us"
+        sling:resourceType="brumacafe/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <main_banner
+                    jcr:created="{Date}2026-08-18T08:39:41.103-03:00"
+                    jcr:createdBy="admin"
+                    jcr:description="Café especial com origem, pessoas e histórias que merecem ser conhecidas."
+                    jcr:lastModified="{Date}2026-08-18T15:14:38.210-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Conheça a Bruma"
+                    sling:resourceType="brumacafe/components/main-banner"
+                    alt="Plantação brasileira de café especial"
+                    fileReference="/content/dam/brumacafe/images/seuAltamiro (1).jpg"/>
+                <title
+                    jcr:created="{Date}2026-08-18T08:39:56.504-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-19T09:47:15.590-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Nossa história"
+                    sling:resourceType="brumacafe/components/title"
+                    linkTarget="_self"
+                    type="h1">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                </title>
+                <featured_quote
+                    jcr:created="{Date}2026-08-18T09:00:16.809-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T00:42:10.395-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featured-quote"
+                    text="&lt;p style=&quot;margin-left: 40.0px;&quot;>A Bruma é uma marca de café especial fundada há três anos e vende exclusivamente pela internet.&lt;/p>&#xd;&#xa;&lt;p style=&quot;margin-left: 40.0px;&quot;>Mais do que apresentar cafés para compra, a Bruma quer contar o que existe por trás de cada xícara.&lt;/p>&#xd;&#xa;&lt;p style=&quot;margin-left: 40.0px;&quot;>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                        <tablet
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                </featured_quote>
+                <title_1135699679
+                    jcr:created="{Date}2026-08-18T08:51:35.793-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-18T08:51:40.808-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Valores"
+                    sling:resourceType="brumacafe/components/title"
+                    linkTarget="_self"
+                    type="h1">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                </title_1135699679>
+                <content_grid
+                    jcr:created="{Date}2026-08-18T08:51:49.782-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-18T15:15:07.731-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/content-grid">
+                    <items jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            alt="foto café"
+                            fileReference="/content/dam/brumacafe/images/brumaChapadaDiamantina.jpg"
+                            text="Acreditamos que saber de onde vem o café faz parte da experiência de apreciá-lo.&#xd;&#xa;"
+                            title="Conhecer a origem"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            alt="foto platação"
+                            fileReference="/content/dam/brumacafe/images/seuAltamiro (1).jpg"
+                            text="Queremos dar visibilidade às pessoas e aos produtores que existem por trás de cada café.&#xd;&#xa;"
+                            title="Valorizar quem planta"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            alt="foto café"
+                            fileReference="/content/dam/brumacafe/images/brumaCerradoMineiro.jpg"
+                            text="Cada origem tem uma história e características próprias que ajudam a explicar por que aquele café é diferente."
+                            title="Entender cada café"/>
+                    </items>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <phone
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="11"/>
+                    </cq:responsive>
+                </content_grid>
+                <title_346802261
+                    jcr:created="{Date}2026-08-20T00:47:12.613-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T00:47:25.949-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Quem faz a Bruma"
+                    sling:resourceType="brumacafe/components/title"/>
+                <featured_quote_913552091
+                    jcr:created="{Date}2026-08-20T01:23:32.655-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T01:24:13.311-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featured-quote"
+                    text="&lt;p>A Bruma é feita por pessoas que&lt;/p>&#xd;&#xa;&lt;p>acreditam que conhecer a origem&lt;/p>&#xd;&#xa;&lt;p>também faz parte de apreciar um&lt;/p>&#xd;&#xa;&lt;p>bom café.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </featured_quote_913552091>
+                <image
+                    jcr:created="{Date}2026-08-20T01:24:36.381-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-20T01:25:19.868-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/image"
+                    alt="teste"
+                    displayPopupTitle="true"
+                    fileName="images (9).jpg"
+                    imageFromPageImage="false"
+                    isDecorative="false"
+                    linkTarget="_self">
+                    <file/>
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="5"/>
+                    </cq:responsive>
+                </image>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

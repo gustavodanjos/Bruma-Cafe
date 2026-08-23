@@ -1,7 +1,7 @@
 /*
  * Content Grid component styles.
  *
- * Global design tokens such as colors, typography, spacing, radio,
+ * Global design tokens such as colors, typography, spacing, radii,
  * and layout values are defined in:
  * ui.frontend/src/main/webpack/site/_variables.scss
  *
@@ -15,41 +15,51 @@
 .cmp-content-grid {
     width: 100%;
     max-width: var(--bruma-max-width);
+
     margin: 0 auto;
-    padding: var(--bruma-space-lg) var(--bruma-space-md);
+    padding: 0 var(--bruma-space-md);
+
     box-sizing: border-box;
 }
 
 .cmp-content-grid__grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+
     gap: var(--bruma-space-md);
+
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
 
 .cmp-content-grid__item {
     display: flex;
     flex-direction: column;
+
     min-width: 0;
     overflow: hidden;
 
     border: 1px solid var(--bruma-color-border);
     border-radius: var(--bruma-radius-card);
+
     background-color: var(--bruma-color-cream);
 }
 
 .cmp-content-grid__media {
     width: 100%;
     aspect-ratio: 4 / 3;
+
     overflow: hidden;
 }
 
 .cmp-content-grid__image {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
 }
@@ -57,7 +67,9 @@
 .cmp-content-grid__content {
     display: flex;
     flex-direction: column;
+
     gap: var(--bruma-space-sm);
+
     min-width: 0;
     padding: var(--bruma-space-md);
 }
@@ -88,6 +100,7 @@
     overflow-wrap: anywhere;
 }
 
+/* Tablet: 768px - 1023px */
 @media (min-width: 768px) {
     .cmp-content-grid__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -98,12 +111,8 @@
     }
 }
 
+/* Desktop: >= 1024px */
 @media (min-width: 1024px) {
-    .cmp-content-grid {
-        padding-top: var(--bruma-space-xl);
-        padding-bottom: var(--bruma-space-xl);
-    }
-
     .cmp-content-grid__grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
