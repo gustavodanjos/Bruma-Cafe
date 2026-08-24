@@ -11,7 +11,7 @@
     font-family: var(--bruma-font-sans);
 }
 
-.container-cafes-grid .info-cafe-container {
+.info-cafe-card, a.info-cafe-link {
     display: flex;
     flex-direction: column;
     background-color: var(--bruma-color-white);
@@ -20,34 +20,52 @@
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(46, 31, 26, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    box-sizing: border-box;
+    cursor: pointer;
+    text-decoration: none; /* For the <a> tag */
+    color: inherit; /* For the <a> tag */
 }
 
-.container-cafes-grid .info-cafe-container:hover {
+.info-cafe-card:hover, a.info-cafe-link:hover {
     transform: translateY(-2px);
     border-color: var(--bruma-color-roast);
     box-shadow: 0 8px 24px rgba(46, 31, 26, 0.1);
-    cursor: pointer;
 }
 
-.container-cafes-grid .info-cafe-container .info-cafe-image {
+.info-cafe-image {
     width: 100%;
     height: 280px;
     object-fit: cover;
     opacity: 0.88;
-    display: block;
     background-color: var(--bruma-color-grain);
 }
 
-.container-cafes-grid .info-cafe-text-container {
+.info-cafe-body {
     display: flex;
     flex-direction: column;
-    gap: 0;
     padding: 24px;
     flex-grow: 1;
 }
 
-.container-cafes-grid .info-cafe-text-container h2 {
+.info-cafe-badges, .cafe-detail-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.info-cafe-badge {
+    background-color: rgba(63,93,69,0.1);
+    color: #3F5D45; /* verde folha */
+    font-family: var(--bruma-font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-cafe-body h2 {
     font-family: var(--bruma-font-serif);
     font-size: 22px;
     font-weight: 500;
@@ -56,24 +74,132 @@
     margin: 0 0 6px 0;
 }
 
-.container-cafes-grid .info-cafe-text-container > p {
-    font-family: var(--bruma-font-sans);
+.info-cafe-origin {
     font-size: 13px;
-    line-height: 1.5;
     color: var(--bruma-color-fog);
     margin: 0 0 16px 0;
 }
 
-.container-cafes-grid .info-cafe-text-container div p {
-    font-family: var(--bruma-font-sans);
+.info-cafe-producer {
     font-size: 13px;
     color: var(--bruma-color-fog);
-    margin: 0;
-    border-top: none;
-    padding-top: 0;
+    margin: 0 0 16px 0;
 }
-
-.container-cafes-grid .info-cafe-text-container div p strong {
+.info-cafe-producer strong {
     color: var(--bruma-color-grain);
     font-weight: 600;
+}
+
+.info-cafe-cta {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--bruma-color-rust);
+    font-family: var(--bruma-font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    margin-top: auto;
+}
+
+.cafe-details-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: var(--bruma-color-cream, #F5EFE7);
+}
+
+.cafe-detail-panel {
+    display: none; 
+    width: 100%;
+}
+
+.cafe-detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    box-sizing: border-box;
+}
+
+.cafe-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .cafe-detail-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.cafe-detail-image-col img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    opacity: 0.9;
+}
+
+.cafe-detail-info-col h2 {
+    font-family: var(--bruma-font-serif);
+    font-size: clamp(32px, 4vw, 44px);
+    color: var(--bruma-color-grain);
+    margin: 0 0 12px 0;
+    line-height: 1.1;
+}
+
+.cafe-detail-origin {
+    font-size: 15px;
+    color: var(--bruma-color-fog);
+    margin: 0 0 32px 0;
+}
+
+.cafe-detail-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--bruma-color-grain);
+    margin: 0 0 40px 0;
+}
+
+.cafe-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.cafe-detail-grid-item {
+    background: var(--bruma-color-white);
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--bruma-color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cafe-detail-grid-item .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bruma-color-fog);
+    letter-spacing: 0.5px;
+}
+
+.cafe-detail-grid-item .value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--bruma-color-grain);
+}
+
+.cafe-detail-sensory .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bruma-color-fog);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 12px;
 }
