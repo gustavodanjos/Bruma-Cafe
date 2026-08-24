@@ -10,7 +10,7 @@
 
 <br/>
 
-> O projeto **Bruma Café** é uma simulação de projeto real desenvolvida como o desafio final do Programa de Estágio em AEM. O objetivo é transformar diretrizes de negócio na fundação de um site institucional e hub de conteúdo focado em cafés especiais.
+> O projeto **Bruma Café** é uma simulação de projeto real desenvolvida como o desafio final do Programa de Estágio em AEM da Webjump. O objetivo é transformar diretrizes de negócio na fundação de um site institucional e hub de conteúdo focado em cafés especiais.
 
 </div>
 
