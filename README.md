@@ -80,8 +80,16 @@ Bruma-Cafe/
 ├── ui.config/      # Configurações OSGi específicas do ambiente
 ├── all/            # Pacote agregador (instala todos os módulos de uma vez)
 ├── dispatcher/     # Configurações do dispatcher
-└── it.tests/       # Testes de integração
+└── it.tests/       # Testes de integração (Estrutura gerada, testes não implementados na Sprint)
 ```
+
+### Fluxo de Build do Frontend
+
+Para garantir otimização de recursos, o frontend (Frente 3) segue este fluxo automatizado:
+1. O `frontend-maven-plugin` dispara o Node/NPM durante o build.
+2. O Webpack compila e minifica SCSS e JS presentes em `ui.frontend`.
+3. Os assets resultantes são automaticamente copiados para a pasta `clientlibs` dentro do módulo `ui.apps`.
+4. O AEM empacota o `ui.apps` e serve os arquivos já processados para o site.
 
 ### Fluxo de Responsabilidades (Server-Side)
 
@@ -283,21 +291,25 @@ var(--bruma-radius-card)
 
 | Ferramenta   | Versão | Observação                         |
 | :----------- | :------ | :----------------------------------- |
-| Java (JDK)   | 11      | Versão suportada pelo AEM 6.5       |
+| Java (JDK)   | 11      | **Obrigatório.** O AEM 6.5 não inicializa corretamente com Java 17+. |
 | Apache Maven | 3.6+    | Deve estar configurado no`PATH`    |
 | Node.js      | 18+     | Necessário para o build do frontend |
 | NPM          | 9+      | Instalado junto com o Node.js        |
 
+> [!CAUTION]
+> **Dependências Proprietárias:** O arquivo `.jar` do AEM e o arquivo de licença (`license.properties`) não estão versionados neste repositório por questões de direitos autorais da Adobe. Você deve obter esses arquivos pelos canais oficiais para executar o projeto.
+
 ### Passo 1: Preparar e rodar o AEM (Author)
 
-1. Crie uma pasta vazia no seu computador.
-2. Coloque dentro dela o arquivo `.jar` do AEM (`aem-author-p4502.jar`) e a licença correspondente (`license.properties`).
-3. Inicie o servidor:
+1. Crie uma pasta vazia no seu computador (ex: `aem-author`).
+2. Coloque dentro dela o arquivo `.jar` do AEM e a licença correspondente (`license.properties`).
+3. Renomeie o arquivo `.jar` para `aem-author-p4502.jar` (isso define o modo Author e a porta 4502).
+4. Inicie o servidor via terminal:
    ```bash
    java -jar aem-author-p4502.jar
    ```
-4. O AEM extrairá todos os arquivos para a pasta `crx-quickstart`. Aguarde a inicialização (pode levar alguns minutos).
-5. Acesse http://localhost:4502 e faça login com `admin` / `admin`.
+5. O AEM extrairá todos os arquivos para a pasta `crx-quickstart`. Aguarde a inicialização (pode levar até 10 minutos na primeira vez).
+6. Acesse http://localhost:4502 e faça login com `admin` / `admin`.
 
 ### Passo 2: Clonar e Buildar o Código
 
@@ -316,16 +328,17 @@ var(--bruma-radius-card)
 > [!NOTE]
 > O primeiro build pode levar alguns minutos, pois o Maven baixará todas as dependências Java da Adobe e o `frontend-maven-plugin` usará o Node.js/NPM para compilar o SCSS/JS da Frente 3.
 
-### Passo 3: Instalar os Pacotes de Conteúdo e Assets
+### Passo 3: Instalar o Conteúdo Base (Desambiguação)
 
-O build do Maven instala os templates e estruturas de componentes, mas o conteúdo real (4 cafés, 2 produtores e imagens no DAM) reside em pacotes de conteúdo (`.zip`).
+O comando do Maven acima compila o código Java, o Frontend e instala as estruturas de Componentes e Templates diretamente na sua instância AEM.
+
+No entanto, o conteúdo redacional puramente authorável (Páginas prontas, 4 cafés, 2 produtores em Content Fragments e imagens no DAM) é mantido em um pacote de backup congelado, para garantir que novos desenvolvedores tenham a mesma massa de dados sem sujar o repositório principal.
+
+Para instalar essa massa de conteúdo:
 
 1. Acesse o **Package Manager**: [http://localhost:4502/crx/packmgr/index.jsp](http://localhost:4502/crx/packmgr/index.jsp)
-2. Clique em **Upload Package** e selecione: `packages/brumacafe-site-final-1.0.0.zip`
+2. Clique em **Upload Package** e selecione o arquivo local: `packages/brumacafe-site-final-1.0.0.zip`
 3. Localize o pacote na listagem e clique em **Install**.
-
-> [!NOTE]
-> Se o pacote não estiver na pasta `packages/`, ele pode já estar versionado no repositório e instalado automaticamente pelo build do Maven.
 
 ### Alternativa: Instalar Apenas o Content Package (Sem Clonar o Repositório)
 
@@ -340,6 +353,44 @@ Se quiser testar o site sem clonar o código, é possível instalar apenas o pac
 
 1. **Content Fragments e Imagens:** Navegue em **Navigation > Assets > Files > brumacafe** e confirme a presença dos 4 cafés e 2 produtores com referências preenchidas.
 2. **Páginas do Site:** Acesse **Sites > Bruma Café** e visualize as páginas no editor para confirmar a renderização dos componentes.
+
+## Execução dos Testes
+
+O projeto utiliza **JUnit 5** em conjunto com **AEM Mocks** (`io.wcm.testing.aem-mock`) para testar a lógica dos Sling Models e Services OSGi.
+
+Para rodar todos os testes unitários e gerar o relatório de cobertura, execute na raiz do projeto:
+
+```bash
+mvn clean test
+```
+
+- A configuração do **JaCoCo** gera relatórios que podem ser encontrados em: `core/target/site/jacoco/index.html`.
+- O módulo `it.tests` faz parte da estrutura padrão do Archetype para abrigar testes de integração ponta a ponta, porém não foram implementados nesta Sprint devido a limitações de tempo.
+
+---
+
+## Validação em Instância Limpa (Task F5.3)
+
+Abaixo está o registro de validação da instalação do projeto a partir do zero. O objetivo é garantir que não há hardcodes dependentes da máquina de desenvolvimento original.
+
+| Escopo Validado | Resultado | Detalhes |
+| :--- | :---: | :--- |
+| Instalação de Templates (`ui.content`) | ✅ | Templates editáveis aplicados corretamente no `/conf`. |
+| Instalação de Código (`ui.apps`) | ✅ | Componentes e Clientlibs compiladas e injetadas. |
+| Deploy de Lógica (`core`) | ✅ | Bundle `brumacafe.core` ativo sem erros no OSGi Console. |
+| Inserção de Massa de Dados (`packages`) | ✅ | Imagens, Content Fragments e Árvore de Páginas importadas via `brumacafe-site-final-1.0.0.zip`. |
+
+### Troubleshooting / Problemas Conhecidos
+
+1. **AEM não sobe ou acusa limite de memória (Out of Memory):**
+   - **Causa:** O AEM 6.5 exige Java 11. O uso de Java 17, 21 ou falta de parâmetros de Heap causa falha no `java.lang.Runtime`.
+   - **Solução:** Assegure o uso exclusivo do JDK 11 (`java -version`).
+2. **Componentes sem estilo no primeiro deploy:**
+   - **Causa:** Cache no Dispatcher ou no navegador.
+   - **Solução:** Rode `mvn clean install`, limpe o cache do navegador e recarregue a página com `Shift + F5`.
+3. **Página exibe apenas código JSON ou não renderiza:**
+   - **Causa:** Falha de registro no Bundle `core` ou `ui.apps` ausente.
+   - **Solução:** Confirme no OSGi Bundles Console (`/system/console/bundles`) se o `Bruma Cafe - Core` está com status `Active`. Se não, reveja os logs (`error.log`).
 
 ---
 
@@ -374,6 +425,23 @@ Para manter a transparência sobre o MVP construído nesta Sprint:
 | **E-mails do Formulário** | O formulário de contato captura e valida os dados, gravando-os no repositório AEM. Nenhum e-mail real é disparado, pois não há servidor SMTP configurado neste ambiente. |
 | **Botão "Comprar" da Vitrine** | O botão de compra dos produtos da vitrine aponta para `#` como placeholder. A URL real da loja da Bruma pode ser configurada futuramente no Console OSGi, sem necessidade de novo *build*. |
 
+## Histórico de Problemas e Soluções
+
+Durante o desenvolvimento e as integrações do projeto, foram identificadas algumas dificuldades que exigiram ajustes para garantir a consistência e a manutenção do código.
+
+### Versionamento e consistência do código
+
+Foram encontradas dificuldades relacionadas ao versionamento e à manutenção de uma mesma base de código entre os desenvolvedores. Algumas alterações e configurações precisaram ser ajustadas para garantir que todos trabalhassem sobre a mesma estrutura e comportamento do projeto.
+
+**Situação atual:** Resolvido. O fluxo de versionamento e a organização do código foram ajustados ao longo do desenvolvimento.
+
+### Padronização de estilização
+
+Também foram encontradas dificuldades para manter uma estilização consistente entre os componentes, principalmente durante a criação e manutenção dos estilos.
+
+Foi necessário realizar ajustes na organização dos estilos e na forma de estilizar os componentes para manter um padrão visual e facilitar a manutenção do frontend.
+
+**Situação atual:** Resolvido. Os estilos foram revisados e padronizados ao final do desenvolvimento.
 ---
 
 ## Equipe
