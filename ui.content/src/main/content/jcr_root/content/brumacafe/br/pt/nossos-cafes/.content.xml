@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-20T13:05:19.933-03:00"
+        cq:lastModified="{Date}2026-08-24T02:05:38.239-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Descubra nossos cafés de safras exclusivas. Conheça as notas sensoriais, a região de origem e a história de cada produtor parceiro da Bruma."
@@ -24,7 +24,19 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
+                <cafe_page_header
+                    jcr:created="{Date}2026-08-23T23:24:18.129-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-23T23:24:55.613-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/cafe-page-header"
+                    chapeu="Nossos cafés"
+                    descricao="Cafés selecionados diretamente de produtores parceiros. Colheita 2026, disponíveis em quantidade limitada."
+                    titulo="Cada lote, uma história"/>
                 <info_cafe
+                    jcr:created="{Date}2026-08-20T13:04:37.758-03:00"
+                    jcr:createdBy="admin"
                     jcr:lastModified="{Date}2026-08-20T13:05:19.931-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
@@ -44,8 +56,21 @@
                             fragmentPath="/content/dam/brumacafe/fragments/bruma-serra-da-mantiqueira"/>
                     </cafes>
                 </info_cafe>
+                <store_callout
+                    jcr:created="{Date}2026-08-24T02:04:31.531-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-24T02:05:38.236-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/store-callout"
+                    buttonLabel="Comprar Agora"
+                    buttonLink="https://www.mercafe.com.br/cafes-especiais-promocao?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=ceo_cafe_gourmet&amp;gad_source=1&amp;gad_campaignid=23899624304&amp;gbraid=0AAAAACYl42gbomcxR0B901fbYswiAzPFt&amp;gclid=CjwKCAjwqJXUBhBNEiwA8BgG7vDb0F7anJltlbLgXvdliHMls9LEEpWjoMBekZCOA0HYIdmvmbdsxxoCsRYQAvD_BwE"
+                    text="Visite nossa loja e encontre o café perfeito para você!"
+                    title="Que tal levar o sabor da Bruma Café para a sua rotina? Conheça nossa seleção de cafés, escolha o seu favorito e descubra sabores que começam na origem e chegam até a sua xícara."/>
             </container>
             <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
                 jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"

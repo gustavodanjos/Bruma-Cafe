@@ -7,13 +7,12 @@
     <jcr:content
         cq:name="bruma-serra-da-mantiqueira"
         cq:parentPath="/content/dam/brumacafe/fragments"
-        cq:versionCreator="admin"
-        jcr:lastModified="{Date}2026-08-12T22:57:52.497-03:00"
+        jcr:lastModified="{Date}2026-08-24T01:38:59.906-03:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent"
         jcr:title="Bruma Serra da Mantiqueira"
         contentFragment="{Boolean}true"
-        lastFragmentSave="{Date}2026-08-12T22:57:52.497-03:00">
+        lastFragmentSave="{Date}2026-08-24T01:38:59.906-03:00">
         <data
             cq:model="/conf/brumacafe/settings/dam/cfm/models/cafe"
             jcr:primaryType="nt:unstructured"
@@ -21,15 +20,21 @@
             <master
                 jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
                 jcr:primaryType="nt:unstructured"
+                altitude="1.250m"
+                altitude_x0040_LastModified="{Date}2026-08-24T01:35:23.317-03:00"
+                altitude_x0040_LastModifiedBy="admin"
                 fotoCafe="/content/dam/brumacafe/images/brumaSerradaMantiqueira.jpg"
                 fotoCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.477-03:00"
                 fotoCafe_x0040_LastModifiedBy="admin"
                 nomeCafe="Bruma Serra da Mantiqueira"
                 nomeCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.475-03:00"
                 nomeCafe_x0040_LastModifiedBy="admin"
-                notasSensoriaisEDescricao="&lt;p>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/p>&#xa;"
+                notasBadges="Caramelo - Chocolate - Frutas Amarelas"
+                notasBadges_x0040_LastModified="{Date}2026-08-24T01:36:52.976-03:00"
+                notasBadges_x0040_LastModifiedBy="admin"
+                notasSensoriaisEDescricao="&lt;ul>&#xa;&lt;li>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/li>&#xa;&lt;/ul>&#xa;"
                 notasSensoriaisEDescricao_x0040_ContentType="text/html"
-                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-12T22:57:52.476-03:00"
+                notasSensoriaisEDescricao_x0040_LastModified="{Date}2026-08-24T01:38:59.881-03:00"
                 notasSensoriaisEDescricao_x0040_LastModifiedBy="admin"
                 nvelDeTorra="media"
                 nvelDeTorra_x0040_LastModified="{Date}2026-08-12T22:57:52.477-03:00"
@@ -37,9 +42,18 @@
                 origemCafe="Carmo de Minas - MG, 1.250m de altitude"
                 origemCafe_x0040_LastModified="{Date}2026-08-12T22:57:52.475-03:00"
                 origemCafe_x0040_LastModifiedBy="admin"
+                processo="Natural"
+                processo_x0040_LastModified="{Date}2026-08-24T01:35:23.316-03:00"
+                processo_x0040_LastModifiedBy="admin"
                 produtorRef="/content/dam/brumacafe/fragments/dona-sebastiana"
                 produtorRef_x0040_LastModified="{Date}2026-08-12T22:57:52.478-03:00"
-                produtorRef_x0040_LastModifiedBy="admin"/>
+                produtorRef_x0040_LastModifiedBy="admin"
+                safra="2026"
+                safra_x0040_LastModified="{Date}2026-08-24T01:35:23.317-03:00"
+                safra_x0040_LastModifiedBy="admin"
+                variedade="Bourbon Amarelo"
+                variedade_x0040_LastModified="{Date}2026-08-24T01:35:23.316-03:00"
+                variedade_x0040_LastModifiedBy="admin"/>
         </data>
         <indexedData jcr:primaryType="nt:unstructured">
             <master
@@ -48,10 +62,15 @@
                 jcr:uuid="c9e41e4d-c40c-477f-9dfe-74aa95903a5a"
                 _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/cafe"
                 _x0040_stringArray_x0040_variations="[]"
+                string_x0040_altitude="1.250m"
                 string_x0040_nomeCafe="Bruma Serra da Mantiqueira"
-                string_x0040_notasSensoriaisEDescricao="&lt;p>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/p>&#xa;"
+                string_x0040_notasBadges="Caramelo - Chocolate - Frutas Amarelas"
+                string_x0040_notasSensoriaisEDescricao="&lt;ul>&#xa;&lt;li>Notas marcantes de caramelo, chocolate ao leite e toque suave de frutas amarelas. Acidez cítrica brilhante e corpo aveludado.&lt;/li>&#xa;&lt;/ul>&#xa;"
                 string_x0040_nvelDeTorra="media"
-                string_x0040_origemCafe="Carmo de Minas - MG, 1.250m de altitude"/>
+                string_x0040_origemCafe="Carmo de Minas - MG, 1.250m de altitude"
+                string_x0040_processo="Natural"
+                string_x0040_safra="2026"
+                string_x0040_variedade="Bourbon Amarelo"/>
         </indexedData>
         <metadata
             jcr:mixinTypes="[cq:Taggable]"
