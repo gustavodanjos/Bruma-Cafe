@@ -1,0 +1,15 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='bruma-cafe.cafe-page-header'}"/>
+</sly>
+
+<sly data-sly-use.model="com.brumacafe.core.models.CafePageHeaderModel">
+    <header class="cmp-cabecalho-secao" data-sly-test="${model.configured}">
+        <span class="cmp-cabecalho-secao__eyebrow" data-sly-test="${model.chapeu}">${model.chapeu}</span>
+        <h1 class="cmp-cabecalho-secao__title">${model.titulo}</h1>
+        <p class="cmp-cabecalho-secao__description" data-sly-test="${model.descricao}">${model.descricao @ context='text'}</p>
+    </header>
+
+    <div class="cq-placeholder" 
+         data-emptytext="Cabeçalho de Seção - Clique para configurar o texto" 
+         data-sly-test="${!model.configured}"></div>
+</sly>
