@@ -1,5 +1,19 @@
 <div align="center">
 
+# Bruma Café — Projeto AEM
+
+[![AEM](https://img.shields.io/badge/AEM-6.5%2B-FF0000?logo=adobe&logoColor=white)](https://experienceleague.adobe.com/docs/experience-manager.html)
+[![Java](https://img.shields.io/badge/Java-11-ED8B00?logo=openjdk&logoColor=white)](https://www.java.com/)
+[![Maven](https://img.shields.io/badge/Maven-3.6%2B-C71A22?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Status](https://img.shields.io/badge/Status-Finalizado-brightgreen)]()
+
+<br/>
+
+> O projeto **Bruma Café** é uma simulação de projeto real desenvolvida como o desafio final do Programa de Estágio em AEM. O objetivo é transformar diretrizes de negócio na fundação de um site institucional e hub de conteúdo focado em cafés especiais.
+
+</div>
+
 ---
 
 ## Índice
@@ -167,7 +181,8 @@ Seguindo rigorosamente o fluxo definido:
 
 ### 4. Resiliência e Performance
 
-- **Integração Desacoplada (Loja):** A chamada à API externa é feita no backend via OSGi Service. O endereço e a quantidade de produtos são configuráveis pelo Console OSGi sem necessidade de novo *build*. Os resultados são mantidos em **cache temporário configurável** para evitar requisições redundantes a cada visita.
+- **API Real da Loja da Bruma:** A vitrine de produtos consome a API própria da marca (`https://api-bruma-cafe.vercel.app/api/produtos`), retornando os dados reais dos cafés disponíveis. O endpoint é configurável no Console OSGi sem necessidade de novo *build*, permitindo ajustes futuros sem tocar em código.
+- **Integração Desacoplada (Loja):** A chamada à API é feita no backend via OSGi Service. Os resultados são mantidos em **cache temporário configurável** para evitar requisições redundantes a cada visita.
 - **Fallback da Loja:** Se a API externa falhar ou ficar indisponível, o componente exibe um estado alternativo graciosamente — o site nunca quebra por causa de uma dependência externa.
 - **QueryBuilder com Limite:** A listagem de artigos usa `p.limit` estrito no QueryBuilder para evitar varreduras ilimitadas no repositório JCR, protegendo a JVM de picos de consumo de memória.
 
@@ -306,11 +321,20 @@ var(--bruma-radius-card)
 O build do Maven instala os templates e estruturas de componentes, mas o conteúdo real (4 cafés, 2 produtores e imagens no DAM) reside em pacotes de conteúdo (`.zip`).
 
 1. Acesse o **Package Manager**: [http://localhost:4502/crx/packmgr/index.jsp](http://localhost:4502/crx/packmgr/index.jsp)
-2. Clique em **Upload Package** e selecione: `packages/brumacafe-conteudo-1.0.0.zip`
+2. Clique em **Upload Package** e selecione: `packages/brumacafe-site-final-1.0.0.zip`
 3. Localize o pacote na listagem e clique em **Install**.
 
 > [!NOTE]
 > Se o pacote não estiver na pasta `packages/`, ele pode já estar versionado no repositório e instalado automaticamente pelo build do Maven.
+
+### Alternativa: Instalar Apenas o Content Package (Sem Clonar o Repositório)
+
+Se quiser testar o site sem clonar o código, é possível instalar apenas o pacote final completo:
+
+1. Inicie o AEM conforme o **Passo 1** acima.
+2. Acesse o **Package Manager**: [http://localhost:4502/crx/packmgr/index.jsp](http://localhost:4502/crx/packmgr/index.jsp)
+3. Faça upload e instale o arquivo `packages/brumacafe-site-final-1.0.0.zip`.
+4. Após a instalação, o site já estará disponível em [http://localhost:4502/content/brumacafe/br/pt.html](http://localhost:4502/content/brumacafe/br/pt.html).
 
 ### Passo 4: Validar a Instalação
 
@@ -345,10 +369,10 @@ p.limit=4
 
 Para manter a transparência sobre o MVP construído nesta Sprint:
 
-| Limitação                       | Detalhes                                                                                                                                                                                                                                       |
-| :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **E-mails do Formulário**  | O formulário de contato captura e valida os dados, gravando-os no repositório AEM. Nenhum e-mail real é disparado, pois não há servidor SMTP configurado neste ambiente.                                                                  |
-| **Loja Virtual (API Mock)** | Os produtos na home são alimentados por uma API pública de testes (`dummyjson.com`). Em produção, o endpoint deve ser substituído pelo e-commerce real da Bruma Café — configurável diretamente no Console OSGi, sem novo *build*. |
+| Limitação | Detalhes |
+| :--- | :--- |
+| **E-mails do Formulário** | O formulário de contato captura e valida os dados, gravando-os no repositório AEM. Nenhum e-mail real é disparado, pois não há servidor SMTP configurado neste ambiente. |
+| **Botão "Comprar" da Vitrine** | O botão de compra dos produtos da vitrine aponta para `#` como placeholder. A URL real da loja da Bruma pode ser configurada futuramente no Console OSGi, sem necessidade de novo *build*. |
 
 ---
 
