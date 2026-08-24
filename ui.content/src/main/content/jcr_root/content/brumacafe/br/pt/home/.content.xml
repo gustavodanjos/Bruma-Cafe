@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-24T03:07:55.137-03:00"
+        cq:lastModified="{Date}2026-08-24T04:25:27.782-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
         jcr:description="Selecionamos cafés especiais brasileiros diretamente dos produtores. Torramos em pequenos lotes e contamos histórias de origem. Conheça a Bruma Café."
@@ -29,13 +29,13 @@
                     jcr:created="{Date}2026-08-20T12:34:18.221-03:00"
                     jcr:createdBy="admin"
                     jcr:description="Selecionamos cafés especiais brasileiros diretamente de produtores, valorizando a origem, o processo e as pessoas por trás de cada colheita. Torramos em pequenos lotes.&#xd;&#xa;Contamos histórias de origem. Nada mais, nada menos."
-                    jcr:lastModified="{Date}2026-08-24T00:03:01.124-03:00"
+                    jcr:lastModified="{Date}2026-08-24T04:25:27.776-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Bruma Café - Café especial, da origem à xícara."
                     sling:resourceType="brumacafe/components/main-banner"
                     alt="Plantação brasileira de café especial"
-                    buttonLink="/content/brumacafe/br/pt/nossos-cafes"
+                    buttonLink="/content/brumacafe/br/pt/nossos-cafes.html"
                     buttonText="Conheça nossos cafés"
                     fileReference="/content/dam/brumacafe/images/vista-aerea.jpg"/>
                 <title
