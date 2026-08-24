@@ -30,9 +30,16 @@ public class StoreServiceImpl implements StoreService {
     private int timeout;
     private long cacheTtlMillis;
 
-    // Cache em memória
-    private List<ProductDto> cachedProducts = Collections.emptyList();
-    private long lastCacheTime = 0;
+    // Cache em memória baseado na URL
+    private static class CacheEntry {
+        List<ProductDto> products;
+        long timestamp;
+        CacheEntry(List<ProductDto> products, long timestamp) {
+            this.products = products;
+            this.timestamp = timestamp;
+        }
+    }
+    private java.util.Map<String, CacheEntry> cacheMap = new java.util.concurrent.ConcurrentHashMap<>();
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -44,44 +51,60 @@ public class StoreServiceImpl implements StoreService {
         this.timeout = config.connectionTimeout();
         this.cacheTtlMillis = config.cacheTtlSeconds() * 1000L;
 
-        // Invalida o cache para recarregar com as novas configs
-        this.cachedProducts = Collections.emptyList();
-        this.lastCacheTime = 0;
+        // Invalida o cache
+        this.cacheMap.clear();
 
         LOG.info("StoreService configurado: URL={}, Limit={}, Timeout={}ms, CacheTTL={}s",
                 this.apiUrl, this.productLimit, this.timeout, config.cacheTtlSeconds());
     }
 
     @Override
-    public synchronized List<ProductDto> getProducts() {
-        long currentTime = System.currentTimeMillis();
+    public List<ProductDto> getProducts() {
+        return getProducts(this.apiUrl);
+    }
 
-        if (!cachedProducts.isEmpty() && (currentTime - lastCacheTime < cacheTtlMillis)) {
-            LOG.debug("Retornando produtos do cache em memória (idade: {}ms)", currentTime - lastCacheTime);
-            return cachedProducts;
+    @Override
+    public List<ProductDto> getProducts(String customApiUrl) {
+        if (customApiUrl == null || customApiUrl.trim().isEmpty()) {
+            customApiUrl = this.apiUrl;
         }
 
-        LOG.info("Cache expirado ou vazio. Realizando consulta HTTP na API da loja: {}", this.apiUrl);
-        List<ProductDto> fetchedProducts = fetchProductsFromApi();
+        long currentTime = System.currentTimeMillis();
+        CacheEntry entry = cacheMap.get(customApiUrl);
+
+        if (entry != null && !entry.products.isEmpty() && (currentTime - entry.timestamp < cacheTtlMillis)) {
+            LOG.debug("Retornando produtos do cache em memória para URL: {}", customApiUrl);
+            return entry.products;
+        }
+
+        LOG.info("Cache expirado ou vazio para {}. Realizando consulta HTTP.", customApiUrl);
+        List<ProductDto> fetchedProducts = fetchProductsFromApi(customApiUrl);
 
         if (fetchedProducts != null && !fetchedProducts.isEmpty()) {
-            this.cachedProducts = Collections.unmodifiableList(fetchedProducts);
-            this.lastCacheTime = currentTime;
-            return this.cachedProducts;
+            List<ProductDto> unmodifiable = Collections.unmodifiableList(fetchedProducts);
+            cacheMap.put(customApiUrl, new CacheEntry(unmodifiable, currentTime));
+            return unmodifiable;
         }
 
-        if (!this.cachedProducts.isEmpty()) {
-            LOG.warn("Falha ao renovar produtos da API. Mantendo cache anterior.");
-            return this.cachedProducts;
+        if (entry != null && !entry.products.isEmpty()) {
+            LOG.warn("Falha ao renovar produtos da API. Mantendo cache anterior para {}.", customApiUrl);
+            return entry.products;
         }
 
         return Collections.emptyList();
     }
 
-    private List<ProductDto> fetchProductsFromApi() {
+    private List<ProductDto> fetchProductsFromApi(String targetUrl) {
         HttpURLConnection conn = null;
         try {
-            String fullUrl = String.format("%s?limit=%d", this.apiUrl, this.productLimit);
+            // Se a URL já possui parâmetros (ex: Vercel), cuidamos para não quebrar.
+            // Por simplicidade, vou apenas apendar se o user quiser manter o limite.
+            // Porém o json do Vercel não tem paginação e traz direto 'products'.
+            String fullUrl = targetUrl;
+            if (targetUrl.contains("dummyjson")) {
+                fullUrl = String.format("%s?limit=%d", targetUrl, this.productLimit);
+            }
+
             URL url = new URL(fullUrl);
 
             conn = (HttpURLConnection) url.openConnection();

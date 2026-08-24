@@ -5,4 +5,5 @@ import com.brumacafe.core.models.dto.ProductDto;
 
 public interface StoreService {
     List<ProductDto> getProducts();
+    List<ProductDto> getProducts(String customApiUrl);
 }   

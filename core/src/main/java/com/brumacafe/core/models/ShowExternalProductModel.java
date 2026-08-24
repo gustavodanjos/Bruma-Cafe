@@ -20,12 +20,15 @@ public class ShowExternalProductModel {
     @OSGiService
     private StoreService storeService;
 
+    @org.apache.sling.models.annotations.injectorspecific.ValueMapValue
+    private String apiUrl;
+
     private List<ProductDto> produtos = new ArrayList<>();
 
     @PostConstruct
     protected void init() {
         if (storeService != null) {
-            this.produtos = storeService.getProducts();
+            this.produtos = storeService.getProducts(this.apiUrl);
         }
     }
 
