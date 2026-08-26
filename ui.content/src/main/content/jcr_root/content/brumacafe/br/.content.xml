@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T12:49:56.776-03:00"
+        cq:lastModifiedBy="admin"
+        cq:redirectTarget="/content/brumacafe/br/pt/home"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="br"
+        sling:resourceType="brumacafe/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid"/>
+            <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-18T11:49:35.002-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:49:56.773-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+    <pt/>
+</jcr:root>

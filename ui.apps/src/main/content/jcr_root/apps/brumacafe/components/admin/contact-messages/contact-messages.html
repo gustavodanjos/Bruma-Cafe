@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="coral-App" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mensagens de Contato - Bruma Café</title>
+
+    <link rel="stylesheet" href="/etc.clientlibs/clientlibs/granite/coralui3.css" type="text/css">
+    <link rel="stylesheet" href="/etc.clientlibs/clientlibs/granite/coralui2.css" type="text/css">
+    
+    <sly data-sly-call="${clientlib.css @ categories='brumacafe.admin.contactmessages'}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="coral--light coral-App-page">
+
+    <main class="bruma-dashboard-container">
+        <header class="bruma-dashboard-header">
+            <h1 class="bruma-dashboard-title">Mensagens de Contato recebidas</h1>
+            <button class="coral-Button coral-Button--primary" onclick="loadMessages()">
+                <span>Atualizar Lista</span>
+            </button>
+        </header>
+
+        <coral-tabview style="margin-bottom: 2rem;">
+            <coral-tablist target="messagesTabs" id="brumaTabList">
+                <coral-tab selected data-filter="UNREAD">Não Lidas</coral-tab>
+                <coral-tab data-filter="READ">Lidas</coral-tab>
+                <coral-tab data-filter="TRASHED">Lixeira</coral-tab>
+            </coral-tablist>
+            <coral-panelstack id="messagesTabs" style="display: none;"></coral-panelstack>
+        </coral-tabview>
+
+        <div class="bruma-messages-list" id="messagesList">
+            <div class="loading-state">
+                <coral-wait size="M" centered></coral-wait> Carregando mensagens...
+            </div>
+        </div>
+    </main>
+
+    
+    <script>
+        window.Coral = window.Coral || {};
+        window.Coral.options = {
+            iconURL: "/libs/granite/coralui3/resources/spectrum-icons.svg",
+            colorIconURL: "/libs/granite/coralui3/resources/spectrum-icons-color.svg"
+        };
+    </script>
+    <script src="/etc.clientlibs/clientlibs/granite/jquery.js"></script>
+    <script src="/etc.clientlibs/clientlibs/granite/coralui3.js"></script>
+    
+    <sly data-sly-call="${clientlib.js @ categories='brumacafe.admin.contactmessages'}"/>
+</body>
+</html>

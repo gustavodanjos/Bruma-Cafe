@@ -19,11 +19,14 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        site: SOURCE_ROOT + '/site/main.ts',
+        'admin-contactmessages': SOURCE_ROOT + '/admin/contact-messages/index.ts'
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            if (chunkData.chunk.name === 'dependencies') return 'clientlib-dependencies/[name].js';
+            if (chunkData.chunk.name === 'admin-contactmessages') return 'clientlib-admin-contactmessages/[name].js';
+            return 'clientlib-site/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },

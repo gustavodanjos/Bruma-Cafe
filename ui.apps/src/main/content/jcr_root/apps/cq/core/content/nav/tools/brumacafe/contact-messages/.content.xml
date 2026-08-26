@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Visualizar as mensagens recebidas pelo formulário de contato do site"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Mensagens de Contato"
+    href="/mnt/overlay/brumacafe/components/admin/contact-messages.html"
+    icon="email"
+    id="brumacafe-contact-messages"/>

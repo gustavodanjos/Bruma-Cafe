@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T07:36:11.600-03:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[brumacafe:origem]"
+        cq:template="/conf/brumacafe/settings/wcm/templates/pagina-de-artigo"
+        jcr:description="Do fruto ao grão seco, o método de processamento define sabores que nenhuma torra pode criar. Entenda as diferenças entre natural, lavado e honey."
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Processos naturais: o que acontece com o café após a colheita"
+        jcr:uuid="bf255967-336d-4ba7-b775-e7f11547e403"
+        sling:resourceType="brumacafe/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-13T07:36:55.871-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2026-08-13T08:02:52.140-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/title"/>
+                <image
+                    jcr:lastModified="{Date}2026-08-20T07:35:19.718-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/image"
+                    alt="Secagem e pós-processamento de grãos de café ao sol"
+                    altValueFromDAM="false"
+                    displayPopupTitle="true"
+                    fileReference="/content/dam/brumacafe/artigos/artigo-processos-naturais-secagem.jpg"
+                    imageFromPageImage="false"
+                    isDecorative="false"
+                    linkTarget="_self"
+                    titleValueFromDAM="true"/>
+                <text
+                    jcr:lastModified="{Date}2026-08-20T07:36:11.597-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/text"
+                    text="&lt;p>Quando o café é colhido, começa uma das etapas mais decisivas de todo o processo: o pós-processamento. É aqui que o fruto se transforma no grão que você vai torrar e moer, e cada método deixa uma marca sensorial inconfundível.&lt;/p>&#xd;&#xa;&lt;p>No processo natural, os frutos são secos ao sol inteiros, por semanas. A polpa permanece em contato com o grão durante todo esse tempo, transferindo açúcares fermentados e notas de frutas tropicais, vinho e chocolate escuro. É o método mais antigo da Etiópia e do Iêmen, e o mais imprevisível — exige atenção constante para evitar defeitos.&lt;/p>&#xd;&#xa;&lt;p>O processo lavado, por sua vez, remove toda a polpa antes da secagem. O grão é fermentado em tanques d'água para desprender o mucilago, depois lavado e seco. O resultado é um café mais limpo, com acidez vívida e notas florais ou cítricas bem definidas — a expressão mais pura do terroir.&lt;/p>&#xd;&#xa;&lt;p>Já o honey process, desenvolvido na Costa Rica, ocupa o meio-termo: retira a casca do fruto, mas mantém parte ou todo o mucilago. Dependendo de quanto resta, o café é classificado como yellow, red ou black honey, com corpos progressivamente mais ricos.&lt;/p>&#xd;&#xa;&lt;p>Na Bruma, trabalhamos principalmente com cafés naturais das regiões de altitude do Cerrado Mineiro e da Chapada Diamantina. A decisão é intencional: acreditamos que o processo natural, quando bem conduzido, revela camadas de sabor que o método lavado simplesmente não consegue alcançar.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T07:33:46.311-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

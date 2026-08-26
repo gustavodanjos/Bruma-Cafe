@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/brumacafe" mode="merge"/>
-    <filter root="/content/brumacafe" mode="merge"/>
-    <filter root="/content/dam/brumacafe" mode="merge">
-        <exclude pattern="/content/dam/brumacafe(/.*)?"/>
-        <include pattern="/content/dam/brumacafe/jcr:content(/.*)?"/>
-    </filter>
-    <filter root="/content/dam/brumacafe/asset.jpg" mode="merge"/>
-    <filter root="/content/dam/brumacafe/logo.svg" mode="merge"/>
-    <filter root="/content/experience-fragments/brumacafe" mode="merge"/>
-    <filter root="/content/cq:tags/brumacafe" mode="merge"/>
+    <filter root="/content/brumacafe"/>
+    <filter root="/content/dam/brumacafe"/>
+    <filter root="/content/experience-fragments/brumacafe"/>
+    <filter root="/conf/brumacafe"/>
+    <filter root="/content/cq:tags/brumacafe"/>
 </workspaceFilter>

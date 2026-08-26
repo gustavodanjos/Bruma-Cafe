@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ad381e89-c476-4f40-9eae-ef8b49b5aa86">
+    <jcr:content
+        cq:name="seu-altamiro"
+        cq:parentPath="/content/dam/brumacafe/fragments"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2026-08-12T22:52:57.291-03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Seu Altamiro"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-08-12T22:52:57.291-03:00">
+        <data
+            cq:model="/conf/brumacafe/settings/dam/cfm/models/produtor"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                foto="/content/dam/brumacafe/images/seuAltamiro.jpg"
+                foto_x0040_LastModified="{Date}2026-08-12T22:52:57.280-03:00"
+                foto_x0040_LastModifiedBy="admin"
+                historia="&lt;p>Pioneiro na produção de cafés especiais na região do Cerrado Mineiro, Seu Altamiro alia a tradição do trabalho no campo a técnicas sustentáveis de manejo do solo. Apaixonado pela biodiversidade local, ele preserva as matas nativas que cercam sua propriedade, o que cria um microclima ideal para o desenvolvimento lento e complexo dos grãos. Seu compromisso é entregar um café que respeita a terra e valoriza quem a cultiva.&lt;/p>&#xa;"
+                historia_x0040_ContentType="text/html"
+                historia_x0040_LastModified="{Date}2026-08-12T22:52:57.280-03:00"
+                historia_x0040_LastModifiedBy="admin"
+                nome="Seu Altamiro"
+                nome_x0040_LastModified="{Date}2026-08-12T22:52:57.280-03:00"
+                nome_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="4e3829c9-4030-4dd5-8cde-aaa2753369ea"
+                _x0040_string_x0040_model="/conf/brumacafe/settings/dam/cfm/models/produtor"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_historia="&lt;p>Pioneiro na produção de cafés especiais na região do Cerrado Mineiro, Seu Altamiro alia a tradição do trabalho no campo a técnicas sustentáveis de manejo do solo. Apaixonado pela biodiversidade local, ele preserva as matas nativas que cercam sua propriedade, o que cria um microclima ideal para o desenvolvimento lento e complexo dos grãos. Seu compromisso é entregar um café que respeita a terra e valoriza quem a cultiva.&lt;/p>&#xa;"
+                string_x0040_nome="Seu Altamiro"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

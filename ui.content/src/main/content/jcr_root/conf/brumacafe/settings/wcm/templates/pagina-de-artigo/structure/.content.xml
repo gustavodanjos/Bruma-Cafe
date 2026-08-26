@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2026-08-13T07:36:55.875-03:00"
+        cq:lastModified="{Date}2026-08-24T03:24:34.353-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/brumacafe/settings/wcm/templates/pagina-de-artigo"
         jcr:primaryType="cq:PageContent"
@@ -13,15 +13,57 @@
             sling:resourceType="brumacafe/components/container"
             layout="responsiveGrid">
             <experiencefragment-header
+                jcr:lastModified="{Date}2026-08-24T03:24:17.490-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/brumacafe/us/en/site/header/master"/>
+                fragmentVariationPath="/content/experience-fragments/brumacafe/br/pt/site/header/master"/>
+            <breadcrumb
+                jcr:created="{Date}2026-08-20T11:00:02.292-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-20T11:17:46.236-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/breadcrumb"
+                disableShadowing="false"
+                hideCurrent="false"
+                showHidden="false"
+                startLevel="4">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="11"/>
+                </cq:responsive>
+            </breadcrumb>
+            <articlehero
+                jcr:created="{Date}2026-08-24T00:43:20.194-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-24T01:52:59.775-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/articlehero"/>
             <container
                 jcr:lastModified="{Date}2026-08-13T07:36:49.072-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
                 editable="{Boolean}true"/>
+            <articlefooter
+                jcr:created="{Date}2026-08-24T00:43:58.302-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-24T00:43:58.302-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/articlefooter"/>
+            <experiencefragment
+                jcr:created="{Date}2026-08-20T10:47:21.642-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-24T03:24:34.350-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/brumacafe/br/pt/site/footer/master"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">

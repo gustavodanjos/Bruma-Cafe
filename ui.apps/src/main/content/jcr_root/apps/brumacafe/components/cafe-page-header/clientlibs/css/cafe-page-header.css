@@ -1,0 +1,54 @@
+.cmp-cabecalho-secao {
+    background-color: var(--bruma-color-grain);
+    padding: 64px 24px 32px 24px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .cmp-cabecalho-secao {
+        padding: 80px 48px 40px 48px;
+    }
+}
+
+.cmp-cabecalho-secao__eyebrow {
+    font-family: var(--bruma-font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bruma-color-fog);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.cmp-cabecalho-secao__title {
+    font-family: var(--bruma-font-serif);
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--bruma-color-cream);
+    margin: 0 0 20px 0;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .cmp-cabecalho-secao__title {
+        font-size: 52px;
+    }
+}
+
+.cmp-cabecalho-secao__description {
+    font-family: var(--bruma-font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--bruma-color-cream);
+    margin: 0;
+    max-width: 580px;
+    white-space: pre-line;
+}

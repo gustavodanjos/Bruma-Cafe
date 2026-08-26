@@ -1,0 +1,2 @@
+#base=site/css
+store-callout.css

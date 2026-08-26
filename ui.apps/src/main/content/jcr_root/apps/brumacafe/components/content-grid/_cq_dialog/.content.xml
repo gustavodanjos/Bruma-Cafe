@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Blocos em Grade"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container"
+        margin="{Boolean}true">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <blocks
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                fieldLabel="Blocos de conteúdo"
+                fieldDescription="Adicione os blocos que deseja exibir. Arraste para alterar a ordem."
+                composite="{Boolean}true">
+
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./items">
+
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <block
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well"
+                            margin="{Boolean}true">
+
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <block-heading
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                    level="{Long}3"
+                                    text="Bloco de conteúdo"/>
+
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                    fieldLabel="Imagem"
+                                    fieldDescription="Escolha uma imagem para representar este bloco."
+                                    name="file"
+                                    fileNameParameter="fileName"
+                                    fileReferenceParameter="fileReference"
+                                    mimeTypes="[image/jpeg,image/png,image/webp]"
+                                    allowUpload="{Boolean}false"
+                                    autoStart="{Boolean}false"
+                                    multiple="{Boolean}false"
+                                    useHTML5="{Boolean}true"
+                                    emptyText="Escolha uma imagem"
+                                    required="{Boolean}true"/>
+
+                                <alternative-text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Texto alternativo"
+                                    fieldDescription="Descreva brevemente o que aparece na imagem."
+                                    name="alt"
+                                    emptyText="Exemplo: Grãos de café secando ao sol"
+                                    maxlength="{Long}160"
+                                    required="{Boolean}true"/>
+
+                                <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Título do bloco"
+                                    fieldDescription="Use um título curto para apresentar este bloco."
+                                    name="title"
+                                    emptyText="Digite um título"
+                                    maxlength="{Long}80"
+                                    required="{Boolean}true"/>
+
+                                <text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Texto do bloco"
+                                    fieldDescription="Adicione o texto de apoio deste bloco."
+                                    name="text"
+                                    emptyText="Digite o texto do bloco"
+                                    maxlength="{Long}320"
+                                    rows="{Long}4"
+                                    required="{Boolean}true"/>
+
+                            </items>
+                        </block>
+
+                    </items>
+                </field>
+
+            </blocks>
+
+        </items>
+    </content>
+
+</jcr:root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Social Links"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <socialLinks
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Redes Sociais"
+                fieldDescription="Adicione, remova ou reordene as redes sociais do rodapé.">
+
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./socialLinks">
+
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <url
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="URL"
+                            fieldDescription="Endereço completo da rede social."
+                            name="./url"/>
+
+                        <platform
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Rede social"
+                            fieldDescription="Selecione o tipo de rede social."
+                            name="./platform">
+
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <instagram
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Instagram"
+                                    value="instagram"/>
+
+                                <facebook
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Facebook"
+                                    value="facebook"/>
+
+                                <linkedin
+                                    jcr:primaryType="nt:unstructured"
+                                    text="LinkedIn"
+                                    value="linkedin"/>
+
+                                <youtube
+                                    jcr:primaryType="nt:unstructured"
+                                    text="YouTube"
+                                    value="youtube"/>
+
+                                <tiktok
+                                    jcr:primaryType="nt:unstructured"
+                                    text="TikTok"
+                                    value="tiktok"/>
+
+                                <x
+                                    jcr:primaryType="nt:unstructured"
+                                    text="X"
+                                    value="x"/>
+
+                            </items>
+                        </platform>
+
+                    </items>
+                </field>
+            </socialLinks>
+
+        </items>
+    </content>
+</jcr:root>

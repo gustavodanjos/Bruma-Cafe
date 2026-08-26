@@ -1,25 +1,112 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
     <sly data-sly-call="${clientlib.css @ categories='bruma-cafe.info-cafe'}"/>
+    <sly data-sly-call="${clientlib.js @ categories='bruma-cafe.info-cafe'}"/>
 </sly>
 
 <sly data-sly-use.model="com.brumacafe.core.models.CafeModel">
     
-    <div class="container-cafes-grid" data-sly-test="${model.configured}" data-sly-list.cafe="${model.listaDeCafes}">
-        <div class="info-cafe-container" data-sly-test="${cafe.nome}">
-            <img class="info-cafe-image" src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
-            
-            <div class="info-cafe-text-container">
-                <h2>${cafe.nome}</h2>
-                <p>${cafe.descricao}</p>
-                <div>
-                    <p>
-                        <strong>Produtor:</strong>
-                        ${cafe.produtor}
-                    </p>
-                </div>
+    <sly data-sly-test="${model.configured}">
+        <div class="container-cafes-wrapper">
+            <div class="container-cafes-grid">
+                <sly data-sly-list.cafe="${model.listaDeCafes}">
+                    
+                    <sly data-sly-test="${model.hasTargetLink}">
+                        <a href="${model.targetLink}.html" class="info-cafe-card info-cafe-link">
+                            <img class="info-cafe-image" src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
+                            <div class="info-cafe-body">
+                                <div class="info-cafe-badges" data-sly-test="${cafe.notasBadges}">
+                                    <span class="info-cafe-badge" data-sly-list.badge="${cafe.notasBadges}">
+                                        ${badge}
+                                    </span>
+                                </div>
+                                <h2>${cafe.nome}</h2>
+                                <p class="info-cafe-origin">${cafe.descricao}</p>
+                                <div class="info-cafe-producer">
+                                    <strong>Produtor:</strong> ${cafe.produtor}
+                                </div>
+                            </div>
+                        </a>
+                    </sly>
+
+                    <sly data-sly-test="${!model.hasTargetLink}">
+                        <div class="info-cafe-card" data-cafe-trigger="${cafe.id}">
+                            <img class="info-cafe-image" src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
+                            <div class="info-cafe-body">
+                                <div class="info-cafe-badges" data-sly-test="${cafe.notasBadges}">
+                                    <span class="info-cafe-badge" data-sly-list.badge="${cafe.notasBadges}">
+                                        ${badge}
+                                    </span>
+                                </div>
+                                <h2>${cafe.nome}</h2>
+                                <p class="info-cafe-origin">${cafe.descricao}</p>
+                                <div class="info-cafe-producer">
+                                    <strong>Produtor:</strong> ${cafe.produtor}
+                                </div>
+                                <button class="info-cafe-cta">Ver detalhes &darr;</button>
+                            </div>
+                        </div>
+                    </sly>
+
+                </sly>
             </div>
+
+            <sly data-sly-test="${!model.hasTargetLink}">
+                <div class="cafe-details-wrapper">
+                    <sly data-sly-list.cafe="${model.listaDeCafes}">
+                        <div class="cafe-detail-panel" id="detail-${cafe.id}" style="display: none;">
+                            <div class="cafe-detail-content">
+                                <div class="cafe-detail-layout">
+                                    <div class="cafe-detail-image-col">
+                                        <img src="${cafe.imagem @ context='uri'}" alt="${cafe.nome}" />
+                                    </div>
+                                    <div class="cafe-detail-info-col">
+                                        <div class="cafe-detail-badges" data-sly-test="${cafe.notasBadges}">
+                                            <span class="info-cafe-badge" data-sly-list.badge="${cafe.notasBadges}">
+                                                ${badge}
+                                            </span>
+                                        </div>
+                                        <h2>${cafe.nome}</h2>
+                                        <p class="cafe-detail-origin">${cafe.produtor} &middot; ${cafe.descricao}</p>
+                                        <div class="cafe-detail-desc">
+                                            ${cafe.notasSensoriaisDescricao @ context='html'}
+                                        </div>
+                                        
+                                        <div class="cafe-detail-grid">
+                                            <div class="cafe-detail-grid-item">
+                                                <span class="label">Variedade</span>
+                                                <span class="value">${cafe.variedade || '-'}</span>
+                                            </div>
+                                            <div class="cafe-detail-grid-item">
+                                                <span class="label">Altitude</span>
+                                                <span class="value">${cafe.altitude || '-'}</span>
+                                            </div>
+                                            <div class="cafe-detail-grid-item">
+                                                <span class="label">Processo</span>
+                                                <span class="value">${cafe.processo || '-'}</span>
+                                            </div>
+                                            <div class="cafe-detail-grid-item">
+                                                <span class="label">Safra</span>
+                                                <span class="value">${cafe.safra || '-'}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="cafe-detail-sensory" data-sly-test="${cafe.notasBadges}">
+                                            <span class="label">Notas Sensoriais</span>
+                                            <div class="cafe-detail-badges">
+                                                <span class="info-cafe-badge" data-sly-list.badge="${cafe.notasBadges}">
+                                                    ${badge}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sly>
+                </div>
+            </sly>
         </div>
-    </div>
+    </sly>
 
     <div class="cq-placeholder" 
          data-emptytext="Ficha do Café - Adicione um ou mais fragmentos" 

@@ -1,0 +1,37 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories='brumacafe.components.store-callout'}" />
+
+<sly data-sly-use.model="com.brumacafe.core.models.StoreCalloutModel" />
+
+<sly data-sly-test.isEmpty="${model.empty}" />
+
+<div data-sly-test="${isEmpty && wcmmode.edit}" class="cq-placeholder" data-emptytext="Chamada para a Loja"></div>
+
+<section class="cmp-store-callout ${model.fileReference ? 'cmp-store-callout--with-image' : ''}"
+    data-sly-test="${!isEmpty}">
+
+    <sly data-sly-test="${model.fileReference}">
+        <img class="cmp-store-callout__background" src="${model.fileReference}" alt="" />
+        <div class="cmp-store-callout__overlay"></div>
+    </sly>
+
+    <div class="cmp-store-callout__content">
+        <h2 class="cmp-store-callout__title">${model.title}</h2>
+
+        <p class="cmp-store-callout__text" data-sly-test="${model.text}">
+            ${model.text}
+        </p>
+
+        <a class="cmp-store-callout__button" href="${model.buttonLink @ context='uri'}" target="_blank"
+            rel="noopener noreferrer" data-sly-test="${model.buttonLabel}">
+            ${model.buttonLabel}
+            <svg class="cmp-store-callout__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+        </a>
+    </div>
+</section>

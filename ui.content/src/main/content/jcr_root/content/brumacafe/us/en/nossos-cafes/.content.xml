@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-20T10:44:24.128-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Nossos Cafés"
+        sling:resourceType="brumacafe/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <main_banner
+                    jcr:description="Cafés selecionados diretamente de produtores parceiros. Colheita 2024, disponíveis em quantidade limitada."
+                    jcr:lastModified="{Date}2026-08-20T10:44:24.126-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Cada lote, uma história"
+                    sling:resourceType="brumacafe/components/main-banner"
+                    alt="Plantação brasileira de café especial"
+                    buttonLink="/content/brumacafe/us/en"
+                    buttonText="Conheça nossos cafés"
+                    fileReference="/content/dam/brumacafe/images/donaSebastiana.jpg"/>
+                <info_cafe
+                    jcr:lastModified="{Date}2026-08-17T11:10:20.061-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/info-cafe">
+                    <cafes jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-cerrado-mineiro"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-chapada-diamantina"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-matas-de-minas"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            fragmentPath="/content/dam/brumacafe/fragments/bruma-serra-da-mantiqueira"/>
+                    </cafes>
+                </info_cafe>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T10:43:24.645-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"
+            fileName="cafe.jpeg">
+            <file/>
+        </cq:featuredimage>
+    </jcr:content>
+</jcr:root>

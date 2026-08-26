@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Component"
+    jcr:title="Listagem de Artigos"
+    jcr:description="Exibe uma lista automática de artigos baseada em consultas"
+    componentGroup="Bruma Cafe - Content"/>
