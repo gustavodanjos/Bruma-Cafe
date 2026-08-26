@@ -15,6 +15,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
+                    <targetLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        name="./targetLink"
+                        fieldLabel="Link de Redirecionamento (Opcional)"
+                        fieldDescription="Se preenchido, os cards funcionarão como links para esta página e o painel de detalhes será desativado."
+                        rootPath="/content/brumacafe"/>
                     <cafes
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

@@ -6,34 +6,25 @@
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Vitrine da Loja"
-    sling:resourceType="cq/gui/components/coral/common/tabs">
-    <items jcr:primaryType="nt:unstructured">
-        <tabs jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/tabs"
-            maximized="{Boolean}true">
-            <items jcr:primaryType="nt:unstructured">
-                <properties jcr:primaryType="nt:unstructured"
-                    jcr:title="Informações"
-                    sling:resourceType="granite/ui/components/coral/foundation/container"
-                    margin="{Boolean}true">
-                    <items jcr:primaryType="nt:unstructured">
-                        <columns jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                            margin="{Boolean}true">
-                            <items jcr:primaryType="nt:unstructured">
-                                <column jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/container">
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <text jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/text"
-                                            text="Este componente consome produtos automaticamente da API externa."/>
-                                    </items>
-                                </column>
-                            </items>
-                        </columns>
-                    </items>
-                </properties>
-            </items>
-        </tabs>
-    </items>
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                        text="Este componente consome produtos automaticamente da API externa."/>
+                    <apiUrl jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Se deixado em branco, a API configurada globalmente no OSGi será utilizada."
+                        fieldLabel="URL da API (Opcional)"
+                        name="./apiUrl"/>
+                </items>
+            </column>
+        </items>
+    </content>
 </jcr:root>

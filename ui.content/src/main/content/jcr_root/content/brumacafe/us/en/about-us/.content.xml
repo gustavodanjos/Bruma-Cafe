@@ -166,13 +166,13 @@
                     imageFromPageImage="false"
                     isDecorative="false"
                     linkTarget="_self">
-                    <file/>
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"
                             offset="0"
                             width="5"/>
                     </cq:responsive>
+                    <file/>
                 </image>
             </container>
         </root>

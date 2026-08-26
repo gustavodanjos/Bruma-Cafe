@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-23T10:38:05.730-03:00"
+        cq:lastModified="{Date}2026-08-24T02:00:13.412-03:00"
         cq:lastModifiedBy="admin"
         cq:tags="[brumacafe:produtores]"
         cq:template="/conf/brumacafe/settings/wcm/templates/pagina-de-artigo"
@@ -26,45 +26,37 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/container"
                 layout="responsiveGrid">
-                <articlehero
-                    jcr:created="{Date}2026-08-22T20:14:39.773-03:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-08-22T20:14:39.773-03:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/articlehero"/>
                 <text
                     jcr:created="{Date}2026-08-20T07:45:55.388-03:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-08-23T10:02:03.327-03:00"
+                    jcr:lastModified="{Date}2026-08-20T10:39:47.657-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="brumacafe/components/text"
-                    text="&lt;p>Chegar ao Sítio Esperança exige paciência. São 40 minutos de estrada de terra depois que o asfalto acaba, subindo a Serra da Canastra por uma trilha que, em época de chuva, só veículos tração 4x4 conseguem completar. Para a família Meireles, isso é o mundo ao contrário: eles nasceram lá.&lt;/p>&#xd;&#xa;&lt;p>Dona Helena, 72 anos, nos recebe com café coado na meia e rosquinhas de polvilho. Ela é a segunda geração: o avô plantou as primeiras mudas de Bourbon Vermelho em 1944, quando a região ainda não tinha nome no mercado de especialidades. &amp;quot;Meu pai sabia que o café daqui era diferente, mas ninguém pagava por isso. Hoje é diferente.&amp;quot;&lt;/p>&#xd;&#xa;&lt;p>A diferença está no manejo. O Sítio Esperança usa sistema agroflorestal parcial: bananeiras e macadâmias sombreiam as fileiras de café, reduzindo a incidência solar direta e mantendo a umidade do solo. O resultado é uma maturação mais lenta e uniforme — precisamente o que procuramos.&lt;/p>&#xd;&#xa;&lt;p>O lote que selecionamos para a Bruma é um Bourbon Vermelho processado em cereja descascada, seco em terreiro suspenso por 25 dias. Na xícara: ameixa, chocolate amargo e acidez cítrica longa. Um café que conta uma história antes mesmo de você terminar a primeira gole.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                    text="&lt;p>Chegar ao Sítio Esperança exige paciência. São 40 minutos de estrada de terra depois que o asfalto acaba, subindo a Serra da Canastra por uma trilha que, em época de chuva, só veículos tração 4x4 conseguem completar. Para a família Meireles, isso é o mundo ao contrário: eles nasceram lá.&lt;/p>&#xd;&#xa;&lt;p>Dona Helena, 72 anos, nos recebe com café coado na meia e rosquinhas de polvilho. Ela é a segunda geração: o avô plantou as primeiras mudas de Bourbon Vermelho em 1944, quando a região ainda não tinha nome no mercado de especialidades. &amp;quot;Meu pai sabia que o café daqui era diferente, mas ninguém pagava por isso. Hoje é diferente.&amp;quot;&lt;/p>&#xd;&#xa;&lt;p>A diferença está no manejo. O Sítio Esperança usa sistema agroflorestal parcial: bananeiras e macadâmias sombreiam as fileiras de café, reduzindo a incidência solar direta e mantendo a umidade do solo. O resultado é uma maturação mais lenta e uniforme — precisamente o que procuramos.&lt;/p>&#xd;&#xa;&lt;p>O lote que selecionamos para a Bruma é um Bourbon Vermelho processado em cereja descascada, seco em terreiro suspenso por 25 dias. Na xícara: ameixa, chocolate amargo e acidez cítrica longa. Um café que conta uma história antes mesmo de você terminar a primeira gole.&lt;br>&#xd;&#xa;Chegar ao Sítio Esperança exige paciência. São 40 minutos de estrada de terra depois que o asfalto acaba, subindo a Serra da Canastra por uma trilha que, em época de chuva, só veículos tração 4x4 conseguem completar. Para a família Meireles, isso é o mundo ao contrário: eles nasceram lá.&lt;/p>&#xd;&#xa;&lt;p>Dona Helena, 72 anos, nos recebe com café coado na meia e rosquinhas de polvilho. Ela é a segunda geração: o avô plantou as primeiras mudas de Bourbon Vermelho em 1944, quando a região ainda não tinha nome no mercado de especialidades. &amp;quot;Meu pai sabia que o café daqui era diferente, mas ninguém pagava por isso. Hoje é diferente.&amp;quot;&lt;/p>&#xd;&#xa;&lt;p>A diferença está no manejo. O Sítio Esperança usa sistema agroflorestal parcial: bananeiras e macadâmias sombreiam as fileiras de café, reduzindo a incidência solar direta e mantendo a umidade do solo. O resultado é uma maturação mais lenta e uniforme — precisamente o que procuramos.&lt;/p>&#xd;&#xa;&lt;p>O lote que selecionamos para a Bruma é um Bourbon Vermelho processado em cereja descascada, seco em terreiro suspenso por 25 dias. Na xícara: ameixa, chocolate amargo e acidez cítrica longa. Um café que conta uma história antes mesmo de você terminar a primeira gole.&lt;br>&#xd;&#xa;Chegar ao Sítio Esperança exige paciência. São 40 minutos de estrada de terra depois que o asfalto acaba, subindo a Serra da Canastra por uma trilha que, em época de chuva, só veículos tração 4x4 conseguem completar. Para a família Meireles, isso é o mundo ao contrário: eles nasceram lá.&lt;/p>&#xd;&#xa;&lt;p>Dona Helena, 72 anos, nos recebe com café coado na meia e rosquinhas de polvilho. Ela é a segunda geração: o avô plantou as primeiras mudas de Bourbon Vermelho em 1944, quando a região ainda não tinha nome no mercado de especialidades. &amp;quot;Meu pai sabia que o café daqui era diferente, mas ninguém pagava por isso. Hoje é diferente.&amp;quot;&lt;/p>&#xd;&#xa;&lt;p>A diferença está no manejo. O Sítio Esperança usa sistema agroflorestal parcial: bananeiras e macadâmias sombreiam as fileiras de café, reduzindo a incidência solar direta e mantendo a umidade do solo. O resultado é uma maturação mais lenta e uniforme — precisamente o que procuramos.&lt;/p>&#xd;&#xa;&lt;p>O lote que selecionamos para a Bruma é um Bourbon Vermelho processado em cereja descascada, seco em terreiro suspenso por 25 dias. Na xícara: ameixa, chocolate amargo e acidez cítrica longa. Um café que conta uma história antes mesmo de você terminar a primeira gole.&lt;/p>&#xd;&#xa;"
                     textIsRich="true"/>
                 <articlefooter
-                    jcr:created="{Date}2026-08-22T20:15:04.479-03:00"
+                    jcr:created="{Date}2026-08-24T00:25:50.644-03:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-08-22T20:15:04.479-03:00"
+                    jcr:lastModified="{Date}2026-08-24T00:25:50.644-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="brumacafe/components/articlefooter"/>
-                <relatedarticles
-                    jcr:created="{Date}2026-08-23T09:07:59.070-03:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-08-23T09:07:59.070-03:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="brumacafe/components/relatedarticles"/>
             </container>
+            <articlehero
+                jcr:lastModified="{Date}2026-08-24T01:52:54.278-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/articlehero"/>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2026-08-23T10:38:05.722-03:00"
+            jcr:lastModified="{Date}2026-08-24T02:00:13.404-03:00"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"
-            alt="Produtor de café no terreiro do Sítio Esperança"
-            altValueFromDAM="false"
-            fileReference="/content/dam/brumacafe/artigos/artigo-sitio-esperanca-produtores.jpg"/>
+            altValueFromDAM="true"/>
+        <image
+            jcr:primaryType="nt:unstructured"
+            fileReference="/content/dam/brumacafe/images/gio.jpg"/>
     </jcr:content>
 </jcr:root>

@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-08-19T14:22:04.447-03:00"
+        cq:lastModified="{Date}2026-08-24T03:50:28.739-03:00"
         cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/brumacafe/settings/wcm/templates/xf-web-variation"
@@ -40,6 +40,8 @@
                 id="cmp-separator--decorative"
                 isDecorative="true"/>
             <sociallinks
+                jcr:lastModified="{Date}2026-08-24T03:01:59.164-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/sociallinks">
                 <cq:responsive jcr:primaryType="nt:unstructured">
@@ -57,11 +59,11 @@
                     <item0
                         jcr:primaryType="nt:unstructured"
                         platform="instagram"
-                        url="https://www.youtube.com/"/>
+                        url="https://www.instagram.com/"/>
                     <item1
                         jcr:primaryType="nt:unstructured"
                         platform="facebook"
-                        url="https://www.youtube.com/"/>
+                        url="https://www.facebook.com/"/>
                     <item2
                         jcr:primaryType="nt:unstructured"
                         platform="youtube"
@@ -113,21 +115,10 @@
                 </cq:responsive>
             </text>
             <footerlinks_1753620539
+                jcr:lastModified="{Date}2026-08-24T03:50:28.716-03:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/footerlinks">
-                <links jcr:primaryType="nt:unstructured">
-                    <item0
-                        jcr:primaryType="nt:unstructured"
-                        link="#"
-                        text="Nossos produtos"/>
-                    <item1
-                        jcr:primaryType="nt:unstructured"
-                        link="#"
-                        text="Nossos Produtores"/>
-                    <item2
-                        jcr:primaryType="nt:unstructured"
-                        text="Trabalhe Conosco"/>
-                </links>
                 <cq:responsive jcr:primaryType="nt:unstructured">
                     <default
                         jcr:primaryType="nt:unstructured"
@@ -135,13 +126,27 @@
                         width="3"/>
                     <phone
                         jcr:primaryType="nt:unstructured"
-                        offset="2"
-                        width="8"/>
+                        offset="3"
+                        width="7"/>
                 </cq:responsive>
+                <links jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        link="/content/brumacafe/br/pt/nossos-cafes.html"
+                        text="Nossos Cafés"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        link="/content/brumacafe/br/pt/contato.html"
+                        text="Mande uma dúvida"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        link="/content/brumacafe/br/pt/sobre.html"
+                        text="Conheça a nossa história"/>
+                </links>
             </footerlinks_1753620539>
             <image
                 cq:styleIds="[1787160069191]"
-                jcr:lastModified="{Date}2026-08-19T11:19:54.924-03:00"
+                jcr:lastModified="{Date}2026-08-24T03:03:14.255-03:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brumacafe/components/image"
@@ -152,6 +157,7 @@
                 imageFromPageImage="false"
                 isDecorative="false"
                 linkTarget="_self"
+                linkURL="/content/brumacafe/br/pt/home"
                 titleValueFromDAM="true">
                 <cq:responsive jcr:primaryType="nt:unstructured">
                     <default
