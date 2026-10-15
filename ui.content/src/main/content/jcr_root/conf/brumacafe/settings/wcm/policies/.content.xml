@@ -251,12 +251,12 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-08-13T07:54:11.792-03:00"
+                    jcr:lastModified="{Date}2026-08-24T03:23:48.063-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Política de Artigo Bruma"
+                    jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[/apps/brumacafe/components/separator,/apps/brumacafe/components/text,/apps/brumacafe/components/title,/apps/brumacafe/components/image]"
+                    components="[/apps/brumacafe/components/featured-quote,/apps/brumacafe/components/separator,/apps/brumacafe/components/text,/apps/brumacafe/components/title,/apps/brumacafe/components/image]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
@@ -285,12 +285,12 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
-                    jcr:lastModified="{Date}2026-08-12T09:37:34.989-03:00"
+                    jcr:lastModified="{Date}2026-08-24T03:25:53.434-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Bruma Cafe - Content,group:Bruma Cafe - Form,group:Bruma Cafe - Structure,group:Bruma Café - Content,group:Bruma Café - Structure,group:WKND - Content,group:WKND Site,group:WKND Site - Content,group:WKND Site - Form,group:WKND Site - Structure]"
+                    components="[/libs/foundation/components/image,/libs/foundation/components/text,/libs/foundation/components/title,/apps/brumacafe/components/featuredarticle,/apps/brumacafe/components/store-callout,/apps/brumacafe/components/separator,/apps/brumacafe/components/title,/apps/brumacafe/components/info-cafe,/apps/brumacafe/components/external-products]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
@@ -363,6 +363,72 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
+            <main-banner jcr:primaryType="nt:unstructured">
+                <policy_1787336874453
+                    jcr:lastModified="{Date}2026-08-24T03:18:31.338-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="bruma-main-banner-alignment"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Tema"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="main-banner-default"
+                                    cq:styleId="1787339839196"
+                                    cq:styleLabel="Padrão"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="main-banner-cream"
+                                    cq:styleId="1787339860518"
+                                    cq:styleLabel="Fundo Creme"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="main-banner-grain"
+                                    cq:styleId="1787365476664"
+                                    cq:styleLabel="Fundo Grão"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1787336874453>
+            </main-banner>
+            <content-grid jcr:primaryType="nt:unstructured">
+                <policy_1787339942729
+                    jcr:lastModified="{Date}2026-08-24T03:19:07.809-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="bruma-content-grid-themes"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Tema"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="content-grid-default"
+                                    cq:styleId="1787339962146"
+                                    cq:styleLabel="Tema Padrão"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="content-grid-cream"
+                                    cq:styleId="1787339963950"
+                                    cq:styleLabel="Fundo Creme"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="content-grid-grain"
+                                    cq:styleId="1787364104696"
+                                    cq:styleLabel="Fundo Grão"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1787339942729>
+            </content-grid>
         </components>
     </brumacafe>
     <wcm jcr:primaryType="nt:unstructured">

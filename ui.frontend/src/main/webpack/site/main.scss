@@ -1,6 +1,11 @@
 @import 'variables';
 @import 'mixins';
 @import 'base';
+@import 'tokens';
 @import '../components/**/*.scss';
 @import './styles/*.scss';
 @import 'fonts';
+@import '../components/featuredarticle';
+@import '../components/relatedarticles';
+@import '../components/articlehero';
+@import '../components/articlefooter';

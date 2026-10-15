@@ -4,7 +4,7 @@
     allowedPaths="[/content/entities(/.*)?]"
     ranking="{Long}100">
     <jcr:content
-        cq:lastModified="{Date}2026-08-12T22:10:37.849-03:00"
+        cq:lastModified="{Date}2026-08-24T01:30:39.658-03:00"
         cq:lastModifiedBy="admin"
         cq:scaffolding="/conf/brumacafe/settings/dam/cfm/models/cafe/jcr:content/model"
         cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
@@ -25,7 +25,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="cq/gui/components/authoring/dialog">
                 <content
-                    jcr:lastModified="{Date}2026-08-12T22:10:37.849-03:00"
+                    jcr:lastModified="{Date}2026-08-24T01:30:39.658-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
@@ -138,7 +138,7 @@
                             fieldLabel="Produtor"
                             filter="hierarchy"
                             fragmentmodelreference="/conf/brumacafe/settings/dam/cfm/models/produtor"
-                            listOrder="21"
+                            listOrder="8"
                             metaType="fragment-reference"
                             name="produtorRef"
                             nameSuffix="contentReference"
@@ -149,6 +149,71 @@
                             <granite:data jcr:primaryType="nt:unstructured"/>
                             <field jcr:primaryType="nt:unstructured"/>
                         </_x0031_786583361358>
+                        <_x0031_787545660226
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Processo"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="processo"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_787545660226>
+                        <_x0031_787545700716
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Variedade"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="variedade"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_787545700716>
+                        <_x0031_787545744828
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Altitude"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="altitude"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_787545744828>
+                        <_x0031_787545767557
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Safra"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="safra"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_787545767557>
+                        <_x0031_787545822503
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Notas Sensoriais (Tags) "
+                            listOrder="21"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="notasBadges"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_787545822503>
                     </items>
                 </content>
             </cq:dialog>

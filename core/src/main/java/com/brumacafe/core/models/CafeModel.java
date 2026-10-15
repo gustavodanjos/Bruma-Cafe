@@ -12,6 +12,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
@@ -21,6 +22,9 @@ public class CafeModel {
 
     @ChildResource
     private List<Resource> cafes;
+
+    @ValueMapValue
+    private String targetLink;
 
     @SlingObject
     private ResourceResolver resourceResolver;
@@ -54,6 +58,7 @@ public class CafeModel {
         }
 
         CafeItem item = new CafeItem();
+        item.setId(fragmentResource.getName());
 
         if (cf.hasElement("nomeCafe")) {
             item.setNome(cf.getElement("nomeCafe").getContent());
@@ -63,6 +68,33 @@ public class CafeModel {
         }
         if (cf.hasElement("fotoCafe")) {
             item.setImagem(cf.getElement("fotoCafe").getContent());
+        }
+
+        if (cf.hasElement("notasSensoriaisEDescricao")) {
+            item.setNotasSensoriaisDescricao(cf.getElement("notasSensoriaisEDescricao").getContent());
+        }
+        if (cf.hasElement("processo")) {
+            item.setProcesso(cf.getElement("processo").getContent());
+        }
+        if (cf.hasElement("variedade")) {
+            item.setVariedade(cf.getElement("variedade").getContent());
+        }
+        if (cf.hasElement("altitude")) {
+            item.setAltitude(cf.getElement("altitude").getContent());
+        }
+        if (cf.hasElement("safra")) {
+            item.setSafra(cf.getElement("safra").getContent());
+        }
+        if (cf.hasElement("notasBadges")) {
+            String notasStr = cf.getElement("notasBadges").getContent();
+            if (notasStr != null && !notasStr.trim().isEmpty()) {
+                String[] notas = notasStr.split(",");
+                List<String> list = new ArrayList<>();
+                for(String n : notas) {
+                    list.add(n.trim());
+                }
+                item.setNotasBadges(list);
+            }
         }
 
         if (cf.hasElement("produtorRef")) {
@@ -89,11 +121,29 @@ public class CafeModel {
         return !listaDeCafes.isEmpty();
     }
 
+    public String getTargetLink() {
+        return targetLink;
+    }
+
+    public boolean isHasTargetLink() {
+        return targetLink != null && !targetLink.trim().isEmpty();
+    }
+
     public static class CafeItem {
+        private String id;
         private String nome;
         private String descricao;
         private String imagem;
         private String produtor;
+        private String notasSensoriaisDescricao;
+        private String processo;
+        private String variedade;
+        private String altitude;
+        private String safra;
+        private List<String> notasBadges;
+
+        public String getId() { return id; }
+        public void setId(String id) { this.id = id; }
 
         public String getNome() { return nome; }
         public void setNome(String nome) { this.nome = nome; }
@@ -106,5 +156,23 @@ public class CafeModel {
 
         public String getProdutor() { return produtor; }
         public void setProdutor(String produtor) { this.produtor = produtor; }
+
+        public String getNotasSensoriaisDescricao() { return notasSensoriaisDescricao; }
+        public void setNotasSensoriaisDescricao(String notasSensoriaisDescricao) { this.notasSensoriaisDescricao = notasSensoriaisDescricao; }
+
+        public String getProcesso() { return processo; }
+        public void setProcesso(String processo) { this.processo = processo; }
+
+        public String getVariedade() { return variedade; }
+        public void setVariedade(String variedade) { this.variedade = variedade; }
+
+        public String getAltitude() { return altitude; }
+        public void setAltitude(String altitude) { this.altitude = altitude; }
+
+        public String getSafra() { return safra; }
+        public void setSafra(String safra) { this.safra = safra; }
+
+        public List<String> getNotasBadges() { return notasBadges; }
+        public void setNotasBadges(List<String> notasBadges) { this.notasBadges = notasBadges; }
     }
 }

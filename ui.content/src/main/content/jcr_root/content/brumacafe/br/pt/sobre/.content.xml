@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-08-24T01:17:00.469-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/brumacafe/settings/wcm/templates/template-base-bruma"
+        jcr:description="Conheça a história e os valores por trás da Bruma Café. Valorizamos quem planta e entregamos o melhor do café especial brasileiro na sua xícara."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sobre"
+        sling:resourceType="brumacafe/components/page"
+        navTitle="Sobre"
+        pageTitle="Nossa História | Bruma Café Especial"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="brumacafe/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-08-12T09:39:23.402-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/container"
+                layout="responsiveGrid">
+                <cafe_page_header
+                    jcr:created="{Date}2026-08-23T23:39:13.294-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-23T23:39:36.833-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/cafe-page-header"
+                    chapeu="Sobre"
+                    titulo="Entenda a nossa história"/>
+                <title
+                    jcr:created="{Date}2026-08-21T23:31:46.767-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-21T23:31:57.293-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Nossa História | Bruma Café Especial"
+                    sling:resourceType="brumacafe/components/title">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="7"/>
+                    </cq:responsive>
+                </title>
+                <featured_quote
+                    jcr:created="{Date}2026-08-22T00:16:44.312-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-24T00:59:30.797-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/featured-quote"
+                    text="&lt;p>&amp;quot;A Bruma Café nasceu da parceria com pequenos produtores de café e da vontade de valorizar cada etapa do processo, desde o cultivo até a xícara. Começou de forma simples, trabalhando diretamente com produtores da região e selecionando grãos com características próprias de sabor e qualidade.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Com o passar dos anos, a empresa ampliou sua atuação, passando a trabalhar com diferentes produtores e investindo em processos de seleção, torra e preparação dos cafés.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Hoje, a Bruma Café atua na produção e comercialização de diferentes tipos de café, mantendo como propósito valorizar os produtores, respeitar a origem dos grãos e proporcionar uma experiência de qualidade para quem aprecia um bom café.&amp;quot;&lt;/p>&#xd;&#xa;"
+                    textIsRich="true">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="10"/>
+                    </cq:responsive>
+                </featured_quote>
+                <title_1000284918
+                    jcr:created="{Date}2026-08-22T00:19:33.766-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:57:39.151-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Nosso Valores | Identidade da Bruma"
+                    sling:resourceType="brumacafe/components/title"
+                    linkTarget="_self"
+                    type="h1">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="7"/>
+                    </cq:responsive>
+                </title_1000284918>
+                <content_grid
+                    cq:styleIds="[1787339962146]"
+                    jcr:created="{Date}2026-08-20T13:01:37.515-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:22:23.274-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/content-grid">
+                    <items jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            alt="café pronto em cima da mesa"
+                            fileReference="/content/dam/brumacafe/images/brumaMatasdeMinas.jpg"
+                            text="Acreditamos que saber de onde vem o café faz parte da experiência de apreciá-lo.&#xd;&#xa;"
+                            title="Conhecer a origem"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            alt="cafe pronto na mao de alguem"
+                            fileReference="/content/dam/brumacafe/images/brumaSerradaMantiqueira.jpg"
+                            text="Queremos dar visibilidade às pessoas e aos produtores que existem por trás de cada café.&#xd;&#xa;"
+                            title="Valorizar quem planta"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            alt="foto café"
+                            fileReference="/content/dam/brumacafe/images/brumaChapadaDiamantina.jpg"
+                            text="Cada origem tem uma história e características próprias que ajudam a explicar por que aquele café é diferente."
+                            title="Entender cada café"/>
+                    </items>
+                </content_grid>
+                <title_1682133320
+                    jcr:created="{Date}2026-08-22T00:22:54.647-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-22T00:23:43.644-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Quem faz a Bruma acontecer | Nossa Equipe"
+                    sling:resourceType="brumacafe/components/title">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="8"/>
+                    </cq:responsive>
+                </title_1682133320>
+                <content_grid_1827369197
+                    jcr:created="{Date}2026-08-22T00:23:58.012-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-24T01:17:00.464-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/content-grid">
+                    <items jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            alt="casal-abracado-na-plantacao"
+                            fileReference="/content/dam/brumacafe/images/ana-e-joao.jpg"
+                            text="Q Grader certificada pela SCA. 12 anos visitando fazendas e construindo relações que atravessam safras."
+                            title="Ana e João - Fundadores &amp; Head de Compras"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            alt="homem-com-chapeu"
+                            fileReference="/content/dam/brumacafe/images/rodrigo.jpg"
+                            text="Formado em Química, torrou café em três países antes de trazer para cá a precisão que o ofício exige."
+                            title="Rodrigo Melo - Mestre de Torra"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            alt="home-com-camisa-branca"
+                            fileReference="/content/dam/brumacafe/images/gio.jpg"
+                            text="Dono do Sítio Esperança. Profissional dedicado à cafeicultura, responsável pelo manejo correto do solo, colheita seletiva no ponto ideal e pós-colheita cuidadosa. Garante a origem, o padrão e a excelência dos lotes que chegam até o consumidor"
+                            title="Gio Meireles - Produtor"/>
+                    </items>
+                </content_grid_1827369197>
+                <store_callout
+                    jcr:created="{Date}2026-08-24T01:06:29.745-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-08-24T01:07:26.863-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="brumacafe/components/store-callout"
+                    buttonLabel="Comprar Agora"
+                    buttonLink="https://www.mercafe.com.br/colecoes-capsulas/tres-3-coracoes?gad_source=1&amp;gad_campaignid=23798409836&amp;gbraid=0AAAAACYl42g9em-Nz3tLsw45fgkzj9HI-&amp;gclid=CjwKCAjwtKrUBhAhEiwAr77ZotOpPAaHceY026SPKfZT7qS0m4YzZsXW7PBG49JJn7hxmB_-jjWD_RoCWxUQAvD_BwE"
+                    text="Obrigado por conhecer a história da Bruma Café e por fazer parte dessa jornada com a gente. Esperamos que você tenha gostado de conhecer um pouco mais sobre o nosso trabalho e convidamos você a descobrir nossos cafés e escolher o seu próximo favorito."
+                    title="Descubra o seu café Preferido">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="3"
+                            width="6"/>
+                    </cq:responsive>
+                </store_callout>
+            </container>
+            <title
+                jcr:created="{Date}2026-08-18T11:47:34.855-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-08-20T12:31:01.276-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brumacafe/components/title"/>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-08-20T12:53:40.459-03:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+</jcr:root>

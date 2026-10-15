@@ -1,0 +1,5 @@
+{
+  "apiUrl": "https://dummyjson.com/products",
+  "productLimit": 4,
+  "connectionTimeout": 5000
+}

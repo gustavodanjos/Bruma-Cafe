@@ -3,4 +3,5 @@
     <filter root="/apps/brumacafe/clientlibs"/>
     <filter root="/apps/brumacafe/components"/>
     <filter root="/apps/brumacafe/i18n"/>
+    <filter root="/apps/cq/core/content/nav/tools/brumacafe"/>
 </workspaceFilter>

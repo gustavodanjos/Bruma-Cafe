@@ -1,0 +1,46 @@
+<sly data-sly-use.model="com.brumacafe.core.models.RelatedArticlesModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+
+    <sly data-sly-test="${wcmmode.edit && model.empty}">
+        <div class="cq-placeholder" data-emptytext="Artigos Relacionados: Nenhum artigo com a mesma tag encontrado."></div>
+    </sly>
+
+    <sly data-sly-test="${!model.empty}">
+        <section class="bruma-related-articles">
+            <div class="bruma-related-articles__container">
+                <h2 class="bruma-related-articles__title">${model.title}</h2>
+
+                <div class="bruma-article-grid">
+                    <sly data-sly-list.article="${model.articles}">
+                        <article class="bruma-article-card" data-category="${article.category}">
+                            <a href="${article.path}" class="bruma-article-card__link">
+                                <div class="bruma-article-card__image-wrapper">
+                                    <sly data-sly-test="${article.imagePath}">
+                                        <img src="${article.imagePath}" alt="${article.title}" class="bruma-article-card__image"/>
+                                    </sly>
+                                    <sly data-sly-test="${!article.imagePath}">
+                                        <div class="bruma-article-card__image-placeholder"></div>
+                                    </sly>
+                                </div>
+
+                                <div class="bruma-article-card__content">
+                                    <span class="bruma-article-card__category">${article.category}</span>
+                                    <h3 class="bruma-article-card__title">${article.title}</h3>
+                                    <sly data-sly-test="${article.description}">
+                                        <p class="bruma-article-card__description">${article.description}</p>
+                                    </sly>
+                                    <div class="bruma-article-card__meta">
+                                        <span data-sly-test="${article.formattedDate}">${article.formattedDate}</span>
+                                        <span data-sly-test="${!article.formattedDate}">${article.date @ format='dd/MM/yyyy'}</span>
+                                        <span class="separator">·</span>
+                                        <span>${article.readingTime} min de leitura</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </sly>
+                </div>
+            </div>
+        </section>
+    </sly>
+</sly>

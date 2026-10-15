@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Component"
+    jcr:title="Informações do Artigo"
+    jcr:description="Exibe a data de publicação e o tempo estimado de leitura do artigo."
+    componentGroup="Bruma Cafe - Content"/>

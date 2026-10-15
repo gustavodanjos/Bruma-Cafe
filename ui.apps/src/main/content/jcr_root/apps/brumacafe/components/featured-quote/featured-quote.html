@@ -1,0 +1,37 @@
+﻿<sly
+    data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+    data-sly-use.quote="com.brumacafe.core.models.FeaturedQuoteModel"
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+</sly>
+
+<sly data-sly-call="${clientlib.css @ categories='brumacafe.components.featured-quote'}"></sly>
+
+<figure class="cmp-featured-quote"
+        data-sly-test="${textModel.text}">
+
+    <blockquote class="cmp-featured-quote__quote">
+
+        <div class="cmp-featured-quote__text"
+             data-sly-test="${textModel.richText}">
+            ${textModel.text @ context='html'}
+        </div>
+
+        <p class="cmp-featured-quote__text"
+           data-sly-test="${!textModel.richText}">
+            ${textModel.text}
+        </p>
+
+    </blockquote>
+
+    <figcaption class="cmp-featured-quote__author"
+                data-sly-test="${quote.author}">
+        ${quote.author}
+    </figcaption>
+
+</figure>
+
+<sly data-sly-call="${template.placeholder @
+    isEmpty=!textModel.text,
+    emptyTextAppend='Clique em configurar para adicionar uma citação'}">
+</sly>
